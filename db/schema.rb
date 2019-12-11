@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_215455) do
+ActiveRecord::Schema.define(version: 2019_12_11_220457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_215455) do
     t.integer "m_recovery"
     t.integer "m_crit_dmg"
     t.integer "m_crit_rate"
+    t.boolean "available", default: true
     t.index ["gem_category_id"], name: "index_msl_gems_on_gem_category_id"
     t.index ["user_id"], name: "index_msl_gems_on_user_id"
   end
