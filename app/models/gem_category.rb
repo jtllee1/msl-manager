@@ -1,0 +1,2 @@
+class GemCategory < ApplicationRecord
+end
