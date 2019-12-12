@@ -1,0 +1,7 @@
+<%= simple_form_for @astromon do |f| %>
+  <%= f.association :specie %>
+  <%= f.input :first_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+  <%= f.input :second_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+  <%= f.input :third_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+  <%= f.submit "Add Astromon" %>
+<% end %>
