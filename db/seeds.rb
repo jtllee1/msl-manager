@@ -214,6 +214,15 @@ gem_category = Gem_category.new(
 gem_category.save!
 
 gem_category = Gem_category.new(
+  name: "Salvation",
+  description: "HP +15%, Recovery +15%",
+  hp: 10,
+  recovery: 10,
+  flat: false,
+  )
+gem_category.save!
+
+gem_category = Gem_category.new(
   name: "Longevity",
   description: "Resist +10%, HP +10%",
   resist: 10,
