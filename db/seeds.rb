@@ -91,6 +91,7 @@ puts "Finished!"
 puts "Creating species..."
 
 specie = Specie.new(
+  slug: "waterbalroxy",
   name: "Balroxy",
   element: "Water",
   pic: "https://vignette.wikia.nocookie.net/monstersuperleague/images/2/25/Balroxy_Water.png/revision/latest?cb=20170404141226",
