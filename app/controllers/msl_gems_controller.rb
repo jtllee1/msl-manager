@@ -6,7 +6,6 @@ class MslGemsController < ApplicationController
   def create
     @msl_gem = MslGem.new(msl_gem_params)
     @msl_gem.user = current_user
-    raise
     if @msl_gem.save
       redirect_to dashboard_path
     else
