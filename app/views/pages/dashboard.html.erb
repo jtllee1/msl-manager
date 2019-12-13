@@ -1,2 +1,43 @@
+<% @msl_gems.each do |msl_gem| %>
+  <p><%= msl_gem.gem_shape %></p>
+  <p><%= msl_gem.gem_category.name %></p>
+  <% unless msl_gem.m_hp == 0 %>
+    <p><%= msl_gem.m_hp %></p>
+  <% end %>
+  <% unless msl_gem.m_attack == 0 %>
+    <p><%= msl_gem.m_attack %></p>
+  <% end %>
+  <% unless msl_gem.m_defence == 0 %>
+    <p><%= msl_gem.m_defence %></p>
+  <% end %>
+  <% unless msl_gem.m_recovery == 0 %>
+    <p><%= msl_gem.m_recovery %></p>
+  <% end %>
+  <% unless msl_gem.m_crit_dmg == 0 %>
+    <p><%= msl_gem.m_crit_dmg %></p>
+  <% end %>
+  <% unless msl_gem.m_crit_rate == 0 %>
+    <p><%= msl_gem.m_crit_rate %></p>
+  <% end %>
+  <% unless msl_gem.s_hp == 0 %>
+    <p><%= msl_gem.s_hp %></p>
+  <% end %>
+  <% unless msl_gem.s_attack == 0 %>
+    <p><%= msl_gem.s_attack %></p>
+  <% end %>
+  <% unless msl_gem.s_defence == 0 %>
+    <p><%= msl_gem.s_defence %></p>
+  <% end %>
+  <% unless msl_gem.s_recovery == 0 %>
+    <p><%= msl_gem.s_recovery %></p>
+  <% end %>
+  <% unless msl_gem.s_crit_dmg == 0 %>
+    <p><%= msl_gem.s_crit_dmg %></p>
+  <% end %>
+  <% unless msl_gem.s_crit_rate == 0 %>
+    <p><%= msl_gem.s_crit_rate %></p>
+  <% end %>
+<% end %>
+
 <%= link_to "Add Astromon", new_astromon_path %>
 <%= link_to "Add Gem", new_msl_gem_path %>
