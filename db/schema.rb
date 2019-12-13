@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_002019) do
+ActiveRecord::Schema.define(version: 2019_12_13_095405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,21 +69,21 @@ ActiveRecord::Schema.define(version: 2019_12_12_002019) do
     t.bigint "user_id"
     t.string "gem_shape"
     t.bigint "gem_category_id"
-    t.integer "s_hp"
-    t.integer "s_attack"
-    t.integer "s_defence"
-    t.integer "s_recovery"
-    t.integer "s_crit_dmg"
-    t.integer "s_crit_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "m_hp"
-    t.integer "m_attack"
-    t.integer "m_defence"
-    t.integer "m_recovery"
-    t.integer "m_crit_dmg"
-    t.integer "m_crit_rate"
     t.boolean "available", default: true
+    t.integer "s_hp", default: 0
+    t.integer "s_attack", default: 0
+    t.integer "s_defence", default: 0
+    t.integer "s_recovery", default: 0
+    t.integer "s_crit_dmg", default: 0
+    t.integer "s_crit_rate", default: 0
+    t.integer "m_hp", default: 0
+    t.integer "m_attack", default: 0
+    t.integer "m_defence", default: 0
+    t.integer "m_recovery", default: 0
+    t.integer "m_crit_dmg", default: 0
+    t.integer "m_crit_rate", default: 0
     t.index ["gem_category_id"], name: "index_msl_gems_on_gem_category_id"
     t.index ["user_id"], name: "index_msl_gems_on_user_id"
   end
