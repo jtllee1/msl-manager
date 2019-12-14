@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_210723) do
+ActiveRecord::Schema.define(version: 2019_12_14_165745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,17 +21,11 @@ ActiveRecord::Schema.define(version: 2019_12_13_210723) do
     t.string "first_gem_shape"
     t.string "second_gem_shape"
     t.string "third_gem_shape"
-    t.bigint "first_gem_id"
-    t.bigint "second_gem_id"
-    t.bigint "third_gem_id"
     t.boolean "variant_state"
     t.integer "variant_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["first_gem_id"], name: "index_astromons_on_first_gem_id"
-    t.index ["second_gem_id"], name: "index_astromons_on_second_gem_id"
     t.index ["specie_id"], name: "index_astromons_on_specie_id"
-    t.index ["third_gem_id"], name: "index_astromons_on_third_gem_id"
     t.index ["user_id"], name: "index_astromons_on_user_id"
   end
 
@@ -39,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_12_13_210723) do
     t.bigint "msl_gem_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "astromon_id"
+    t.index ["astromon_id"], name: "index_first_gems_on_astromon_id"
     t.index ["msl_gem_id"], name: "index_first_gems_on_msl_gem_id"
   end
 
@@ -92,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_12_13_210723) do
     t.bigint "msl_gem_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "astromon_id"
+    t.index ["astromon_id"], name: "index_second_gems_on_astromon_id"
     t.index ["msl_gem_id"], name: "index_second_gems_on_msl_gem_id"
   end
 
@@ -137,6 +135,8 @@ ActiveRecord::Schema.define(version: 2019_12_13_210723) do
     t.bigint "msl_gem_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "astromon_id"
+    t.index ["astromon_id"], name: "index_third_gems_on_astromon_id"
     t.index ["msl_gem_id"], name: "index_third_gems_on_msl_gem_id"
   end
 
@@ -168,19 +168,19 @@ ActiveRecord::Schema.define(version: 2019_12_13_210723) do
     t.string "slug"
   end
 
-  add_foreign_key "astromons", "first_gems"
-  add_foreign_key "astromons", "second_gems"
   add_foreign_key "astromons", "species", column: "specie_id"
-  add_foreign_key "astromons", "third_gems"
   add_foreign_key "astromons", "users"
+  add_foreign_key "first_gems", "astromons"
   add_foreign_key "first_gems", "msl_gems"
   add_foreign_key "first_skills", "skills"
   add_foreign_key "msl_gems", "gem_categories"
   add_foreign_key "msl_gems", "users"
+  add_foreign_key "second_gems", "astromons"
   add_foreign_key "second_gems", "msl_gems"
   add_foreign_key "second_skills", "skills"
   add_foreign_key "species", "first_skills"
   add_foreign_key "species", "second_skills"
   add_foreign_key "species", "variant_skills"
+  add_foreign_key "third_gems", "astromons"
   add_foreign_key "third_gems", "msl_gems"
 end
