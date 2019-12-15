@@ -1,5 +1,8 @@
 <div class="astromon-cards">
   <% astromons.each do |astromon| %>
+    <% @first_gem = FirstGem.find_by(astromon_id: astromon.id) %>
+    <% @second_gem = SecondGem.find_by(astromon_id: astromon.id) %>
+    <% @third_gem = ThirdGem.find_by(astromon_id: astromon.id) %>
     <div class="astromon-card">
       <div class="astromon-pic">
         <p><%= astromon.specie.name %></p>
@@ -9,9 +12,21 @@
 
       </div>
       <div class="astromon-gem">
-      <%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %>
-      <%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %>
-      <%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %>
+      <% unless @first_gem %>
+        <%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %>
+      <% else %>
+        <%= link_to "Remove First Gem", astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+      <% unless @second_gem %>
+        <%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %>
+      <% else %>
+        <%= link_to "Remove Second Gem", astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+      <% unless @third_gem %>
+        <%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %>
+      <% else %>
+        <%= link_to "Remove Third Gem", astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
       </div>
     </div>
   <% end %>

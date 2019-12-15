@@ -18,6 +18,12 @@ class ThirdGemsController < ApplicationController
     end
   end
 
+  def destroy
+    @third_gem = ThirdGem.find_by(astromon_id: params[:astromon_id])
+    @third_gem.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def find_astromon
