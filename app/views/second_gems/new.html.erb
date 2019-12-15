@@ -1,0 +1,4 @@
+<%= simple_form_for([@astromon, @second_gem]) do |f| %>
+  <%= render "shared/astromon-gems", msl_gems: @second_gems %>
+  <%= f.submit "Add Second Gem" %>
+<% end %>

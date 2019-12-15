@@ -6,7 +6,6 @@ class AstromonsController < ApplicationController
   def create
     @astromon = Astromon.new(astromon_params)
     @astromon.user = current_user
-    raise
     if @astromon.save
       redirect_to dashboard_path
     else

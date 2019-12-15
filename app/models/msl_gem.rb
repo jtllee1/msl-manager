@@ -1,7 +1,7 @@
 class MslGem < ApplicationRecord
   belongs_to :user
   belongs_to :gem_category
-  has_many :first_gems
-  has_many :second_gems
-  has_many :third_gems
+  has_one :first_gem
+  has_one :second_gem
+  has_one :third_gem
 end
