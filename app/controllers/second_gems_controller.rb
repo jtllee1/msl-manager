@@ -18,6 +18,12 @@ class SecondGemsController < ApplicationController
     end
   end
 
+  def destroy
+    @second_gem = SecondGem.find_by(astromon_id: params[:astromon_id])
+    @second_gem.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def find_astromon
