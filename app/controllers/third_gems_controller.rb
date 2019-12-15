@@ -12,6 +12,9 @@ class ThirdGemsController < ApplicationController
       msl_gem_id: params[:msl_gem]
     )
     if @third_gem.save
+      find_msl_gem
+      @msl_gem.available = false
+      @msl_gem.save
       redirect_to dashboard_path
     else
       redirect_to new_astromon_third_gem_path(@astromon)
@@ -21,6 +24,9 @@ class ThirdGemsController < ApplicationController
   def destroy
     @third_gem = ThirdGem.find_by(astromon_id: params[:astromon_id])
     @third_gem.destroy
+    find_msl_gem
+    @msl_gem.available = true
+    @msl_gem.save
     redirect_to dashboard_path
   end
 
@@ -28,5 +34,9 @@ class ThirdGemsController < ApplicationController
 
   def find_astromon
     @astromon = Astromon.find(params[:astromon_id])
+  end
+
+  def find_msl_gem
+    @msl_gem = @third_gem.msl_gem
   end
 end

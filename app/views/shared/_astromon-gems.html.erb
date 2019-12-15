@@ -48,6 +48,8 @@
         </div>
       </div>
     </div>
-    <%= check_box_tag "msl_gem", msl_gem.id %>
+    <% if msl_gem.available %>
+      <%= check_box_tag "msl_gem", msl_gem.id %>
+    <% end %>
   <% end %>
 </div>
