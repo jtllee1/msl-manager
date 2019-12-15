@@ -1,4 +1,4 @@
 class ThirdGem < ApplicationRecord
   belongs_to :msl_gem
-  has_many :astromons
+  belongs_to :astromon
 end

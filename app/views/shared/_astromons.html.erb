@@ -1,0 +1,18 @@
+<div class="astromon-cards">
+  <% astromons.each do |astromon| %>
+    <div class="astromon-card">
+      <div class="astromon-pic">
+        <p><%= astromon.specie.name %></p>
+        <%= image_tag astromon.specie.pic, alt: "Balroxy" %>
+      </div>
+      <div class="astromon-stat">
+
+      </div>
+      <div class="astromon-gem">
+      <%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %>
+      <%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %>
+      <%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %>
+      </div>
+    </div>
+  <% end %>
+</div>
