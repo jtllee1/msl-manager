@@ -9,12 +9,18 @@
         <%= image_tag astromon.specie.pic, alt: "Balroxy" %>
       </div>
       <div class="astromon-stat">
-        <p>HP: <%= astromon.specie.hp %></p>
+        <p>HP: <%= astromon.specie.hp %> +<%= @hp_sum %>%</p>
         <p>Attack: <%= astromon.specie.attack %></p>
         <p>Defence: <%= astromon.specie.defence %></p>
         <p>Recovery: <%= astromon.specie.recovery %></p>
         <p>Crit. Dmg: <%= astromon.specie.crit_dmg %></p>
         <p>Crit. Rate: <%= astromon.specie.crit_rate %></p>
+        <% if astromon.variant_level %>
+          <p>Variant Level: <%= astromon.variant_level %></p>
+          <%= astromon.specie.variant_skill.name %>
+          <%= image_tag astromon.specie.variant_skill.pic, alt: "alttext" %>
+          <%= astromon.specie.variant_skill.description %>
+        <% end %>
       </div>
       <div class="astromon-gem">
         <div class="gem-cards">
