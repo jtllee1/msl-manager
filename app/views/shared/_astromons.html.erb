@@ -15,10 +15,18 @@
         <p>Recovery: <%= astromon.specie.recovery %></p>
         <p>Crit. Dmg: <%= astromon.specie.crit_dmg %></p>
         <p>Crit. Rate: <%= astromon.specie.crit_rate %></p>
+        <p><%= astromon.specie.first_skill.skill.name %>
+           <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
+           <%= astromon.specie.first_skill.skill.description %>
+        </p>
+        <p><%= astromon.specie.second_skill.skill.name %>
+           <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
+           <%= astromon.specie.second_skill.skill.description %>
+        </p>
         <% if astromon.variant_level %>
           <p>Variant Level: <%= astromon.variant_level %></p>
           <%= astromon.specie.variant_skill.name %>
-          <%= image_tag astromon.specie.variant_skill.pic, alt: "alttext" %>
+          <%= image_tag astromon.specie.variant_skill.pic, alt: astromon.specie.variant_skill.name %>
           <%= astromon.specie.variant_skill.description %>
         <% end %>
       </div>
