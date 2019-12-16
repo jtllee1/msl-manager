@@ -9,24 +9,37 @@
         <%= image_tag astromon.specie.pic, alt: "Balroxy" %>
       </div>
       <div class="astromon-stat">
-
+        <p>HP: <%= astromon.specie.hp %></p>
+        <p>Attack: <%= astromon.specie.attack %></p>
+        <p>Defence: <%= astromon.specie.defence %></p>
+        <p>Recovery: <%= astromon.specie.recovery %></p>
+        <p>Crit. Dmg: <%= astromon.specie.crit_dmg %></p>
+        <p>Crit. Rate: <%= astromon.specie.crit_rate %></p>
       </div>
       <div class="astromon-gem">
-      <% unless @first_gem %>
-        <%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %>
-      <% else %>
-        <%= link_to "Remove First Gem", astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-      <% unless @second_gem %>
-        <%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %>
-      <% else %>
-        <%= link_to "Remove Second Gem", astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-      <% unless @third_gem %>
-        <%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %>
-      <% else %>
-        <%= link_to "Remove Third Gem", astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
+        <div class="gem-cards">
+          <% unless @first_gem %>
+            <%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %>
+          <% else %>
+            <%= link_to astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= render "shared/equipped-gems", msl_gem: @first_gem.msl_gem %>
+            <% end %>
+          <% end %>
+          <% unless @second_gem %>
+            <%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %>
+          <% else %>
+            <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= render "shared/equipped-gems", msl_gem: @second_gem.msl_gem %>
+            <% end %>
+          <% end %>
+          <% unless @third_gem %>
+            <%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %>
+          <% else %>
+            <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <%= render "shared/equipped-gems", msl_gem: @third_gem.msl_gem %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
