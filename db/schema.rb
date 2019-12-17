@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_165745) do
+ActiveRecord::Schema.define(version: 2019_12_17_215917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,15 +157,15 @@ ActiveRecord::Schema.define(version: 2019_12_14_165745) do
     t.string "name"
     t.string "pic"
     t.text "description"
-    t.integer "hp"
-    t.integer "attack"
-    t.integer "defence"
-    t.integer "recovery"
-    t.integer "crit_dmg"
-    t.integer "crit_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.float "hp", default: 0.0
+    t.float "attack", default: 0.0
+    t.float "defence", default: 0.0
+    t.float "recovery", default: 0.0
+    t.float "rit_dmg", default: 0.0
+    t.float "crit_rate", default: 0.0
   end
 
   add_foreign_key "astromons", "species", column: "specie_id"
