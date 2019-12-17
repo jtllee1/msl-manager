@@ -5,7 +5,7 @@
     <% @third_gem = ThirdGem.find_by(astromon_id: astromon.id) %>
     <% if @first_gem && @second_gem && @third_gem %>
       <% hp_sum = @first_gem.msl_gem.m_hp + @first_gem.msl_gem.s_hp + @second_gem.msl_gem.m_hp + @second_gem.msl_gem.s_hp + @third_gem.msl_gem.m_hp + @third_gem.msl_gem.s_hp %>
-      <% attack_sum = @first_gem.msl_gem.m_attack + @first_gem.msl_gem.s_attack + @second_gem.msl_gem.m_attack + @second_gem.msl_gem.s_attack + @third_gem.msl_gem.m_attack + @third_gem.msl_gem.s_attack%>
+      <% attack_sum = @first_gem.msl_gem.m_attack + @first_gem.msl_gem.s_attack + @second_gem.msl_gem.m_attack + @second_gem.msl_gem.s_attack + @third_gem.msl_gem.m_attack + @third_gem.msl_gem.s_attack %>
       <% defence_sum = @first_gem.msl_gem.m_defence + @first_gem.msl_gem.s_defence + @second_gem.msl_gem.m_defence + @second_gem.msl_gem.s_defence + @third_gem.msl_gem.m_defence + @third_gem.msl_gem.s_defence %>
       <% recovery_sum = @first_gem.msl_gem.m_recovery + @first_gem.msl_gem.s_recovery + @second_gem.msl_gem.m_recovery + @second_gem.msl_gem.s_recovery + @third_gem.msl_gem.m_recovery + @third_gem.msl_gem.s_recovery %>
       <% crit_dmg_sum = @first_gem.msl_gem.m_crit_dmg + @first_gem.msl_gem.s_crit_dmg + @second_gem.msl_gem.m_crit_dmg + @second_gem.msl_gem.s_crit_dmg + @third_gem.msl_gem.m_crit_dmg + @third_gem.msl_gem.s_crit_dmg %>
