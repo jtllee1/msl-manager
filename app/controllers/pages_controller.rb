@@ -7,5 +7,12 @@ class PagesController < ApplicationController
   def dashboard
     @astromons = Astromon.where(user_id: current_user.id)
     @msl_gems = MslGem.where(user_id: current_user.id)
+    check_gem_type
+  end
+
+  private
+
+  def check_gem_type
+
   end
 end
