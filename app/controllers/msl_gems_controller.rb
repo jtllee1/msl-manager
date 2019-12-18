@@ -1,4 +1,8 @@
 class MslGemsController < ApplicationController
+  def index
+    @msl_gems = MslGem.where(user_id: current_user.id)
+  end
+
   def new
     @msl_gem = MslGem.new
   end
