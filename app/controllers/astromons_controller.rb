@@ -1,4 +1,8 @@
 class AstromonsController < ApplicationController
+  def index
+    @astromons = Astromon.where(user_id: current_user.id)
+  end
+
   def new
     @astromon = Astromon.new
   end
