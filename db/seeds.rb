@@ -7,10 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroying data..."
 
+FirstGem.destroy_all
+SecondGem.destroy_all
+ThirdGem.destroy_all
+Astromon.destroy_all
 Specie.destroy_all
 FirstSkill.destroy_all
 SecondSkill.destroy_all
 Skill.destroy_all
+MslGem.destroy_all
 GemCategory.destroy_all
 User.destroy_all
 

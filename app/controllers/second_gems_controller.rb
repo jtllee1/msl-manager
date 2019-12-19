@@ -15,7 +15,7 @@ class SecondGemsController < ApplicationController
       find_msl_gem
       @msl_gem.available = false
       @msl_gem.save
-      redirect_to dashboard_path
+      redirect_to astromons_path
     else
       redirect_to new_astromon_second_gem_path(@astromon)
     end
@@ -27,7 +27,7 @@ class SecondGemsController < ApplicationController
     find_msl_gem
     @msl_gem.available = true
     @msl_gem.save
-    redirect_to dashboard_path
+    redirect_to astromons_path
   end
 
   private

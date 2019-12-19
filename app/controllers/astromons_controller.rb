@@ -11,7 +11,7 @@ class AstromonsController < ApplicationController
     @astromon = Astromon.new(astromon_params)
     @astromon.user = current_user
     if @astromon.save
-      redirect_to dashboard_path
+      redirect_to astromons_path
     else
       render :new
     end
