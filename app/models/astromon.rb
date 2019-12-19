@@ -27,7 +27,10 @@ class Astromon < ApplicationRecord
   end
 
   def self.gem_hp(astromon, stat)
-    if astromon.first_gem.msl_gem.gem_category == astromon.second_gem.msl_gem.gem_category && astromon.first_gem.msl_gem.gem_category == astromon.third_gem.msl_gem.gem_category
+    first_gem = Astromon.first_gem(astromon)
+    second_gem = Astromon.second_gem(astromon)
+    third_gem = Astromon.third_gem(astromon)
+    if first_gem && second_gem && third_gem && astromon.first_gem.msl_gem.gem_category == astromon.second_gem.msl_gem.gem_category && astromon.first_gem.msl_gem.gem_category == astromon.third_gem.msl_gem.gem_category
       str = "astromon.first_gem.msl_gem.gem_category.#{stat}"
       instance_eval str
     else
