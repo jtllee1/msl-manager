@@ -1,43 +1,23 @@
 <div class="astromon-cards">
   <% astromons.each do |astromon| %>
-    <% @first_gem = FirstGem.find_by(astromon_id: astromon.id) %>
-    <% @second_gem = SecondGem.find_by(astromon_id: astromon.id) %>
-    <% @third_gem = ThirdGem.find_by(astromon_id: astromon.id) %>
-    <% if @first_gem && @second_gem && @third_gem %>
-      <% hp_sum = @first_gem.msl_gem.m_hp + @first_gem.msl_gem.s_hp + @second_gem.msl_gem.m_hp + @second_gem.msl_gem.s_hp + @third_gem.msl_gem.m_hp + @third_gem.msl_gem.s_hp %>
-      <% attack_sum = @first_gem.msl_gem.m_attack + @first_gem.msl_gem.s_attack + @second_gem.msl_gem.m_attack + @second_gem.msl_gem.s_attack + @third_gem.msl_gem.m_attack + @third_gem.msl_gem.s_attack %>
-      <% defence_sum = @first_gem.msl_gem.m_defence + @first_gem.msl_gem.s_defence + @second_gem.msl_gem.m_defence + @second_gem.msl_gem.s_defence + @third_gem.msl_gem.m_defence + @third_gem.msl_gem.s_defence %>
-      <% recovery_sum = @first_gem.msl_gem.m_recovery + @first_gem.msl_gem.s_recovery + @second_gem.msl_gem.m_recovery + @second_gem.msl_gem.s_recovery + @third_gem.msl_gem.m_recovery + @third_gem.msl_gem.s_recovery %>
-      <% crit_dmg_sum = @first_gem.msl_gem.m_crit_dmg + @first_gem.msl_gem.s_crit_dmg + @second_gem.msl_gem.m_crit_dmg + @second_gem.msl_gem.s_crit_dmg + @third_gem.msl_gem.m_crit_dmg + @third_gem.msl_gem.s_crit_dmg %>
-      <% crit_rate_sum = @first_gem.msl_gem.m_crit_rate + @first_gem.msl_gem.s_crit_rate + @second_gem.msl_gem.m_crit_rate + @second_gem.msl_gem.s_crit_rate + @third_gem.msl_gem.m_crit_rate + @third_gem.msl_gem.s_crit_rate %>
-      <% resist_sum = @first_gem.msl_gem.m_resist + @first_gem.msl_gem.s_resist + @second_gem.msl_gem.m_resist + @second_gem.msl_gem.s_resist + @third_gem.msl_gem.m_resist + @third_gem.msl_gem.s_resist %>
-      <% if astromon.first_gem.msl_gem.gem_category == astromon.second_gem.msl_gem.gem_category && astromon.first_gem.msl_gem.gem_category == astromon.third_gem.msl_gem.gem_category %>
-          <% gem_hp = astromon.first_gem.msl_gem.gem_category.hp %>
-          <% gem_attack = astromon.first_gem.msl_gem.gem_category.attack %>
-          <% gem_defence = astromon.first_gem.msl_gem.gem_category.defence %>
-          <% gem_recovery = astromon.first_gem.msl_gem.gem_category.recovery %>
-          <% gem_crit_dmg = astromon.first_gem.msl_gem.gem_category.crit_dmg %>
-          <% gem_crit_rate = astromon.first_gem.msl_gem.gem_category.crit_rate %>
-          <% gem_resist = astromon.first_gem.msl_gem.gem_category.resist %>
-          <% flat = astromon.first_gem.msl_gem.gem_category.flat ? "" : "%" %>
-      <% else %>
-          <% gem_hp = 0 %>
-          <% gem_attack = 0 %>
-          <% gem_defence = 0 %>
-          <% gem_recovery = 0 %>
-          <% gem_crit_dmg = 0 %>
-          <% gem_crit_rate = 0 %>
-          <% gem_resist = 0 %>
-      <% end %>
-    <% else %>
-      <% hp_sum = 0 %>
-      <% attack_sum = 0 %>
-      <% defence_sum = 0 %>
-      <% recovery_sum = 0 %>
-      <% crit_dmg_sum = 0 %>
-      <% crit_rate_sum = 0 %>
-      <% resist_sum = 0 %>
-    <% end %>
+    <% @first_gem = Astromon.first_gem(astromon) %>
+    <% @second_gem = Astromon.second_gem(astromon) %>
+    <% @third_gem = Astromon.third_gem(astromon) %>
+    <% hp_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "hp") %>
+    <% gem_hp = Astromon.gem_hp(astromon, "hp") %>
+    <% attack_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "attack") %>
+    <% gem_attack = Astromon.gem_hp(astromon, "attack") %>
+    <% defence_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "defence") %>
+    <% gem_defence = Astromon.gem_hp(astromon, "defence") %>
+    <% recovery_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "recovery") %>
+    <% gem_recovery = Astromon.gem_hp(astromon, "recovery") %>
+    <% crit_dmg_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "crit_dmg") %>
+    <% gem_crit_dmg = Astromon.gem_hp(astromon, "crit_dmg") %>
+    <% crit_rate_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "crit_rate") %>
+    <% gem_crit_rate = Astromon.gem_hp(astromon, "crit_rate") %>
+    <% resist_sum = Astromon.hp_sum(@first_gem, @second_gem, @third_gem, "resist") %>
+    <% gem_resist = Astromon.gem_hp(astromon, "resist") %>
+    <% flat = Astromon.flat(astromon) %>
     <div class="astromon-card">
       <div class="astromon-pic">
         <p><%= astromon.specie.name %></p>
