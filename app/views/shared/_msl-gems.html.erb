@@ -1,7 +1,7 @@
 <div class="gem-cards">
   <% msl_gems.each do |msl_gem| %>
     <div class="gem-card">
-      <div class="gem-pic">
+      <div class="gem-pic <%= msl_gem.gem_shape %>-<%= msl_gem.gem_category.name %>">
         <p><%= msl_gem.gem_shape %></p>
         <p><%= msl_gem.gem_category.name %></p>
         <p><%= msl_gem.gem_category.description %></p>
