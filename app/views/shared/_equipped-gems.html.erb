@@ -1,8 +1,10 @@
 <div class="gem-card">
-  <div class="gem-pic <%= msl_gem.gem_shape %>-<%= msl_gem.gem_category.name %>">
-    <p><%= msl_gem.gem_shape %></p>
-    <p><%= msl_gem.gem_category.name %></p>
-    <p><%= msl_gem.gem_category.description %></p>
+  <div class="gem-pic">
+    <div class="<%= msl_gem.gem_shape %>-<%= msl_gem.gem_category.name %> centered">
+    </div>
+    <div class="gem-desc">
+      <p><%= msl_gem.gem_category.description %></p>
+    </div>
   </div>
   <div class="stat">
     <div class="main-stat">
