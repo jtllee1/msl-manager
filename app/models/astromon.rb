@@ -39,6 +39,8 @@ class Astromon < ApplicationRecord
   end
 
   def self.flat(astromon)
-    astromon.first_gem.msl_gem.gem_category.flat ? "" : "%"
+    if astromon.first_gem
+      astromon.first_gem.msl_gem.gem_category.flat ? "" : "%"
+    end
   end
 end
