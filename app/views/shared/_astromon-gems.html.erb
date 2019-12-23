@@ -1,58 +1,51 @@
-<div class="gem-cards">
-  <% msl_gems.each do |msl_gem| %>
-    <div class="gem-card">
-      <div class="gem-pic">
-        <div class="<%= msl_gem.gem_shape %>-<%= msl_gem.gem_category.name %> centered">
-        </div>
-        <div class="gem-desc">
-          <p><%= msl_gem.gem_category.description %></p>
-        </div>
-      </div>
-      <div class="stat">
-        <div class="main-stat">
-          <% unless msl_gem.m_hp == 0 %>
-            <p>HP: <%= msl_gem.m_hp %>%</p>
-          <% end %>
-          <% unless msl_gem.m_attack == 0 %>
-            <p>Attack: <%= msl_gem.m_attack %>%</p>
-          <% end %>
-          <% unless msl_gem.m_defence == 0 %>
-            <p>Defence: <%= msl_gem.m_defence %>%</p>
-          <% end %>
-          <% unless msl_gem.m_recovery == 0 %>
-            <p>Recovery: <%= msl_gem.m_recovery %>%</p>
-          <% end %>
-          <% unless msl_gem.m_crit_dmg == 0 %>
-            <p>Crit. Dmg: <%= msl_gem.m_crit_dmg %>%</p>
-          <% end %>
-          <% unless msl_gem.m_crit_rate == 0 %>
-            <p>Crit. Rate: <%= msl_gem.m_crit_rate %>%</p>
-          <% end %>
-        </div>
-        <div class="sub-stat">
-          <% unless msl_gem.s_hp == 0 %>
-            <p>HP: <%= msl_gem.s_hp %>%</p>
-          <% end %>
-          <% unless msl_gem.s_attack == 0 %>
-            <p>Attack: <%= msl_gem.s_attack %>%</p>
-          <% end %>
-          <% unless msl_gem.s_defence == 0 %>
-            <p>Defence: <%= msl_gem.s_defence %>%</p>
-          <% end %>
-          <% unless msl_gem.s_recovery == 0 %>
-            <p>Recovery: <%= msl_gem.s_recovery %>%</p>
-          <% end %>
-          <% unless msl_gem.s_crit_dmg == 0 %>
-            <p>Crit. Dmg: <%= msl_gem.s_crit_dmg %>%</p>
-          <% end %>
-          <% unless msl_gem.s_crit_rate == 0 %>
-            <p>Crit. Rate: <%= msl_gem.s_crit_rate %>%</p>
-          <% end %>
-        </div>
-      </div>
+<div class="gem-card">
+  <div class="gem-pic">
+    <div class="<%= msl_gem.gem_shape %>-<%= msl_gem.gem_category.name %>">
     </div>
-    <% if msl_gem.available %>
-      <%= check_box_tag "msl_gem", msl_gem.id %>
-    <% end %>
-  <% end %>
+    <div class="gem-desc">
+      <p><%= msl_gem.gem_category.description %></p>
+    </div>
+  </div>
+  <div class="stat">
+    <div class="main-stat">
+      <% unless msl_gem.m_hp == 0 %>
+        <p>HP: <%= msl_gem.m_hp %>%</p>
+      <% end %>
+      <% unless msl_gem.m_attack == 0 %>
+        <p>Attack: <%= msl_gem.m_attack %>%</p>
+      <% end %>
+      <% unless msl_gem.m_defence == 0 %>
+        <p>Defence: <%= msl_gem.m_defence %>%</p>
+      <% end %>
+      <% unless msl_gem.m_recovery == 0 %>
+        <p>Recovery: <%= msl_gem.m_recovery %>%</p>
+      <% end %>
+      <% unless msl_gem.m_crit_dmg == 0 %>
+        <p>Crit. Dmg: <%= msl_gem.m_crit_dmg %>%</p>
+      <% end %>
+      <% unless msl_gem.m_crit_rate == 0 %>
+        <p>Crit. Rate: <%= msl_gem.m_crit_rate %>%</p>
+      <% end %>
+    </div>
+    <div class="sub-stat">
+      <% unless msl_gem.s_hp == 0 %>
+        <p>HP: <%= msl_gem.s_hp %>%</p>
+      <% end %>
+      <% unless msl_gem.s_attack == 0 %>
+        <p>Attack: <%= msl_gem.s_attack %>%</p>
+      <% end %>
+      <% unless msl_gem.s_defence == 0 %>
+        <p>Defence: <%= msl_gem.s_defence %>%</p>
+      <% end %>
+      <% unless msl_gem.s_recovery == 0 %>
+        <p>Recovery: <%= msl_gem.s_recovery %>%</p>
+      <% end %>
+      <% unless msl_gem.s_crit_dmg == 0 %>
+        <p>Crit. Dmg: <%= msl_gem.s_crit_dmg %>%</p>
+      <% end %>
+      <% unless msl_gem.s_crit_rate == 0 %>
+        <p>Crit. Rate: <%= msl_gem.s_crit_rate %>%</p>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,11 @@
 <%= simple_form_for([@astromon, @second_gem]) do |f| %>
-  <%= render "shared/astromon-gems", msl_gems: @second_gems %>
+  <div class="gem-cards">
+  <% @second_gems.each do |msl_gem| %>
+    <%= render "shared/eqastromon-gems", msl_gem: msl_gem %>
+    <% if msl_gem.available %>
+      <%= check_box_tag "msl_gem", msl_gem.id %>
+    <% end %>
+  <% end %>
+  </div>
   <%= f.submit "Add Second Gem" %>
 <% end %>
