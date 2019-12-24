@@ -1,110 +1,140 @@
+.Square-bg {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: darkgoldenrod;
+  margin: 8px;
+  position: relative;
+}
+
+.Triangle-bg {
+  width: 64px;
+  height: 64px;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  border-radius: 8px;
+  background: darkgoldenrod;
+  margin: 8px;
+  position: relative;
+}
+
+.Diamond-bg {
+  width: 56px;
+  height: 56px;
+  transform: rotate(45deg);
+  border-radius: 8px;
+  background: darkgoldenrod;
+  margin: 16px;
+  position: relative;
+}
+
 .Square {
   width: 48px;
   height: 48px;
-  margin: 8px;
-  background: gray;
-  border-radius: 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
 }
 
 .Triangle {
-  width: 0px;
-  height: 0px;
-  border-left: 24px solid transparent;
-  border-right: 24px solid transparent;
-  border-bottom: 48px solid gray;
-  margin: 8px;
-  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  border-radius: 4px;
+  position: absolute;
+  top: 11px;
+  left: 8px;
 }
 
 .Diamond {
   width: 44px;
   height: 44px;
-  transform: rotate(45deg);
-  margin: 8px;
-  background: gray;
-  border-radius: 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
 }
 
-// .Ruin {
-//   border-bottom: 50px solid ;
-// }
+.Ruin {
+  background: lightgray;
+}
 
-// .Valor {
-//   border-bottom: 50px solid ;
-// }
+.Valor {
+  background: blue;
+}
 
-// .Life {
-//   border-bottom: 50px solid ;
-// }
+.Life {
+  background: red;
+}
 
-// .Protection {
-//   border-bottom: 50px solid ;
-// }
+.Protection {
+  background: orange;
+}
 
-// .Vitality {
-//   border-bottom: 50px solid ;
-// }
+.Vitality {
+  background: green;
+}
 
-// .Conviction {
-//   border-bottom: 50px solid ;
-// }
+.Conviction {
+  background: gold;
+}
 
-// .Intuition {
-//   border-bottom: 50px solid ;
-// }
+.Intuition {
+  background: darkviolet;
+}
 
-// .Leech {
-//   border-bottom: 50px solid ;
-// }
+.Leech {
+  background: radial-gradient(red, black);
+}
 
 // .Siphon {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Pugilist {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Healer {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Magi {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Zeal {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Armour {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Longevity {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Salvation {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Bastion {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Ferocity {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Tenacity {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
 // .Fortitude {
-//   border-bottom: 50px solid ;
+//   background: ;
 // }
 
-// .Healing {
-//   border-bottom: 50px solid ;
-// }
+.Healing {
+  background: greenyellow;
+}
