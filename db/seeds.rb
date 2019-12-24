@@ -167,6 +167,14 @@ gem_category = GemCategory.new(
 gem_category.save!
 
 gem_category = GemCategory.new(
+  name: "Intuition",
+  description: "Crit. Rate +20%",
+  crit_rate: 20,
+  flat: false,
+  )
+gem_category.save!
+
+gem_category = GemCategory.new(
   name: "Leech",
   description: "HP Drain +20%",
   flat: false,
