@@ -1,5 +1,6 @@
 .gem-cards {
   display: flex;
+  flex-wrap: wrap;
   border: 1px solid black;
   .gem-card {
     display: flex;
