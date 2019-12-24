@@ -1,23 +1,108 @@
-.Square-Ruin {
-  width: 50px;
-  height: 50px;
+.Square {
+  width: 48px;
+  height: 48px;
+  margin: 8px;
   background: gray;
-  margin: 10px;
+  border-radius: 8px;
 }
 
-.Triangle-Ruin {
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid gray;
-  margin: 10px;
+.Triangle {
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-bottom: 48px solid gray;
+  margin: 8px;
+  border-radius: 8px;
 }
 
-.Diamond-Ruin {
-  width: 50px;
-  height: 50px;
-  background: gray;
+.Diamond {
+  width: 44px;
+  height: 44px;
   transform: rotate(45deg);
-  margin: 10px;
+  margin: 8px;
+  background: gray;
+  border-radius: 8px;
 }
+
+// .Ruin {
+//   border-bottom: 50px solid ;
+// }
+
+// .Valor {
+//   border-bottom: 50px solid ;
+// }
+
+// .Life {
+//   border-bottom: 50px solid ;
+// }
+
+// .Protection {
+//   border-bottom: 50px solid ;
+// }
+
+// .Vitality {
+//   border-bottom: 50px solid ;
+// }
+
+// .Conviction {
+//   border-bottom: 50px solid ;
+// }
+
+// .Intuition {
+//   border-bottom: 50px solid ;
+// }
+
+// .Leech {
+//   border-bottom: 50px solid ;
+// }
+
+// .Siphon {
+//   border-bottom: 50px solid ;
+// }
+
+// .Pugilist {
+//   border-bottom: 50px solid ;
+// }
+
+// .Healer {
+//   border-bottom: 50px solid ;
+// }
+
+// .Magi {
+//   border-bottom: 50px solid ;
+// }
+
+// .Zeal {
+//   border-bottom: 50px solid ;
+// }
+
+// .Armour {
+//   border-bottom: 50px solid ;
+// }
+
+// .Longevity {
+//   border-bottom: 50px solid ;
+// }
+
+// .Salvation {
+//   border-bottom: 50px solid ;
+// }
+
+// .Bastion {
+//   border-bottom: 50px solid ;
+// }
+
+// .Ferocity {
+//   border-bottom: 50px solid ;
+// }
+
+// .Tenacity {
+//   border-bottom: 50px solid ;
+// }
+
+// .Fortitude {
+//   border-bottom: 50px solid ;
+// }
+
+// .Healing {
+//   border-bottom: 50px solid ;
+// }
