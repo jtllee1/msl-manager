@@ -1,6 +1,6 @@
 .Square-bg {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 8px;
   background: darkgoldenrod;
   margin: 8px;
@@ -8,8 +8,8 @@
 }
 
 .Triangle-bg {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
   border-radius: 8px;
   background: darkgoldenrod;
@@ -18,8 +18,8 @@
 }
 
 .Diamond-bg {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   transform: rotate(45deg);
   border-radius: 8px;
   background: darkgoldenrod;
@@ -32,8 +32,8 @@
   height: 48px;
   border-radius: 4px;
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 4px;
+  left: 4px;
 }
 
 .Triangle {
@@ -42,8 +42,8 @@
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
   border-radius: 4px;
   position: absolute;
-  top: 11px;
-  left: 8px;
+  top: 8px;
+  left: 6px;
 }
 
 .Diamond {
@@ -51,8 +51,8 @@
   height: 44px;
   border-radius: 4px;
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 4px;
+  left: 4px;
 }
 
 .Ruin {
@@ -84,56 +84,56 @@
 }
 
 .Leech {
+  background: radial-gradient(darkred, black);
+}
+
+.Siphon {
+  background: radial-gradient(darkblue, black);
+}
+
+.Pugilist {
+  background: radial-gradient(magenta, black);
+}
+
+.Healer {
   background: radial-gradient(red, black);
 }
 
-// .Siphon {
-//   background: ;
-// }
+.Magi {
+  background: radial-gradient(blue, black);
+}
 
-// .Pugilist {
-//   background: ;
-// }
+.Zeal {
+  background: linear-gradient(90deg, blue 50%, purple 50%);
+}
 
-// .Healer {
-//   background: ;
-// }
+.Armour {
+  background: linear-gradient(90deg, lightgray 50%, gold 50%);
+}
 
-// .Magi {
-//   background: ;
-// }
+.Longevity {
+  background: linear-gradient(90deg, gold 50%, red 50%);
+}
 
-// .Zeal {
-//   background: ;
-// }
+.Salvation {
+  background: linear-gradient(90deg, red 50%, green 50%);
+}
 
-// .Armour {
-//   background: ;
-// }
+.Bastion {
+  background: radial-gradient(lightgreen, black);
+}
 
-// .Longevity {
-//   background: ;
-// }
+.Ferocity {
+  background: turquoise;
+}
 
-// .Salvation {
-//   background: ;
-// }
+.Tenacity {
+  background: brown;
+}
 
-// .Bastion {
-//   background: ;
-// }
-
-// .Ferocity {
-//   background: ;
-// }
-
-// .Tenacity {
-//   background: ;
-// }
-
-// .Fortitude {
-//   background: ;
-// }
+.Fortitude {
+  background: deeppink;
+}
 
 .Healing {
   background: greenyellow;
