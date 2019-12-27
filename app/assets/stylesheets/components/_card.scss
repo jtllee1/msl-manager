@@ -5,18 +5,22 @@
   .gem-card {
     display: flex;
     border: 1px solid black;
-    .gem-pic {
+    .gem-left {
       border: 1px solid black;
-      .gem-desc {
+      .gem-pic {
         border: 1px solid black;
+        display: flex;
+        justify-content: center;
+      }
+      .gem-desc {
         margin: 16px;
         p {
           width: 120px;
-          word-wrap: break-word;
+          margin-bottom: 0px;
         }
       }
     }
-    .stat {
+    .gem-right {
       border: 1px solid black;
       .main-stat {
         border: 1px solid black;
