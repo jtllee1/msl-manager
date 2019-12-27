@@ -6,9 +6,14 @@
     display: flex;
     border: 1px solid black;
     .gem-pic {
-
+      border: 1px solid black;
       .gem-desc {
-
+        border: 1px solid black;
+        margin: 16px;
+        p {
+          width: 120px;
+          word-wrap: break-word;
+        }
       }
     }
     .stat {
