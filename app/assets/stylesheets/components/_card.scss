@@ -3,18 +3,23 @@
   flex-wrap: wrap;
   border: 1px solid black;
   .gem-card {
+    background: burlywood;
     display: flex;
-    width: 304px;
+    width: 300px;
     height: 232px;
     margin: 16px;
-    border: 1px solid black;
     border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     .gem-left {
-      border: 1px solid black;
       .gem-pic {
-        border: 1px solid black;
         display: flex;
         justify-content: center;
+        .gem-border {
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+        .gem-icon {
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
       }
       .gem-desc {
         margin: 16px;
@@ -25,21 +30,17 @@
       }
     }
     .gem-right {
-      border: 1px solid black;
       .main-stat {
         text-align: center;
         padding-top: 16px;
-        border: 1px solid black;
-          width: 144px;
+        width: 144px;
       }
       .sub-stat {
-        border: 1px solid black;
         p {
           margin: 0px;
           padding-left: 8px;
           padding-top: 8px;
           padding-bottom: 8px;
-          border: 1px solid black;
         }
       }
     }
