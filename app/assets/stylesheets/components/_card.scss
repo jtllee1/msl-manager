@@ -1,16 +1,18 @@
 .gem-cards {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
   .gem-card {
     background: burlywood;
     display: flex;
     width: 300px;
     height: 232px;
     margin: 16px;
+    border: 1px solid blanchedalmond;
     border-radius: 8px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     .gem-left {
+      border-right: 1px solid blanchedalmond;
+      padding-top: 24px;
       .gem-pic {
         display: flex;
         justify-content: center;
@@ -31,6 +33,7 @@
     }
     .gem-right {
       .main-stat {
+        border-bottom: 1px solid blanchedalmond;
         text-align: center;
         padding-top: 16px;
         width: 144px;
