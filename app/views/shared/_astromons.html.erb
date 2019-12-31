@@ -30,7 +30,7 @@
         <p>Recovery: <%= astromon.specie.recovery %> +<%= recovery_sum %>% +<%= gem_recovery %><%= flat %></p>
         <p>Crit. Dmg: <%= astromon.specie.crit_dmg %>% +<%= crit_dmg_sum %>% +<%= gem_crit_dmg %><%= flat %></p>
         <p>Crit. Rate: <%= astromon.specie.crit_rate %>% +<%= crit_rate_sum %>% +<%= gem_crit_rate %><%= flat %></p>
-        <p>Resist: <%= astromon.specie.resist %> +<%= resist_sum %>% +<%= gem_resist %><%= flat %></p>
+        <p>Resist: <%= astromon.specie.resist %>% +<%= resist_sum %>% +<%= gem_resist %><%= flat %></p>
         <p><%= astromon.specie.first_skill.skill.name %>
            <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
            <%= astromon.specie.first_skill.skill.description %>
