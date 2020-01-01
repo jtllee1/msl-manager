@@ -23,28 +23,52 @@
         <p><%= astromon.specie.name %></p>
         <%= image_tag astromon.specie.pic, alt: astromon.specie.name %>
       </div>
-      <div class="astromon-stat">
-        <p>HP: <%= astromon.specie.hp %> +<%= hp_sum %>% +<%= gem_hp %><%= flat %></p>
-        <p>Attack: <%= astromon.specie.attack %> +<%= attack_sum %>% +<%= gem_attack %><%= flat %></p>
-        <p>Defence: <%= astromon.specie.defence %> +<%= defence_sum %>% +<%= gem_defence %><%= flat %></p>
-        <p>Recovery: <%= astromon.specie.recovery %> +<%= recovery_sum %>% +<%= gem_recovery %><%= flat %></p>
-        <p>Crit. Dmg: <%= astromon.specie.crit_dmg %>% +<%= crit_dmg_sum %>% +<%= gem_crit_dmg %><%= flat %></p>
-        <p>Crit. Rate: <%= astromon.specie.crit_rate %>% +<%= crit_rate_sum %>% +<%= gem_crit_rate %><%= flat %></p>
-        <p>Resist: <%= astromon.specie.resist %>% +<%= resist_sum %>% +<%= gem_resist %><%= flat %></p>
-        <p><%= astromon.specie.first_skill.skill.name %>
-           <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
-           <%= astromon.specie.first_skill.skill.description %>
-        </p>
-        <p><%= astromon.specie.second_skill.skill.name %>
-           <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
-           <%= astromon.specie.second_skill.skill.description %>
-        </p>
-        <% if astromon.variant_level %>
-          <p>Variant Level: <%= astromon.variant_level %></p>
-          <%= astromon.specie.variant_skill.name %>
-          <%= image_tag astromon.specie.variant_skill.pic, alt: astromon.specie.variant_skill.name %>
-          <%= astromon.specie.variant_skill.description %>
-        <% end %>
+      <div class="astromon-data">
+        <div class="stat">
+          <div class="stat-name">
+            <p>HP: <%= astromon.specie.hp %></p>
+            <p>Attack: <%= astromon.specie.attack %></p>
+            <p>Defence: <%= astromon.specie.defence %></p>
+            <p>Recovery: <%= astromon.specie.recovery %></p>
+            <p>Crit. Dmg: <%= astromon.specie.crit_dmg %>%</p>
+            <p>Crit. Rate: <%= astromon.specie.crit_rate %>%</p>
+            <p>Resist: <%= astromon.specie.resist %>%</p>
+          </div>
+          <div class="stat-boost">
+            <p>+<%= hp_sum %>%</p>
+            <p>+<%= attack_sum %>%</p>
+            <p>+<%= defence_sum %>%</p>
+            <p>+<%= recovery_sum %>%</p>
+            <p>+<%= crit_dmg_sum %>%</p>
+            <p>+<%= crit_rate_sum %>%</p>
+            <p>+<%= resist_sum %>%</p>
+          </div>
+          <div class="stat-gem">
+            <p>+<%= gem_hp %><%= flat %></p>
+            <p>+<%= gem_attack %><%= flat %></p>
+            <p>+<%= gem_defence %><%= flat %></p>
+            <p>+<%= gem_recovery %><%= flat %></p>
+            <p>+<%= gem_crit_dmg %><%= flat %></p>
+            <p>+<%= gem_crit_rate %><%= flat %></p>
+            <p>+<%= gem_resist %><%= flat %></p>
+          </div>
+        </div>
+        <div class="skill">
+          <p><%= astromon.specie.first_skill.skill.name %></p>
+             <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
+             <%= astromon.specie.first_skill.skill.description %>
+          <p><%= astromon.specie.second_skill.skill.name %></p>
+             <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
+             <%= astromon.specie.second_skill.skill.description %>
+        </div>
+        <div class="leader">
+          <% if astromon.variant_level %>
+            <p>Variant Level: <%= astromon.variant_level %></p>
+            <p><%= astromon.specie.variant_skill.name %></p>
+            <%= image_tag astromon.specie.variant_skill.pic, alt: astromon.specie.variant_skill.name %>
+            <%= astromon.specie.variant_skill.description %>
+          <% end %>
+        </div>
       </div>
       <div class="astromon-gem">
         <div class="gem-cards">

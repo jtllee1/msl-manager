@@ -5,8 +5,17 @@
     .astromon-pic {
       border: 1px solid black;
     }
-    .astromon-stat {
+    .astromon-data {
       border: 1px solid black;
+      .stat {
+        display: flex;
+      }
+      .skill {
+
+      }
+      .leader {
+
+      }
     }
     .astromon-gem {
       border: 1px solid black;
