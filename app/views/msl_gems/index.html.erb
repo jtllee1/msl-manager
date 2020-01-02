@@ -1,16 +1,14 @@
 <div class="container">
+  <p>
+    <%= link_to "Add Gem", new_msl_gem_path %>
+    <%= link_to "Back", dashboard_path %>
+  </p>
+</div>
+
+<div class="container">
   <div class="gem-cards">
     <% @msl_gems.each do |msl_gem| %>
       <%= render "shared/astromon-gems", msl_gem: msl_gem %>
     <% end %>
   </div>
-</div>
-
-<div class="container">
-  <p>
-    <%= link_to "Add Gem", new_msl_gem_path %>
-  </p>
-  <p>
-    <%= link_to "Back", dashboard_path %>
-  </p>
 </div>
