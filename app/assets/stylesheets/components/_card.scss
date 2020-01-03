@@ -10,16 +10,30 @@
       }
       .stat {
         display: flex;
-        img {
-          width: 64px;
+        .stat-name {
+          border: 1px solid black;
+          width: 140px;
+          padding: 8px;
+        }
+        .stat-boost {
+          border: 1px solid black;
+          width: 100px;
+          padding: 8px;
+        }
+        .stat-gem {
+          border: 1px solid black;
+          width: 100px;
+          padding: 8px;
         }
       }
       .skill {
+        border: 1px solid black;
         img {
           width: 64px;
         }
       }
       .leader {
+        border: 1px solid black;
         img {
           width: 64px;
         }
