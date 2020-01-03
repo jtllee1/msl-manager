@@ -2,23 +2,35 @@
   .astromon-card {
     display: flex;
     border: 1px solid black;
-    .astromon-pic {
-      border: 1px solid black;
-    }
     .astromon-data {
+      padding: 16px;
       border: 1px solid black;
+      .astromon-pic {
+        padding-bottom: 16px;
+      }
       .stat {
         display: flex;
+        img {
+          width: 64px;
+        }
       }
       .skill {
-
+        img {
+          width: 64px;
+        }
       }
       .leader {
-
+        img {
+          width: 64px;
+        }
       }
     }
     .astromon-gem {
+      width: 360px;
       border: 1px solid black;
+      a {
+        padding-left: 16px;
+      }
     }
   }
 }
