@@ -10,30 +10,43 @@
       }
       .stat {
         display: flex;
+        width: 340px;
+        background: burlywood;
+        border: 1px solid blanchedalmond;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         .stat-name {
-          border: 1px solid black;
+          border-right: 1px solid blanchedalmond;
           width: 140px;
           padding: 8px;
         }
         .stat-boost {
-          border: 1px solid black;
+          border-right: 1px solid blanchedalmond;
           width: 100px;
           padding: 8px;
         }
         .stat-gem {
-          border: 1px solid black;
           width: 100px;
           padding: 8px;
         }
       }
       .skill {
-        border: 1px solid black;
+        background: burlywood;
+        border: 1px solid blanchedalmond;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         img {
           width: 64px;
         }
       }
       .leader {
-        border: 1px solid black;
+        background: burlywood;
+        border: 1px solid blanchedalmond;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         img {
           width: 64px;
         }
