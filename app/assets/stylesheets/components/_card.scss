@@ -1,3 +1,10 @@
+.inner-border {
+  background: burlywood;
+  border: 1px solid blanchedalmond;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .astromon-cards {
   .astromon-card {
     display: flex;
@@ -11,11 +18,7 @@
       .stat {
         display: flex;
         width: 340px;
-        background: burlywood;
-        border: 1px solid blanchedalmond;
         margin-bottom: 16px;
-        border-radius: 8px;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         .stat-name {
           border-right: 1px solid blanchedalmond;
           width: 140px;
@@ -32,21 +35,13 @@
         }
       }
       .skill {
-        background: burlywood;
-        border: 1px solid blanchedalmond;
         margin-bottom: 16px;
-        border-radius: 8px;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         img {
           width: 64px;
         }
       }
       .leader {
-        background: burlywood;
-        border: 1px solid blanchedalmond;
         margin-bottom: 16px;
-        border-radius: 8px;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         img {
           width: 64px;
         }
@@ -66,14 +61,10 @@
   display: flex;
   flex-wrap: wrap;
   .gem-card {
-    background: burlywood;
     display: flex;
     width: 300px;
     height: 232px;
     margin: 16px;
-    border: 1px solid blanchedalmond;
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     .gem-left {
       border-right: 1px solid blanchedalmond;
       padding-top: 24px;
