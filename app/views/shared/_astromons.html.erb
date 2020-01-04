@@ -24,7 +24,7 @@
           <p><%= astromon.specie.name %></p>
           <%= image_tag astromon.specie.pic, alt: astromon.specie.name %>
         </div>
-        <div class="stat">
+        <div class="stat inner-border">
           <div class="stat-name">
             <p>HP: <%= astromon.specie.hp %></p>
             <p>Attack: <%= astromon.specie.attack %></p>
@@ -53,7 +53,7 @@
             <p>+<%= gem_resist %><%= flat %></p>
           </div>
         </div>
-        <div class="skill">
+        <div class="skill inner-border">
           <p><%= astromon.specie.first_skill.skill.name %></p>
              <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
              <%= astromon.specie.first_skill.skill.description %>
@@ -61,7 +61,7 @@
              <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
              <%= astromon.specie.second_skill.skill.description %>
         </div>
-        <div class="leader">
+        <div class="leader inner-border">
           <% if astromon.variant_level %>
             <p>Variant Level: <%= astromon.variant_level %></p>
             <p><%= astromon.specie.variant_skill.name %></p>
