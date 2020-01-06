@@ -55,18 +55,35 @@
         </div>
         <div class="skill inner-border">
           <p><%= astromon.specie.first_skill.skill.name %></p>
-             <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
-             <%= astromon.specie.first_skill.skill.description %>
+             <div class="outer-skill">
+               <div class="img">
+                <%= image_tag astromon.specie.first_skill.skill.pic, alt: astromon.specie.first_skill.skill.name %>
+               </div>
+               <div class="desc">
+                <%= astromon.specie.first_skill.skill.description %>
+               </div>
+             </div>
           <p><%= astromon.specie.second_skill.skill.name %></p>
-             <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
-             <%= astromon.specie.second_skill.skill.description %>
+             <div class="outer-skill">
+               <div class="img">
+                <%= image_tag astromon.specie.second_skill.skill.pic, alt: astromon.specie.second_skill.skill.name %>
+               </div>
+               <div class="desc">
+                <%= astromon.specie.second_skill.skill.description %>
+               </div>
+             </div>
         </div>
         <div class="leader inner-border">
           <% if astromon.variant_level %>
-            <p>Variant Level: <%= astromon.variant_level %></p>
-            <p><%= astromon.specie.variant_skill.name %></p>
-            <%= image_tag astromon.specie.variant_skill.pic, alt: astromon.specie.variant_skill.name %>
-            <%= astromon.specie.variant_skill.description %>
+            <p><%= astromon.specie.variant_skill.name %> Lv. <%= astromon.variant_level %></p>
+            <div class="outer-skill">
+              <div class="img">
+                <%= image_tag astromon.specie.variant_skill.pic, alt: astromon.specie.variant_skill.name %>
+              </div>
+              <div class="desc">
+                <%= astromon.specie.variant_skill.description %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>

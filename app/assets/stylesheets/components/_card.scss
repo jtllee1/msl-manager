@@ -5,6 +5,17 @@
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.outer-skill {
+  display: flex;
+  margin-bottom: 8px;
+  .img {
+    margin-right: 8px;
+  }
+  .desc {
+    padding-top: 8px;
+  }
+}
+
 .astromon-cards {
   .astromon-card {
     display: flex;
@@ -36,12 +47,14 @@
       }
       .skill {
         margin-bottom: 16px;
+        padding: 16px;
         img {
           width: 64px;
         }
       }
       .leader {
         margin-bottom: 16px;
+        padding: 16px;
         img {
           width: 64px;
         }
