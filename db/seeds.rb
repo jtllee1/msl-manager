@@ -246,6 +246,15 @@ gem_category = GemCategory.new(
 gem_category.save!
 
 gem_category = GemCategory.new(
+  name: "Indomitability",
+  description: "Defence +10%, Resist +10%",
+  defence: 10,
+  resist: 10,
+  flat: false,
+  )
+gem_category.save!
+
+gem_category = GemCategory.new(
   name: "Bastion",
   description: "Shield +15000",
   flat: true,
