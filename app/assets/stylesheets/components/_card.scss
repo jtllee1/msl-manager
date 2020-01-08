@@ -19,7 +19,6 @@
 .astromon-cards {
   .astromon-card {
     display: flex;
-    border: 1px solid black;
     .astromon-data {
       padding: 16px;
       border: 1px solid black;
@@ -28,8 +27,8 @@
       }
       .stat {
         display: flex;
-        width: 340px;
         margin-bottom: 16px;
+        width: 440px;
         .stat-name {
           border-right: 1px solid blanchedalmond;
           width: 140px;
@@ -41,6 +40,11 @@
           padding: 8px;
         }
         .stat-gem {
+          border-right: 1px solid blanchedalmond;
+          width: 100px;
+          padding: 8px;
+        }
+        .total-stat {
           width: 100px;
           padding: 8px;
         }
