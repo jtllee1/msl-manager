@@ -52,6 +52,15 @@
             <p>+<%= gem_crit_rate %><%= flat %></p>
             <p>+<%= gem_resist %><%= flat %></p>
           </div>
+          <div class="total-stat">
+            <p><%= (astromon.specie.hp + (((astromon.specie.hp * hp_sum)) / 100)).to_i %></p>
+            <p><%= (astromon.specie.attack + (((astromon.specie.attack * attack_sum)) / 100)).to_i %></p>
+            <p><%= (astromon.specie.defence + (((astromon.specie.defence * defence_sum)) / 100)).to_i %></p>
+            <p><%= (astromon.specie.recovery + (((astromon.specie.recovery * recovery_sum)) / 100)).to_i %></p>
+            <p><%= astromon.specie.crit_dmg + crit_dmg_sum %>%</p>
+            <p><%= astromon.specie.crit_rate + crit_rate_sum %>%</p>
+            <p><%= astromon.specie.resist + resist_sum %>%</p>
+          </div>
         </div>
         <div class="skill inner-border">
           <p><%= astromon.specie.first_skill.skill.name %></p>
