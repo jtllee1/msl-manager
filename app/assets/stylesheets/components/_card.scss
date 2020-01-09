@@ -1,3 +1,7 @@
+body {
+  background: #774831;;
+}
+
 .inner-border {
   background: burlywood;
   border: 1px solid blanchedalmond;
@@ -17,11 +21,19 @@
 }
 
 .astromon-cards {
+  display: flex;
+  flex-wrap: wrap;
   .astromon-card {
+    background: rgba(180, 120, 100, 0.5);
     display: flex;
+    width: 840px;
+    border: 1px solid blanchedalmond;
+    border-radius: 8px;
+    margin: 16px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     .astromon-data {
       padding: 16px;
-      border: 1px solid black;
+      border-right: 1px solid blanchedalmond;
       .astromon-pic {
         padding-bottom: 16px;
       }
@@ -66,7 +78,6 @@
     }
     .astromon-gem {
       width: 360px;
-      border: 1px solid black;
       a {
         padding-left: 16px;
       }
