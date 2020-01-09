@@ -99,21 +99,27 @@
       <div class="astromon-gem">
         <div class="gem-cards">
           <% unless @first_gem %>
+          <div class="gem-card inner-border">
             <a><%= link_to "Add First Gem", new_astromon_first_gem_path(astromon) %></a>
+          </div>
           <% else %>
             <%= link_to astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
               <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
             <% end %>
           <% end %>
           <% unless @second_gem %>
+          <div class="gem-card inner-border">
             <a><%= link_to "Add Second Gem", new_astromon_second_gem_path(astromon) %></a>
+          </div>
           <% else %>
             <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
               <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
             <% end %>
           <% end %>
           <% unless @third_gem %>
-            <a><%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %></a>
+          <div>
+            <a class="gem-card inner-border"><%= link_to "Add Third Gem", new_astromon_third_gem_path(astromon) %></a>
+          </div>
           <% else %>
             <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
               <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
