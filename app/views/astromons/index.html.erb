@@ -1,5 +1,9 @@
-<%= link_to "Add Astromon", new_astromon_path %>
+<%= link_to new_astromon_path do %>
+  <button class="button">Add Astromon</button>
+<% end %>
 
-<%= link_to "Back", dashboard_path %>
+<%= link_to dashboard_path do %>
+  <button class="button">Back</button>
+<% end %>
 
 <%= render "shared/astromons", astromons: @astromons %>
