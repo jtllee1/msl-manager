@@ -17,7 +17,7 @@ class Astromon < ApplicationRecord
     ThirdGem.find_by(astromon_id: astromon.id)
   end
 
-  def self.hp_sum(first_gem, second_gem, third_gem, stat)
+  def self.stat_sum(first_gem, second_gem, third_gem, stat)
     if first_gem && second_gem && third_gem
       str = "first_gem.msl_gem.m_#{stat} + first_gem.msl_gem.s_#{stat} + second_gem.msl_gem.m_#{stat} + second_gem.msl_gem.s_#{stat} + third_gem.msl_gem.m_#{stat} + third_gem.msl_gem.s_#{stat}"
       instance_eval str
@@ -26,7 +26,7 @@ class Astromon < ApplicationRecord
     end
   end
 
-  def self.gem_hp(astromon, stat)
+  def self.gem_stat(astromon, stat)
     first_gem = Astromon.first_gem(astromon)
     second_gem = Astromon.second_gem(astromon)
     third_gem = Astromon.third_gem(astromon)
