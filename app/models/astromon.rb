@@ -43,4 +43,12 @@ class Astromon < ApplicationRecord
       astromon.first_gem.msl_gem.gem_category.flat ? "" : "%"
     end
   end
+
+  def self.final_stat(astromon, stat, stat_sum, gem_sum)
+    if !astromon.first_gem.msl_gem.gem_category.flat
+      (stat * (stat_sum + gem_sum) / 100).to_i
+    else
+      ((stat * stat_sum / 100) + gem_sum).to_i
+    end
+  end
 end
