@@ -45,7 +45,9 @@ class Astromon < ApplicationRecord
   end
 
   def self.final_stat(astromon, stat, stat_sum, gem_sum)
-    if !astromon.first_gem.msl_gem.gem_category.flat
+    if astromon.first_gem == nil
+      0
+    elsif !astromon.first_gem.msl_gem.gem_category.flat
       (stat * (stat_sum + gem_sum) / 100).to_i
     else
       ((stat * stat_sum / 100) + gem_sum).to_i
