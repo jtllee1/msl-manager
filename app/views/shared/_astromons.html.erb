@@ -82,8 +82,8 @@
                </div>
              </div>
         </div>
-        <div class="leader inner-border">
-          <% if astromon.variant_level %>
+        <% if astromon.variant_level %>
+          <div class="leader inner-border">
             <p><%= astromon.specie.variant_skill.name %> Lv. <%= astromon.variant_level %></p>
             <div class="outer-skill">
               <div class="img">
@@ -93,8 +93,8 @@
                 <%= astromon.specie.variant_skill.description %>
               </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
       <div class="astromon-gem">
         <div class="gem-cards">
