@@ -88,6 +88,11 @@ body {
 .gem-cards {
   display: flex;
   flex-wrap: wrap;
+  .add-gem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .gem-card {
     display: flex;
     width: 300px;
