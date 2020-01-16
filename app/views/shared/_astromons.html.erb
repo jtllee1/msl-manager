@@ -105,8 +105,9 @@
               </div>
             <% end %>
           <% else %>
+            <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
             <%= link_to astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
+              <i class="fa fa-trash"></i>
             <% end %>
           <% end %>
           <% unless @second_gem %>
@@ -116,8 +117,9 @@
               </div>
             <% end %>
           <% else %>
+            <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
             <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
+              <i class="fa fa-trash"></i>
             <% end %>
           <% end %>
           <% unless @third_gem %>
@@ -127,8 +129,9 @@
               </div>
             <% end %>
           <% else %>
+            <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
             <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
+              <i class="fa fa-trash"></i>
             <% end %>
           <% end %>
         </div>
