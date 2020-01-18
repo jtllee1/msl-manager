@@ -18,8 +18,30 @@
 }
 
 .new-gem-form {
+  margin-top: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: 640px;
+  text-align: center;
+  h3 {
+    margin-bottom: 16px;
+  }
+  .type {
+    width: 240px;
+    display: inline-block;
+  }
   input {
-    width: 300px;
+    width: 240px;
     border-radius: 8px;
+  }
+  .stat {
+    display: flex;
+    justify-content: center;
+    .main {
+      margin: 16px;
+    }
+    .sub {
+      margin: 16px;
+    }
   }
 }
