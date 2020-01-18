@@ -1,23 +1,32 @@
-<div class="new-gem-form">
+<div class="container new-gem-form inner-border">
+  <h3>Add Your Gem</h3>
   <%= simple_form_for @msl_gem do |f| %>
-    <%= f.input :gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
-    <%= f.association :gem_category %>
-    <p>Main Stat (Pick 1)</p>
-    <%= f.input :m_hp, :label => "HP"%>
-    <%= f.input :m_attack, :label => "Attack" %>
-    <%= f.input :m_defence, :label => "Defence" %>
-    <%= f.input :m_recovery, :label => "Recovery" %>
-    <%= f.input :m_crit_dmg, :label => "Crit. Dmg" %>
-    <%= f.input :m_crit_rate, :label => "Crit. Rate" %>
-    <%= f.input :m_resist, :label => "Resist" %>
-    <p>Sub Stat (Pick up to 4)</p>
-    <%= f.input :s_hp, :label => "HP" %>
-    <%= f.input :s_attack, :label => "Attack" %>
-    <%= f.input :s_defence, :label => "Defence" %>
-    <%= f.input :s_recovery, :label => "Recovery" %>
-    <%= f.input :s_crit_dmg, :label => "Crit. Dmg" %>
-    <%= f.input :s_crit_rate, :label => "Crit. Rate" %>
-    <%= f.input :s_resist, :label => "Resist" %>
+    <div class="type">
+      <%= f.input :gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+      <%= f.association :gem_category %>
+    </div>
+    <div class="stat">
+      <div class="main">
+        <h5>Main Stat (Pick 1)</h5>
+        <%= f.input :m_hp, :label => "HP"%>
+        <%= f.input :m_attack, :label => "Attack" %>
+        <%= f.input :m_defence, :label => "Defence" %>
+        <%= f.input :m_recovery, :label => "Recovery" %>
+        <%= f.input :m_crit_dmg, :label => "Crit. Dmg" %>
+        <%= f.input :m_crit_rate, :label => "Crit. Rate" %>
+        <%= f.input :m_resist, :label => "Resist" %>
+      </div>
+      <div class="sub">
+        <h5>Sub Stat (Pick up to 4)</h5>
+        <%= f.input :s_hp, :label => "HP" %>
+        <%= f.input :s_attack, :label => "Attack" %>
+        <%= f.input :s_defence, :label => "Defence" %>
+        <%= f.input :s_recovery, :label => "Recovery" %>
+        <%= f.input :s_crit_dmg, :label => "Crit. Dmg" %>
+        <%= f.input :s_crit_rate, :label => "Crit. Rate" %>
+        <%= f.input :s_resist, :label => "Resist" %>
+      </div>
+    </div>
     <%= f.submit "Add Gem" %>
   <% end %>
 </div>
