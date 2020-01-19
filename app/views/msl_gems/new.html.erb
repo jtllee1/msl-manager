@@ -27,6 +27,9 @@
         <%= f.input :s_resist, :label => "Resist" %>
       </div>
     </div>
-    <%= f.submit "Add Gem" %>
+    <%= f.submit "Add Gem", class:"button" %>
+    <%= link_to new_msl_gem_path do %>
+      <button class="button">Back</button>
+    <% end %>
   <% end %>
 </div>
