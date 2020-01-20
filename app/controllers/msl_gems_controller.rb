@@ -1,6 +1,6 @@
 class MslGemsController < ApplicationController
   def index
-    @msl_gems = MslGem.where(user_id: current_user.id)
+    msl_gem_index
   end
 
   def new
@@ -17,9 +17,31 @@ class MslGemsController < ApplicationController
     end
   end
 
+  def destroy
+    @first_gem = FirstGem.where(msl_gem_id: params[:id])
+    @second_gem = SecondGem.where(msl_gem_id: params[:id])
+    @third_gem = ThirdGem.where(msl_gem_id: params[:id])
+    msl_gem_index
+    find_msl_gem
+    if @first_gem != [] || @second_gem != [] || @third_gem != []
+    else
+      @msl_gem.destroy
+      @msl_gem.save
+    end
+    redirect_to msl_gems_path
+  end
+
   private
 
   def msl_gem_params
     params.require(:msl_gem).permit(:gem_shape, :gem_category_id, :m_hp, :m_attack, :m_defence, :m_recovery, :m_crit_dmg, :m_crit_rate, :m_resist, :s_hp, :s_attack, :s_defence, :s_recovery, :s_crit_dmg, :s_crit_rate, :s_resist)
+  end
+
+  def msl_gem_index
+    @msl_gems = MslGem.where(user_id: current_user.id)
+  end
+
+  def find_msl_gem
+    @msl_gem = @msl_gems.find(params[:id])
   end
 end
