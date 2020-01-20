@@ -101,7 +101,10 @@
           <% unless @first_gem %>
             <%= link_to new_astromon_first_gem_path(astromon) do %>
               <div class="gem-card inner-border add-gem">
-                <p>Add First Gem</p>
+                <div class="<%= astromon.first_gem_shape %>-bg">
+                  <div class="<%= astromon.first_gem_shape %> empty-gem">
+                  </div>
+                </div>
               </div>
             <% end %>
           <% else %>
@@ -113,7 +116,10 @@
           <% unless @second_gem %>
             <%= link_to new_astromon_second_gem_path(astromon) do %>
               <div class="gem-card inner-border add-gem">
-                <p>Add Second Gem</p>
+                <div class="<%= astromon.second_gem_shape %>-bg">
+                  <div class="<%= astromon.second_gem_shape %> empty-gem">
+                  </div>
+                </div>
               </div>
             <% end %>
           <% else %>
@@ -125,7 +131,10 @@
           <% unless @third_gem %>
             <%= link_to new_astromon_third_gem_path(astromon) do %>
               <div class="gem-card inner-border add-gem">
-                <p>Add Third Gem</p>
+                <div class="<%= astromon.third_gem_shape %>-bg">
+                  <div class="<%= astromon.third_gem_shape %> empty-gem">
+                  </div>
+                </div>
               </div>
             <% end %>
           <% else %>
