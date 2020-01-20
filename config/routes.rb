@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :second_gems, only: [:new, :create, :destroy]
     resources :third_gems, only: [:new, :create, :destroy]
   end
-  resources :msl_gems, only: [:index, :new, :create]
+  resources :msl_gems, only: [:index, :new, :create, :destroy]
 end
