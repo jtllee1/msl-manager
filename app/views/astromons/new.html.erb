@@ -1,8 +1,17 @@
-<%= simple_form_for @astromon do |f| %>
-  <%= f.association :specie %>
-  <%= f.input :first_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
-  <%= f.input :second_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
-  <%= f.input :third_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
-  <%= f.input :variant_level %>
-  <%= f.submit "Add Astromon" %>
-<% end %>
+<div class="container new-form inner-border">
+  <h3>Add Your Astromon</h3>
+  <%= simple_form_for @astromon do |f| %>
+  <div class="type">
+    <%= f.association :specie %>
+    <%= f.input :first_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+    <%= f.input :second_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+    <%= f.input :third_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
+    <%= f.input :variant_level %>
+  </div>
+  <br>
+    <%= f.submit "Add Astromon", class:"button" %>
+  <% end %>
+  <%= link_to astromons_path do %>
+    <button class="button">Back</button>
+  <% end %>
+</div>
