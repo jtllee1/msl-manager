@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/dashboard', to: 'pages#dashboard'
-  resources :astromons, only: [:index, :new, :create] do
+  resources :astromons, only: [:index, :new, :create, :destroy] do
     resources :first_gems, only: [:new, :create, :destroy]
     resources :second_gems, only: [:new, :create, :destroy]
     resources :third_gems, only: [:new, :create, :destroy]
