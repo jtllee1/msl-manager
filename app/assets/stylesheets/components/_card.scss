@@ -22,6 +22,7 @@ body {
 
 .astromon-cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   .astromon-card {
     background: rgba(180, 120, 100, 0.5);
