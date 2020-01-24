@@ -5,4 +5,11 @@
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
   margin: 8px;
   padding: 8px;
+  color: black;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: black;
+  background: rgba(210, 170, 130, 1.0);
 }
