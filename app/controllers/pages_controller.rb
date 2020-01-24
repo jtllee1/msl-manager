@@ -9,7 +9,8 @@ class PagesController < ApplicationController
 
   def guest
     @guest = User.new(
-      email: "guest_#{Time.now.to_i}#{rand(100)}"
+      email: "guest_#{Time.now.to_i}#{rand(100)}",
+      guest: true,
     )
     @guest.save!(validate: false)
     sign_in(@guest)
