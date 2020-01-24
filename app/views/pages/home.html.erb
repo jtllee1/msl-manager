@@ -1,3 +1,7 @@
 <h1>Pages#home</h1>
 
-<p><%= link_to "Create a guest account", guest_path, class: "button" %></p>
+<% if current_user == nil %>
+  <p><%= link_to "Create a guest account", guest_path, class: "button" %></p>
+<% elsif current_user.guest %>
+  <p><%= link_to "Save your account", edit_user_registration_path, class: "button" %></p>
+<% end %>
