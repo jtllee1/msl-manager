@@ -123,3 +123,84 @@ end
 
 leader_skill_name = @leader_search[18]
 leader_skill_desc = @leader_search[19]
+
+@stats = []
+
+html_doc2.css('*[style*="order:6; flex-grow:1; flex-basis:0;"]').each do |stat|
+  @stats << stat.text
+end
+
+evo_1_fire_hp = @stats[0]
+evo_1_fire_attack = @stats[1]
+evo_1_fire_defence = @stats[2]
+evo_1_fire_recovery = @stats[3]
+
+evo_2_fire_hp = @stats[4]
+evo_2_fire_attack = @stats[5]
+evo_2_fire_defence = @stats[6]
+evo_2_fire_recovery = @stats[7]
+
+evo_3_fire_hp = @stats[8]
+evo_3_fire_attack = @stats[9]
+evo_3_fire_defence = @stats[10]
+evo_3_fire_recovery = @stats[11]
+
+evo_1_water_hp = @stats[12]
+evo_1_water_attack = @stats[13]
+evo_1_water_defence = @stats[14]
+evo_1_water_recovery = @stats[15]
+
+evo_2_water_hp = @stats[16]
+evo_2_water_attack = @stats[17]
+evo_2_water_defence = @stats[18]
+evo_2_water_recovery = @stats[19]
+
+evo_3_water_hp = @stats[20]
+evo_3_water_attack = @stats[21]
+evo_3_water_defence = @stats[22]
+evo_3_water_recovery = @stats[23]
+
+evo_1_wood_hp = @stats[24]
+evo_1_wood_attack = @stats[25]
+evo_1_wood_defence = @stats[26]
+evo_1_wood_recovery = @stats[27]
+
+evo_2_wood_hp = @stats[28]
+evo_2_wood_attack = @stats[29]
+evo_2_wood_defence = @stats[30]
+evo_2_wood_recovery = @stats[31]
+
+evo_3_wood_hp = @stats[32]
+evo_3_wood_attack = @stats[33]
+evo_3_wood_defence = @stats[34]
+evo_3_wood_recovery = @stats[35]
+
+evo_1_light_hp = @stats[36]
+evo_1_light_attack = @stats[37]
+evo_1_light_defence = @stats[38]
+evo_1_light_recovery = @stats[39]
+
+evo_2_light hp = @stats[40]
+evo_2_light_attack = @stats[41]
+evo_2_light_defence = @stats[42]
+evo_2_light_recovery = @stats[43]
+
+evo_3_light_hp = @stats[44]
+evo_3_light_attack = @stats[45]
+evo_3_light_defence = @stats[46]
+evo_3_light_recovery = @stats[47]
+
+evo_1_dark_hp = @stats[48]
+evo_1_dark_attack = @stats[49]
+evo_1_dark_defence = @stats[50]
+evo_1_dark_recovery = @stats[51]
+
+evo_2_dark_hp = @stats[52]
+evo_2_dark_attack = @stats[53]
+evo_2_dark_defence = @stats[54]
+evo_2_dark_recovery = @stats[55]
+
+evo_3_dark_hp = @stats[56]
+evo_3_dark_attack = @stats[57]
+evo_3_dark_defence = @stats[58]
+evo_3_dark_recovery = @stats[59]
