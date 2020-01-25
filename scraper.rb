@@ -98,3 +98,49 @@ dark_skill_2_img = @img_search[38]
 # puts dark_evo_3_img
 # puts dark_skill_1_img
 # puts dark_skill_2_img
+
+@skill_1_search = []
+
+html_doc2.search('#normalskill div span').each do |skill|
+  @skill_1_search << skill.text
+end
+
+@skill_1_search.delete('There are no upgrades for this unit.')
+
+fire_skill_1_name = @skill_1_search[2]
+fire_skill_1_desc = @skill_1_search[3]
+
+water_skill_1_name = @skill_1_search[8]
+water_skill_1_desc = @skill_1_search[9]
+
+wood_skill_1_name = @skill_1_search[14]
+wood_skill_1_desc = @skill_1_search[15]
+
+light_skill_1_name = @skill_1_search[20]
+light_skill_1_desc = @skill_1_search[21]
+
+dark_skill_1_name = @skill_1_search[26]
+dark_skill_1_desc = @skill_1_search[27]
+
+@skill_2_search = []
+
+html_doc2.search('#activeskill div span').each do |skill|
+  @skill_2_search << skill.text
+end
+
+@skill_2_search.delete('There are no upgrades for this unit.')
+
+fire_skill_2_name = @skill_2_search[2]
+fire_skill_2_desc = @skill_2_search[3]
+
+water_skill_2_name = @skill_2_search[8]
+water_skill_2_desc = @skill_2_search[9]
+
+wood_skill_2_name = @skill_2_search[14]
+wood_skill_2_desc = @skill_2_search[15]
+
+light_skill_2_name = @skill_2_search[20]
+light_skill_2_desc = @skill_2_search[21]
+
+dark_skill_2_name = @skill_2_search[26]
+dark_skill_2_desc = @skill_2_search[27]
