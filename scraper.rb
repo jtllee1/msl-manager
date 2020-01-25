@@ -67,38 +67,6 @@ dark_evo_3_img = @img_search[43]
 dark_skill_1_img = @img_search[37]
 dark_skill_2_img = @img_search[38]
 
-# puts leader_img
-
-# puts fire_evo_1_img
-# puts fire_evo_2_img
-# puts fire_evo_3_img
-# puts fire_skill_1_img
-# puts fire_skill_2_img
-
-# puts water_evo_1_img
-# puts water_evo_2_img
-# puts water_evo_3_img
-# puts water_skill_1_img
-# puts water_skill_2_img
-
-# puts wood_evo_1_img
-# puts wood_evo_2_img
-# puts wood_evo_3_img
-# puts wood_skill_1_img
-# puts wood_skill_2_img
-
-# puts light_evo_1_img
-# puts light_evo_2_img
-# puts light_evo_3_img
-# puts light_skill_1_img
-# puts light_skill_2_img
-
-# puts dark_evo_1_img
-# puts dark_evo_2_img
-# puts dark_evo_3_img
-# puts dark_skill_1_img
-# puts dark_skill_2_img
-
 @skill_1_search = []
 
 html_doc2.search('#normalskill div span').each do |skill|
@@ -144,3 +112,14 @@ light_skill_2_desc = @skill_2_search[21]
 
 dark_skill_2_name = @skill_2_search[26]
 dark_skill_2_desc = @skill_2_search[27]
+
+@leader_search = []
+
+html_doc2.search('.flex-container div span').each_with_index do |skill, index|
+  @leader_search << skill.text
+end
+
+@leader_search.delete('There are no upgrades for this unit.')
+
+leader_skill_name = @leader_search[18]
+leader_skill_desc = @leader_search[19]
