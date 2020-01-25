@@ -20,11 +20,39 @@ end
   html_file2 = open(url2).read
   html_doc2 = Nokogiri::HTML(html_file2)
 
+  name_scrape(html_doc2)
+  type_scrape(html_doc2)
   img_scrape(html_doc2)
   skill_1_scrape(html_doc2)
   skill_2_scrape(html_doc2)
   leader_skill_scrape(html_doc2)
   stat_scrape(html_doc2)
+end
+
+def name_scrape(doc)
+  @name_search = []
+
+  doc.search('b').each do |name|
+    @name_search << name.text
+  end
+
+  @evo_1_name = @name_search[1]
+  @evo_2_name = @name_search[2]
+  @evo_3_name = @name_search[3]
+end
+
+def type_scrape(doc)
+  @type_search = []
+
+  doc.css('*[style*="text-align:center; color:#ccb89d;"]').each do |type|
+    @type_search << type.text
+  end
+
+  @fire_type = @type_search[0]
+  @water_type = @type_search[1]
+  @wood_type = @type_search[2]
+  @light_type = @type_search[3]
+  @dark_type = @type_search[4]
 end
 
 def img_scrape(doc)
