@@ -16,6 +16,11 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <% unless current_user.guest %>
+    <%= f.input :current_password,
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+    <% end %>
   </div>
 
   <div class="form-actions">
