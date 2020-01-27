@@ -12,9 +12,6 @@ SecondGem.destroy_all
 ThirdGem.destroy_all
 Astromon.destroy_all
 Specie.destroy_all
-FirstSkill.destroy_all
-SecondSkill.destroy_all
-Skill.destroy_all
 MslGem.destroy_all
 GemCategory.destroy_all
 User.destroy_all
@@ -25,93 +22,10 @@ puts "Finished!"
 puts "Creating users..."
 
 user = User.new(
-  username: "test",
   email: "test@gmail.com",
   password: "123456789",
   )
 user.save!
-
-puts "Finished!"
-
-
-puts "Creating variant skills..."
-
-variant_skill = VariantSkill.new(
-  slug: "atk35",
-  name: "Fighting Spirit",
-  pic: "https://vignette.wikia.nocookie.net/monstersuperleague/images/7/75/Fighting_Spirit.png/revision/latest?cb=20180307015532",
-  description: "Increases allies' attack power by 35~40%",
-  attack: 35,
-  )
-variant_skill.save!
-
-puts "Finished!"
-
-
-puts "Creating skills..."
-
-skill = Skill.new(
-  slug: "cstrike",
-  name: "Courageous Strike",
-  pic: "https://vignette.wikia.nocookie.net/monstersuperleague/images/2/20/Courageous_Strike.png/revision/latest?cb=20170519190411",
-  description: "Grants additional attack power proportional to the target's maximum HP.",
-  )
-skill.save!
-
-skill = Skill.new(
-  slug: "ddown802",
-  name: "Defence Down",
-  pic: "https://vignette.wikia.nocookie.net/monstersuperleague/images/0/03/Defense_Down.png/revision/latest?cb=20160923164351",
-  description: "Grants a 80 percent chance to reduce the enemy's defense for 2 turns.",
-  )
-skill.save!
-
-puts "Finished!"
-
-
-puts "Creating first skills..."
-
-Skill.all.each do |skill|
-  first_skill = FirstSkill.new(
-    skill_id: skill.id,
-    )
-  first_skill.save!
-end
-
-puts "Finished!"
-
-
-puts "Creating second skills..."
-
-Skill.all.each do |skill|
-  second_skill = SecondSkill.new(
-    skill_id: skill.id,
-    )
-  second_skill.save!
-end
-
-puts "Finished!"
-
-
-puts "Creating species..."
-
-specie = Specie.new(
-  slug: "waterbalroxy",
-  name: "Balroxy",
-  element: "Water",
-  pic: "https://vignette.wikia.nocookie.net/monstersuperleague/images/2/25/Balroxy_Water.png/revision/latest?cb=20170404141226",
-  hp: 28813,
-  attack: 3562,
-  defence: 2452,
-  recovery: 2390,
-  crit_dmg: 50,
-  crit_rate: 10,
-  resist: 20,
-  first_skill_id: FirstSkill.find_by(skill_id: Skill.find_by(slug: "cstrike").id).id,
-  second_skill_id: SecondSkill.find_by(skill_id: Skill.find_by(slug: "ddown802").id).id,
-  variant_skill_id: VariantSkill.find_by(slug: "atk35").id,
-  )
-specie.save!
 
 puts "Finished!"
 
@@ -295,27 +209,3 @@ gem_category.save!
 
 puts "Finished!"
 
-
-# puts "Creating msl gems..."
-
-# puts "Finished!"
-
-
-# puts "Creating first gems..."
-
-# puts "Finished!"
-
-
-# puts "Creating second gems..."
-
-# puts "Finished!"
-
-
-# puts "Creating third gems..."
-
-# puts "Finished!"
-
-
-# puts "Creating astromons..."
-
-# puts "Finished!"

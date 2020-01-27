@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_153922) do
+ActiveRecord::Schema.define(version: 2020_01_27_202913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 2020_01_24_153922) do
     t.bigint "astromon_id"
     t.index ["astromon_id"], name: "index_first_gems_on_astromon_id"
     t.index ["msl_gem_id"], name: "index_first_gems_on_msl_gem_id"
-  end
-
-  create_table "first_skills", force: :cascade do |t|
-    t.bigint "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["skill_id"], name: "index_first_skills_on_skill_id"
   end
 
   create_table "gem_categories", force: :cascade do |t|
@@ -95,22 +88,6 @@ ActiveRecord::Schema.define(version: 2020_01_24_153922) do
     t.index ["msl_gem_id"], name: "index_second_gems_on_msl_gem_id"
   end
 
-  create_table "second_skills", force: :cascade do |t|
-    t.bigint "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["skill_id"], name: "index_second_skills_on_skill_id"
-  end
-
-  create_table "skills", force: :cascade do |t|
-    t.string "name"
-    t.string "pic"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "slug"
-  end
-
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.string "element"
@@ -122,15 +99,18 @@ ActiveRecord::Schema.define(version: 2020_01_24_153922) do
     t.integer "crit_dmg"
     t.integer "crit_rate"
     t.integer "resist"
-    t.bigint "first_skill_id"
-    t.bigint "second_skill_id"
-    t.bigint "variant_skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.index ["first_skill_id"], name: "index_species_on_first_skill_id"
-    t.index ["second_skill_id"], name: "index_species_on_second_skill_id"
-    t.index ["variant_skill_id"], name: "index_species_on_variant_skill_id"
+    t.string "first_skill_name"
+    t.text "first_skill_desc"
+    t.string "first_skill_pic"
+    t.string "second_skill_name"
+    t.text "second_skill_desc"
+    t.string "second_skill_pic"
+    t.string "variant_skill_name"
+    t.text "variant_skill_desc"
+    t.string "variant_skill_pic"
   end
 
   create_table "third_gems", force: :cascade do |t|
@@ -175,15 +155,10 @@ ActiveRecord::Schema.define(version: 2020_01_24_153922) do
   add_foreign_key "astromons", "users"
   add_foreign_key "first_gems", "astromons"
   add_foreign_key "first_gems", "msl_gems"
-  add_foreign_key "first_skills", "skills"
   add_foreign_key "msl_gems", "gem_categories"
   add_foreign_key "msl_gems", "users"
   add_foreign_key "second_gems", "astromons"
   add_foreign_key "second_gems", "msl_gems"
-  add_foreign_key "second_skills", "skills"
-  add_foreign_key "species", "first_skills"
-  add_foreign_key "species", "second_skills"
-  add_foreign_key "species", "variant_skills"
   add_foreign_key "third_gems", "astromons"
   add_foreign_key "third_gems", "msl_gems"
 end
