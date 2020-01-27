@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_202913) do
+ActiveRecord::Schema.define(version: 2020_01_27_212700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 2020_01_27_202913) do
     t.string "variant_skill_name"
     t.text "variant_skill_desc"
     t.string "variant_skill_pic"
+    t.integer "evo"
+    t.string "typing"
   end
 
   create_table "third_gems", force: :cascade do |t|
