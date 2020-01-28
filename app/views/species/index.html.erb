@@ -1,0 +1,56 @@
+<div class="astromon-cards">
+  <% @species.each do |specie| %>
+    <div class="astromon-card">
+      <div class="astromon-data">
+        <div class="astromon-pic">
+          <p style="color: blanchedalmond;"><%= specie.name %></p>
+          <% if specie.pic %>
+            <%= image_tag specie.pic, alt: specie.name %>
+          <% end %>
+        </div>
+        <div class="stat inner-border">
+          <div class="stat-name">
+            <p>HP: <%= specie.hp %></p>
+            <p>Attack: <%= specie.attack %></p>
+            <p>Defence: <%= specie.defence %></p>
+            <p>Recovery: <%= specie.recovery %></p>
+            <p>Crit. Dmg: <%= specie.crit_dmg %>%</p>
+            <p>Crit. Rate: <%= specie.crit_rate %>%</p>
+            <p>Resist: <%= specie.resist %>%</p>
+          </div>
+        </div>
+        <div class="skill inner-border">
+          <p><%= specie.first_skill_name %></p>
+          <div class="outer-skill">
+            <div class="img">
+              <%= image_tag specie.first_skill_pic, alt: specie.first_skill_name %>
+            </div>
+            <div class="desc">
+              <%= specie.first_skill_desc %>
+            </div>
+          </div>
+          <p><%= specie.second_skill_name %></p>
+          <div class="outer-skill">
+            <div class="img">
+              <%= image_tag specie.second_skill_pic, alt: specie.second_skill_name %>
+            </div>
+            <div class="desc">
+              <%= specie.second_skill_desc %>
+            </div>
+          </div>
+        </div>
+        <div class="leader inner-border">
+          <p><%= specie.variant_skill_name %></p>
+          <div class="outer-skill">
+            <div class="img">
+              <%= image_tag specie.variant_skill_pic, alt: specie.variant_skill_name %>
+            </div>
+            <div class="desc">
+              <%= specie.variant_skill_desc %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
