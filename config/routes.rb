@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :third_gems, only: [:new, :create, :destroy]
   end
   resources :msl_gems, only: [:index, :new, :create, :destroy]
+  resources :species, only: [:index]
 end
