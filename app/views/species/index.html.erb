@@ -22,31 +22,24 @@
         <div class="skill inner-border">
           <p><%= specie.first_skill_name %></p>
           <div class="outer-skill">
-            <div class="img">
-              <%= image_tag specie.first_skill_pic, alt: specie.first_skill_name %>
-            </div>
+            <% if specie.first_skill_pic %>
+              <div class="img">
+                <%= image_tag specie.first_skill_pic, alt: specie.first_skill_name %>
+              </div>
+            <% end %>
             <div class="desc">
               <%= specie.first_skill_desc %>
             </div>
           </div>
           <p><%= specie.second_skill_name %></p>
           <div class="outer-skill">
-            <div class="img">
-              <%= image_tag specie.second_skill_pic, alt: specie.second_skill_name %>
-            </div>
+            <% if specie.second_skill_pic %>
+              <div class="img">
+                <%= image_tag specie.second_skill_pic, alt: specie.second_skill_name %>
+              </div>
+            <% end %>
             <div class="desc">
               <%= specie.second_skill_desc %>
-            </div>
-          </div>
-        </div>
-        <div class="leader inner-border">
-          <p><%= specie.variant_skill_name %></p>
-          <div class="outer-skill">
-            <div class="img">
-              <%= image_tag specie.variant_skill_pic, alt: specie.variant_skill_name %>
-            </div>
-            <div class="desc">
-              <%= specie.variant_skill_desc %>
             </div>
           </div>
         </div>

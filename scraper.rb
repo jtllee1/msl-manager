@@ -17,7 +17,7 @@ html_doc.search('td a').each do |link|
 end
 
 # url = "https://monstersuperleague.fandom.com/"
-# url2 = url + @links[5]
+# url2 = url + @links[0]
 # html_file2 = open(url2).read
 # html_doc2 = Nokogiri::HTML(html_file2)
 
@@ -50,41 +50,63 @@ end
 def img_scrape(doc)
   @img_search = []
 
-  doc.search('#summarytop .lzyPlcHld').each do |image|
+  doc.search('#summarytop #portrait2 .lzyPlcHld').each do |image|
     @img_search << image['data-src']
   end
 
-  @leader_img = @img_search[0]
+  doc.search('#summarytop #portrait3 .lzyPlcHld').each do |image|
+    @img_search << image['data-src']
+  end
 
-  @fire_evo_1_img = @img_search[3]
-  @fire_evo_2_img = @img_search[5]
-  @fire_evo_3_img = @img_search[7]
-  @fire_skill_1_img = @img_search[1]
-  @fire_skill_2_img = @img_search[2]
+  doc.search('#summarytop #portrait1 .lzyPlcHld').each do |image|
+    @img_search << image['data-src']
+  end
 
-  @water_evo_1_img = @img_search[12]
-  @water_evo_2_img = @img_search[14]
-  @water_evo_3_img = @img_search[16]
-  @water_skill_1_img = @img_search[10]
-  @water_skill_2_img = @img_search[11]
+  @fire_evo_1_img = @img_search[4]
+  @fire_evo_2_img = @img_search[0]
+  @fire_evo_3_img = @img_search[2]
 
-  @wood_evo_1_img = @img_search[21]
-  @wood_evo_2_img = @img_search[23]
-  @wood_evo_3_img = @img_search[25]
-  @wood_skill_1_img = @img_search[19]
-  @wood_skill_2_img = @img_search[20]
+  @water_evo_1_img = @img_search[6]
+  @water_evo_2_img = @img_search[8]
+  @water_evo_3_img = @img_search[10]
 
-  @light_evo_1_img = @img_search[30]
-  @light_evo_2_img = @img_search[32]
-  @light_evo_3_img = @img_search[34]
-  @light_skill_1_img = @img_search[28]
-  @light_skill_2_img = @img_search[29]
+  @wood_evo_1_img = @img_search[12]
+  @wood_evo_2_img = @img_search[14]
+  @wood_evo_3_img = @img_search[16]
 
-  @dark_evo_1_img = @img_search[39]
-  @dark_evo_2_img = @img_search[41]
-  @dark_evo_3_img = @img_search[43]
-  @dark_skill_1_img = @img_search[37]
-  @dark_skill_2_img = @img_search[38]
+  @light_evo_1_img = @img_search[18]
+  @light_evo_2_img = @img_search[20]
+  @light_evo_3_img = @img_search[22]
+
+  @dark_evo_1_img = @img_search[24]
+  @dark_evo_2_img = @img_search[26]
+  @dark_evo_3_img = @img_search[28]
+
+  @skill_1_img_search = []
+  @skill_2_img_search = []
+
+  doc.search('#normalskill > div:nth-child(3) > div.flex-container > div:nth-child(1) > a > img').each do |image|
+    @skill_1_img_search << image['data-src']
+  end
+
+  doc.search('#activeskill > div:nth-child(3) > div.flex-container > div:nth-child(1) > a > img').each do |image|
+    @skill_2_img_search << image['data-src']
+  end
+
+  @fire_skill_1_img = @skill_1_img_search[0]
+  @fire_skill_2_img = @skill_2_img_search[0]
+
+  @water_skill_1_img = @skill_1_img_search[1]
+  @water_skill_2_img = @skill_2_img_search[1]
+
+  @wood_skill_1_img = @skill_1_img_search[2]
+  @wood_skill_2_img = @skill_2_img_search[2]
+
+  @light_skill_1_img = @skill_1_img_search[3]
+  @light_skill_2_img = @skill_2_img_search[3]
+
+  @dark_skill_1_img = @skill_1_img_search[4]
+  @dark_skill_2_img = @skill_2_img_search[4]
 end
 
 def skill_1_scrape(doc)
@@ -236,10 +258,10 @@ end
 @counter = 1
 
 @links.each do |link|
-  url = "https://monstersuperleague.fandom.com/"
-  url2 = url + link
-  html_file2 = open(url2).read
-  html_doc2 = Nokogiri::HTML(html_file2)
+  # url = "https://monstersuperleague.fandom.com/"
+  # url2 = url + link
+  # html_file2 = open(url2).read
+  # html_doc2 = Nokogiri::HTML(html_file2)
 
   # name_scrape(html_doc2)
   # type_scrape(html_doc2)
