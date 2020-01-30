@@ -5,10 +5,12 @@ class AstromonsController < ApplicationController
 
   def new
     @astromon = Astromon.new
+    @specie = Specie.find(params[:format])
   end
 
   def create
     @astromon = Astromon.new(astromon_params)
+    @astromon.specie_id = params[:specie_id]
     @astromon.user = current_user
     if @astromon.save
       redirect_to astromons_path

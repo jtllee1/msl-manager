@@ -1,8 +1,14 @@
 <div class="container new-form inner-border">
   <h3>Add Your Astromon</h3>
+  <div class="astromon-pic">
+    <p style="color: blanchedalmond;"><%= @specie.name %></p>
+    <% if @specie.pic %>
+      <%= image_tag @specie.pic, alt: @specie.name %>
+    <% end %>
+  </div>
   <%= simple_form_for @astromon do |f| %>
   <div class="type">
-    <%= f.association :specie %>
+    <%= hidden_field_tag :specie_id, params[:format] %>
     <%= f.input :first_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
     <%= f.input :second_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
     <%= f.input :third_gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>

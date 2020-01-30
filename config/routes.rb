@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/dashboard', to: 'pages#dashboard'
   get '/guest', to: 'pages#guest'
+  resources :species, only: [:index]
   resources :astromons, only: [:index, :new, :create, :destroy] do
     resources :first_gems, only: [:new, :create, :destroy]
     resources :second_gems, only: [:new, :create, :destroy]
     resources :third_gems, only: [:new, :create, :destroy]
   end
   resources :msl_gems, only: [:index, :new, :create, :destroy]
-  resources :species, only: [:index]
 end
