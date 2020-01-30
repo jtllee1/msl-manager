@@ -1,9 +1,11 @@
-<%= link_to species_index_path do %>
-  <button class="button">Add Astromon</button>
-<% end %>
+<div class="container">
+  <%= link_to species_index_path do %>
+    <button class="button">Add Astromon</button>
+  <% end %>
 
-<%= link_to dashboard_path do %>
-  <button class="button">Back</button>
-<% end %>
+  <%= link_to dashboard_path do %>
+    <button class="button">Back</button>
+  <% end %>
+</div>
 
 <%= render "shared/astromons", astromons: @astromons %>
