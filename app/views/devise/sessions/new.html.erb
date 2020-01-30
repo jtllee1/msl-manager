@@ -18,8 +18,8 @@
         <%= f.button :submit, "Log in", class:"button" %>
       </div>
     <% end %>
-
     <div class="form-links">
+      <%= link_to "Create a guest account", guest_path, class: "button" %>
       <%= render "devise/shared/links" %>
     </div>
   </div>
