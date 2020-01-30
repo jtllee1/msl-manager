@@ -14,9 +14,6 @@
         <% if current_user.guest %>
           <li><%= link_to "Save your account", edit_user_registration_path, class: "nav-link" %></li>
         <% end %>
-        <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/70735034_2499141400363476_6723365259974803456_n.png?_nc_cat=102&_nc_ohc=zTxsMV3NqnMAQm99AOokpYdfl59qnvp_R_bxhHgJ3qaQJamxYoQ_-9jrA&_nc_ht=scontent-lhr3-1.xx&oh=41873855c463aecd8c04e39176a10449&oe=5ED89A8D", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
