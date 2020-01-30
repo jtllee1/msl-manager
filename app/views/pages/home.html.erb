@@ -1,7 +1,33 @@
-<h1>Pages#home</h1>
-
-<% if current_user == nil %>
-  <p><%= link_to "Create a guest account", guest_path, class: "button" %></p>
-<% elsif current_user.guest %>
-  <p><%= link_to "Save your account", edit_user_registration_path, class: "button" %></p>
-<% end %>
+<div class="container posts inner-border">
+  <div class="post">
+    <div class="title">
+      <h1>Monster Super League Manager</h1>
+    </div>
+    <div class="content">
+      <p>Hi, Noel here. This is a tool I made to help with
+        the management of gems and trinkets for astromons so
+        that masters can maximise their astromon's full potential.
+        As I continue playing this game, I keep finding myself wanting
+        to rearrange my gems all the time but since free gem removal
+        events are only on certain Saturdays of the month, I had to
+        make the most of it by preparing how to gem my astromons
+        beforehand. Initially, I used excel to help keep track of all
+        my astromons and gems. However, I thought I could improve upon
+        that by turning it into a web app which has lead me here.
+      </p>
+    </div>
+    <div class="content">
+      <p>Get started now by creating a guest account and adding your
+        own astromons, gems and trinkets by creating a guest account!
+        But don't forget to save your account to keep your astromon and
+        gem configurations.</p>
+    </div>
+    <div class="guest">
+      <% if current_user == nil %>
+        <p><%= link_to "Create a guest account", guest_path, class: "button" %></p>
+      <% elsif current_user.guest %>
+        <p><%= link_to "Save your account", edit_user_registration_path, class: "button" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
