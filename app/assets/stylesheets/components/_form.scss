@@ -1,7 +1,13 @@
 .form {
-  padding: 16%;
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
 }
+
+.inner-form {
+  padding: 160px;
+}
+
 .form-inputs {
   width: 600px;
   input {
@@ -14,7 +20,7 @@
 }
 
 .form-links {
-
+  display: flex;
 }
 
 .new-form {
