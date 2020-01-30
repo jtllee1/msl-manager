@@ -1,5 +1,5 @@
 class SpeciesController < ApplicationController
   def index
-    @species = Specie.all
+    @species = Specie.where(evo: 1)
   end
 end
