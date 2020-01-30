@@ -4,9 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
-  end
-
   def guest
     @guest = User.new(
       email: "guest_#{Time.now.to_i}#{rand(100)}",

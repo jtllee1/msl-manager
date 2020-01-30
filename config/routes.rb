@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'registrations'}
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/dashboard', to: 'pages#dashboard'
   get '/guest', to: 'pages#guest'
   resources :species, only: [:index]
   resources :astromons, only: [:index, :new, :create, :destroy] do
