@@ -256,41 +256,63 @@ end
 def img_scrape(doc)
   @img_search = []
 
-  doc.search('#summarytop .lzyPlcHld').each do |image|
+  doc.search('#summarytop #portrait2 .lzyPlcHld').each do |image|
     @img_search << image['data-src']
   end
 
-  @leader_img = @img_search[0]
+  doc.search('#summarytop #portrait3 .lzyPlcHld').each do |image|
+    @img_search << image['data-src']
+  end
 
-  @fire_evo_1_img = @img_search[3]
-  @fire_evo_2_img = @img_search[5]
-  @fire_evo_3_img = @img_search[7]
-  @fire_skill_1_img = @img_search[1]
-  @fire_skill_2_img = @img_search[2]
+  doc.search('#summarytop #portrait1 .lzyPlcHld').each do |image|
+    @img_search << image['data-src']
+  end
 
-  @water_evo_1_img = @img_search[12]
-  @water_evo_2_img = @img_search[14]
-  @water_evo_3_img = @img_search[16]
-  @water_skill_1_img = @img_search[10]
-  @water_skill_2_img = @img_search[11]
+  @fire_evo_1_img = @img_search[4]
+  @fire_evo_2_img = @img_search[0]
+  @fire_evo_3_img = @img_search[2]
 
-  @wood_evo_1_img = @img_search[21]
-  @wood_evo_2_img = @img_search[23]
-  @wood_evo_3_img = @img_search[25]
-  @wood_skill_1_img = @img_search[19]
-  @wood_skill_2_img = @img_search[20]
+  @water_evo_1_img = @img_search[6]
+  @water_evo_2_img = @img_search[8]
+  @water_evo_3_img = @img_search[10]
 
-  @light_evo_1_img = @img_search[30]
-  @light_evo_2_img = @img_search[32]
-  @light_evo_3_img = @img_search[34]
-  @light_skill_1_img = @img_search[28]
-  @light_skill_2_img = @img_search[29]
+  @wood_evo_1_img = @img_search[12]
+  @wood_evo_2_img = @img_search[14]
+  @wood_evo_3_img = @img_search[16]
 
-  @dark_evo_1_img = @img_search[39]
-  @dark_evo_2_img = @img_search[41]
-  @dark_evo_3_img = @img_search[43]
-  @dark_skill_1_img = @img_search[37]
-  @dark_skill_2_img = @img_search[38]
+  @light_evo_1_img = @img_search[18]
+  @light_evo_2_img = @img_search[20]
+  @light_evo_3_img = @img_search[22]
+
+  @dark_evo_1_img = @img_search[24]
+  @dark_evo_2_img = @img_search[26]
+  @dark_evo_3_img = @img_search[28]
+
+  @skill_1_img_search = []
+  @skill_2_img_search = []
+
+  doc.search('#normalskill > div:nth-child(3) > div.flex-container > div:nth-child(1) > a > img').each do |image|
+    @skill_1_img_search << image['data-src']
+  end
+
+  doc.search('#activeskill > div:nth-child(3) > div.flex-container > div:nth-child(1) > a > img').each do |image|
+    @skill_2_img_search << image['data-src']
+  end
+
+  @fire_skill_1_img = @skill_1_img_search[0]
+  @fire_skill_2_img = @skill_2_img_search[0]
+
+  @water_skill_1_img = @skill_1_img_search[1]
+  @water_skill_2_img = @skill_2_img_search[1]
+
+  @wood_skill_1_img = @skill_1_img_search[2]
+  @wood_skill_2_img = @skill_2_img_search[2]
+
+  @light_skill_1_img = @skill_1_img_search[3]
+  @light_skill_2_img = @skill_2_img_search[3]
+
+  @dark_skill_1_img = @skill_1_img_search[4]
+  @dark_skill_2_img = @skill_2_img_search[4]
 end
 
 def skill_1_scrape(doc)
@@ -343,18 +365,18 @@ def skill_2_scrape(doc)
   @dark_skill_2_desc = @skill_2_search[27]
 end
 
-def leader_skill_scrape(doc)
-  @leader_search = []
+# def leader_skill_scrape(doc)
+#   @leader_search = []
 
-  doc.search('.flex-container div span').each_with_index do |skill, index|
-    @leader_search << skill.text
-  end
+#   doc.search('.flex-container div span').each_with_index do |skill, index|
+#     @leader_search << skill.text
+#   end
 
-  @leader_search.delete('There are no upgrades for this unit.')
+#   @leader_search.delete('There are no upgrades for this unit.')
 
-  @leader_skill_name = @leader_search[18]
-  @leader_skill_desc = @leader_search[19]
-end
+#   @leader_skill_name = @leader_search[18]
+#   @leader_skill_desc = @leader_search[19]
+# end
 
 def stat_scrape(doc)
   @stats = []
@@ -452,7 +474,7 @@ end
   img_scrape(html_doc2)
   skill_1_scrape(html_doc2)
   skill_2_scrape(html_doc2)
-  leader_skill_scrape(html_doc2)
+  # leader_skill_scrape(html_doc2)
   stat_scrape(html_doc2)
 
   unless Specie.find_by(name: @evo_1_name)
@@ -480,9 +502,6 @@ end
         second_skill_name: @fire_skill_2_name,
         second_skill_desc: @fire_skill_2_desc,
         second_skill_pic: @fire_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       fire1.save!
 
@@ -506,9 +525,6 @@ end
         second_skill_name: @fire_skill_2_name,
         second_skill_desc: @fire_skill_2_desc,
         second_skill_pic: @fire_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       fire2.save!
 
@@ -532,9 +548,6 @@ end
         second_skill_name: @fire_skill_2_name,
         second_skill_desc: @fire_skill_2_desc,
         second_skill_pic: @fire_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       fire3.save!
     end
@@ -560,9 +573,6 @@ end
         second_skill_name: @water_skill_2_name,
         second_skill_desc: @water_skill_2_desc,
         second_skill_pic: @water_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       water1.save!
 
@@ -586,9 +596,6 @@ end
         second_skill_name: @water_skill_2_name,
         second_skill_desc: @water_skill_2_desc,
         second_skill_pic: @water_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       water2.save!
 
@@ -612,9 +619,6 @@ end
         second_skill_name: @water_skill_2_name,
         second_skill_desc: @water_skill_2_desc,
         second_skill_pic: @water_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       water3.save!
     end
@@ -640,9 +644,6 @@ end
         second_skill_name: @wood_skill_2_name,
         second_skill_desc: @wood_skill_2_desc,
         second_skill_pic: @wood_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       wood1.save!
 
@@ -666,9 +667,6 @@ end
         second_skill_name: @wood_skill_2_name,
         second_skill_desc: @wood_skill_2_desc,
         second_skill_pic: @wood_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       wood2.save!
 
@@ -692,9 +690,6 @@ end
         second_skill_name: @wood_skill_2_name,
         second_skill_desc: @wood_skill_2_desc,
         second_skill_pic: @wood_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       wood3.save!
     end
@@ -720,9 +715,6 @@ end
         second_skill_name: @light_skill_2_name,
         second_skill_desc: @light_skill_2_desc,
         second_skill_pic: @light_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       light1.save!
 
@@ -750,9 +742,6 @@ end
         second_skill_name: @light_skill_2_name,
         second_skill_desc: @light_skill_2_desc,
         second_skill_pic: @light_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       light2.save!
 
@@ -780,9 +769,6 @@ end
         second_skill_name: @light_skill_2_name,
         second_skill_desc: @light_skill_2_desc,
         second_skill_pic: @light_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       light3.save!
 
@@ -812,9 +798,6 @@ end
         second_skill_name: @dark_skill_2_name,
         second_skill_desc: @dark_skill_2_desc,
         second_skill_pic: @dark_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       dark1.save!
 
@@ -842,9 +825,6 @@ end
         second_skill_name: @dark_skill_2_name,
         second_skill_desc: @dark_skill_2_desc,
         second_skill_pic: @dark_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       dark2.save!
 
@@ -872,9 +852,6 @@ end
         second_skill_name: @dark_skill_2_name,
         second_skill_desc: @dark_skill_2_desc,
         second_skill_pic: @dark_skill_2_img,
-        variant_skill_name: @leader_skill_name,
-        variant_skill_desc: @leader_skill_desc,
-        variant_skill_pic: @leader_img,
         )
       dark3.save!
 
