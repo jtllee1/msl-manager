@@ -21,7 +21,7 @@
     <div class="astromon-card">
       <div class="astromon-data">
         <div class="astromon-pic">
-          <p style="color: blanchedalmond;"><%= astromon.specie.name %></p>
+          <p style="color: blanchedalmond;"><%= astromon.specie.name %> - <%= astromon.specie.typing %></p>
           <%= image_tag astromon.specie.pic, alt: astromon.specie.name %>
           <%= link_to astromon_path(astromon), method: :delete, data: { confirm: "Are you sure?" } do %>
             <i class="fa fa-trash"></i>
