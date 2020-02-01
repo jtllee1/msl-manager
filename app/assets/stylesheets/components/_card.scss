@@ -37,6 +37,9 @@ body {
       border-right: 1px solid blanchedalmond;
       .astromon-pic {
         padding-bottom: 16px;
+        .equip-selection {
+          display: flex;
+        }
       }
       .stat {
         display: flex;
