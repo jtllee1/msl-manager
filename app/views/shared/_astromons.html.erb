@@ -29,27 +29,54 @@
           <div class="equip-selection">
             <% unless @first_gem %>
               <%= link_to new_astromon_first_gem_path(astromon) do %>
-                  <div class="<%= astromon.first_gem_shape %>-bg">
-                    <div class="<%= astromon.first_gem_shape %> empty-gem">
+                  <div class="gem-pic">
+                    <div class="gem-border <%= astromon.first_gem_shape %>-bg">
+                      <div class="gem-icon <%= astromon.first_gem_shape %> empty-gem">
+                      </div>
                     </div>
                   </div>
               <% end %>
+            <% else %>
+              <div class="gem-pic">
+                <div class="gem-border <%= astromon.first_gem_shape %>-bg">
+                  <div class="gem-icon <%= astromon.first_gem_shape %> <%= astromon.first_gem.msl_gem.gem_category.name %>">
+                  </div>
+                </div>
+              </div>
             <% end %>
             <% unless @second_gem %>
               <%= link_to new_astromon_second_gem_path(astromon) do %>
-                  <div class="<%= astromon.second_gem_shape %>-bg">
-                    <div class="<%= astromon.second_gem_shape %> empty-gem">
+                  <div class="gem-pic">
+                    <div class="gem-border <%= astromon.second_gem_shape %>-bg">
+                      <div class="gem-icon <%= astromon.second_gem_shape %> empty-gem">
+                      </div>
                     </div>
                   </div>
               <% end %>
+            <% else %>
+              <div class="gem-pic">
+                <div class="gem-border <%= astromon.second_gem_shape %>-bg">
+                  <div class="gem-icon <%= astromon.second_gem_shape %> <%= astromon.second_gem.msl_gem.gem_category.name %>">
+                  </div>
+                </div>
+              </div>
             <% end %>
             <% unless @third_gem %>
               <%= link_to new_astromon_third_gem_path(astromon) do %>
-                  <div class="<%= astromon.third_gem_shape %>-bg">
-                    <div class="<%= astromon.third_gem_shape %> empty-gem">
+                  <div class="gem-pic">
+                    <div class="gem-border <%= astromon.third_gem_shape %>-bg">
+                      <div class="gem-icon <%= astromon.third_gem_shape %> empty-gem">
+                      </div>
                     </div>
                   </div>
               <% end %>
+            <% else %>
+              <div class="gem-pic">
+                <div class="gem-border <%= astromon.third_gem_shape %>-bg">
+                  <div class="gem-icon <%= astromon.third_gem_shape %> <%= astromon.third_gem.msl_gem.gem_category.name %>">
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>

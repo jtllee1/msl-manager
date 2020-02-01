@@ -113,16 +113,6 @@ body {
     .gem-left {
       border-right: 1px solid blanchedalmond;
       padding-top: 24px;
-      .gem-pic {
-        display: flex;
-        justify-content: center;
-        .gem-border {
-          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-        }
-        .gem-icon {
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-      }
       .gem-desc {
         margin: 16px;
         p {
@@ -147,5 +137,16 @@ body {
         }
       }
     }
+  }
+}
+
+.gem-pic {
+  display: flex;
+  justify-content: center;
+  .gem-border {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  .gem-icon {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
