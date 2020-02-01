@@ -89,7 +89,6 @@ body {
   }
 }
 
-
 .gem-cards {
   display: flex;
   flex-wrap: wrap;
@@ -149,4 +148,8 @@ body {
   .gem-icon {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
+}
+
+.invisible {
+  display: none;
 }
