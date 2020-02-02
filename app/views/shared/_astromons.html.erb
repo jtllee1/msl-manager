@@ -1,6 +1,7 @@
 <div class="astromon-cards">
-  <% @counter = 0 %>
   <% astromons.each do |astromon| %>
+    <% @counter = 0 %>
+    <div class="astromon-id invisible"><%= astromon.id %></div>
     <% @first_gem = Astromon.first_gem(astromon) %>
     <% @second_gem = Astromon.second_gem(astromon) %>
     <% @third_gem = Astromon.third_gem(astromon) %>
@@ -39,7 +40,7 @@
                   </div>
               <% end %>
             <% else %>
-              <div class="gem-pic" id="gem-<%= @counter %>">
+              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
                 <div class="gem-border <%= astromon.first_gem_shape %>-bg">
                   <div class="gem-icon <%= astromon.first_gem_shape %> <%= astromon.first_gem.msl_gem.gem_category.name %>">
                   </div>
@@ -57,7 +58,7 @@
                   </div>
               <% end %>
             <% else %>
-              <div class="gem-pic" id="gem-<%= @counter %>">
+              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
                 <div class="gem-border <%= astromon.second_gem_shape %>-bg">
                   <div class="gem-icon <%= astromon.second_gem_shape %> <%= astromon.second_gem.msl_gem.gem_category.name %>">
                   </div>
@@ -75,7 +76,7 @@
                   </div>
               <% end %>
             <% else %>
-              <div class="gem-pic" id="gem-<%= @counter %>">
+              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
                 <div class="gem-border <%= astromon.third_gem_shape %>-bg">
                   <div class="gem-icon <%= astromon.third_gem_shape %> <%= astromon.third_gem.msl_gem.gem_category.name %>">
                   </div>
@@ -160,7 +161,7 @@
         <div class="gem-cards">
           <% @counter += 1 %>
           <% if @first_gem %>
-            <div class="invisible" id="gem-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
               <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
               <%= link_to astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
@@ -169,7 +170,7 @@
           <% end %>
           <% @counter += 1 %>
           <% if @second_gem %>
-            <div class="invisible" id="gem-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
               <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
               <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
@@ -178,7 +179,7 @@
           <% end %>
           <% @counter += 1 %>
           <% if @third_gem %>
-            <div class="invisible" id="gem-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
               <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
               <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
