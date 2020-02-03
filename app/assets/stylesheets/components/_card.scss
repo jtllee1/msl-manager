@@ -104,7 +104,9 @@ body {
     background: rgba(210, 170, 130, 1.0);
   }
   .gem-card.default {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .gem-card {
     display: flex;
