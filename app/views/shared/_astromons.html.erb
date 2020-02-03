@@ -160,6 +160,12 @@
       <div class="astromon-gem">
         <div class="gem-cards">
           <% @counter += 1 %>
+          <div id="<%= astromon.id %>-<%= @counter %>">
+            <div class="gem-card inner-border default">
+              <p>Click on a gem to display it's stats.</p>
+            </div>
+          </div>
+          <% @counter += 1 %>
           <% if @first_gem %>
             <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
               <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
