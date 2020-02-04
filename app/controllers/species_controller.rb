@@ -1,5 +1,10 @@
 class SpeciesController < ApplicationController
   def index
-    @species = Specie.where(evo: 1)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR element ILIKE :query OR"
+      @species = Specie.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @species = Specie.all
+    end
   end
 end
