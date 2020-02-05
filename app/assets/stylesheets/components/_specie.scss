@@ -1,0 +1,49 @@
+.specie-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .specie-card {
+    background: rgba(180, 120, 100, 0.5);
+    display: flex;
+    width: 600px;
+    border: 1px solid blanchedalmond;
+    border-radius: 8px;
+    margin: 16px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    .specie-data {
+      padding: 16px;
+      .specie-pic {
+        padding-bottom: 16px;
+        .equip-selection {
+          display: flex;
+        }
+      }
+      .specie-info {
+        display: flex;
+        .stat {
+          display: flex;
+          margin-bottom: 16px;
+          width: 140px;
+          .stat-name {
+            width: 140px;
+            padding: 8px;
+          }
+        }
+        .skill {
+          margin-bottom: 16px;
+          padding: 16px;
+          img {
+            width: 64px;
+          }
+        }
+        .leader {
+          margin-bottom: 16px;
+          padding: 16px;
+          img {
+            width: 64px;
+          }
+        }
+      }
+    }
+  }
+}
