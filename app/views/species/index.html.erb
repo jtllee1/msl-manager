@@ -1,13 +1,17 @@
-<%= form_tag species_index_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an astromon"
-  %>
-  <%= submit_tag "Search", class: "button" %>
-<% end %>
+<div class="container form">
+  <%= form_tag species_index_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an astromon"
+    %>
+    <%= submit_tag "Search", class: "button" %>
+    <%= link_to "Reset Search", species_index_path, class: "button"  %>
+  <% end %>
+</div>
 
 <div class="astromon-cards">
+  <%= will_paginate @species %>
   <% @species.each do |specie| %>
     <div class="astromon-card">
       <div class="astromon-data">
@@ -58,4 +62,5 @@
       <% end %>
     </div>
   <% end %>
+  <%= will_paginate @species %>
 </div>

@@ -4,7 +4,7 @@ class SpeciesController < ApplicationController
       sql_query = "name ILIKE :query OR element ILIKE :query"
       @species = Specie.where(sql_query, query: "%#{params[:query]}%")
     else
-      @species = Specie.all
+      @species = Specie.paginate(page: params[:page], per_page: 30)
     end
   end
 end
