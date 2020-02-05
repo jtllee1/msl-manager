@@ -10,8 +10,11 @@
   <% end %>
 </div>
 
-<div class="astromon-cards">
+<div class="container form paginate_link">
   <%= will_paginate @species %>
+</div>
+
+<div class="astromon-cards">
   <% @species.each do |specie| %>
     <div class="astromon-card">
       <div class="astromon-data">
@@ -62,5 +65,8 @@
       <% end %>
     </div>
   <% end %>
+</div>
+
+<div class="container form paginate_link">
   <%= will_paginate @species %>
 </div>

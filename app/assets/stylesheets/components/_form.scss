@@ -57,3 +57,40 @@
   width: 600px;
   border-radius: 8px;
 }
+
+.paginate_link {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default;
+}
+.paginate_link a, .paginate_link span, .paginate_link em {
+  padding: 0.2em 0.5em;
+}
+.paginate_link .disabled {
+  color: blanchedalmond;
+}
+.paginate_link .current {
+  font-style: normal;
+  font-weight: bold;
+  color: rgba(210, 170, 130, 1.0);
+}
+.paginate_link a {
+  color: blanchedalmond;
+  text-decoration: none;
+}
+.paginate_link a:hover, .paginate_link a:focus {
+  color: rgba(210, 170, 130, 1.0);
+}
+.paginate_link .page_info {
+  color: blanchedalmond;
+  padding-top: 0.8em;
+}
+.paginate_link .previous_page, .paginate_link .next_page {
+  border-width: 2px;
+}
+.paginate_link .previous_page {
+  margin-right: 1em;
+}
+.paginate_link .next_page {
+  margin-left: 1em;
+}
