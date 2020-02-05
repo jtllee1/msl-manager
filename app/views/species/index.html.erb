@@ -14,55 +14,57 @@
   <%= will_paginate @species %>
 </div>
 
-<div class="astromon-cards">
+<div class="specie-cards">
   <% @species.each do |specie| %>
-    <div class="astromon-card">
-      <div class="astromon-data">
-        <div class="astromon-pic">
+    <div class="specie-card">
+      <div class="specie-data">
+        <div class="specie-pic">
           <p style="color: blanchedalmond;"><%= specie.name %></p>
           <% if specie.pic %>
             <%= image_tag specie.pic, alt: specie.name %>
           <% end %>
+          <%= link_to new_astromon_path(specie) do %>
+            <button class="button">Add Astromon</button>
+          <% end %>
         </div>
-        <div class="stat inner-border">
-          <div class="stat-name">
-            <p>HP: <%= specie.hp %></p>
-            <p>Attack: <%= specie.attack %></p>
-            <p>Defence: <%= specie.defence %></p>
-            <p>Recovery: <%= specie.recovery %></p>
-            <p>Crit. Dmg: <%= specie.crit_dmg %>%</p>
-            <p>Crit. Rate: <%= specie.crit_rate %>%</p>
-            <p>Resist: <%= specie.resist %>%</p>
-          </div>
-        </div>
-        <div class="skill inner-border">
-          <p><%= specie.first_skill_name %></p>
-          <div class="outer-skill">
-            <% if specie.first_skill_pic %>
-              <div class="img">
-                <%= image_tag specie.first_skill_pic, alt: specie.first_skill_name %>
-              </div>
-            <% end %>
-            <div class="desc">
-              <%= specie.first_skill_desc %>
+        <div class="specie-info">
+          <div class="stat inner-border">
+            <div class="stat-name">
+              <p>HP: <%= specie.hp %></p>
+              <p>Attack: <%= specie.attack %></p>
+              <p>Defence: <%= specie.defence %></p>
+              <p>Recovery: <%= specie.recovery %></p>
+              <p>Crit. Dmg: <%= specie.crit_dmg %>%</p>
+              <p>Crit. Rate: <%= specie.crit_rate %>%</p>
+              <p>Resist: <%= specie.resist %>%</p>
             </div>
           </div>
-          <p><%= specie.second_skill_name %></p>
-          <div class="outer-skill">
-            <% if specie.second_skill_pic %>
-              <div class="img">
-                <%= image_tag specie.second_skill_pic, alt: specie.second_skill_name %>
+          <div class="skill inner-border">
+            <p><%= specie.first_skill_name %></p>
+            <div class="outer-skill">
+              <% if specie.first_skill_pic %>
+                <div class="img">
+                  <%= image_tag specie.first_skill_pic, alt: specie.first_skill_name %>
+                </div>
+              <% end %>
+              <div class="desc">
+                <%= specie.first_skill_desc %>
               </div>
-            <% end %>
-            <div class="desc">
-              <%= specie.second_skill_desc %>
+            </div>
+            <p><%= specie.second_skill_name %></p>
+            <div class="outer-skill">
+              <% if specie.second_skill_pic %>
+                <div class="img">
+                  <%= image_tag specie.second_skill_pic, alt: specie.second_skill_name %>
+                </div>
+              <% end %>
+              <div class="desc">
+                <%= specie.second_skill_desc %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <%= link_to new_astromon_path(specie) do %>
-        <button class="button">Add Astromon</button>
-      <% end %>
     </div>
   <% end %>
 </div>
