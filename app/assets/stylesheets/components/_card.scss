@@ -42,6 +42,8 @@ body {
       .astromon-pic {
         padding-bottom: 16px;
         img {
+          margin-top: 8px;
+          margin-bottom: 8px;
           width: 80px;
           height: 80px;
         }
@@ -125,9 +127,10 @@ body {
     color: black;
     .gem-left {
       border-right: 1px solid blanchedalmond;
-      padding-top: 24px;
+      padding-top: 8px;
       .gem-desc {
         margin: 16px;
+        margin-top: 8px;
         p {
           width: 80px;
           margin-bottom: 8px;
