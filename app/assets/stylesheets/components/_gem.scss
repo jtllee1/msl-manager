@@ -1,6 +1,6 @@
 .Square-bg {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
   background: darkgoldenrod;
   margin: 8px;
@@ -8,8 +8,8 @@
 }
 
 .Triangle-bg {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
   border-radius: 8px;
   background: darkgoldenrod;
@@ -18,8 +18,8 @@
 }
 
 .Diamond-bg {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   transform: rotate(45deg);
   border-radius: 8px;
   background: darkgoldenrod;
@@ -28,8 +28,8 @@
 }
 
 .Square {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
   position: absolute;
   top: 4px;
@@ -37,8 +37,8 @@
 }
 
 .Triangle {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
   border-radius: 4px;
   position: absolute;
@@ -47,8 +47,8 @@
 }
 
 .Diamond {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
   position: absolute;
   top: 4px;

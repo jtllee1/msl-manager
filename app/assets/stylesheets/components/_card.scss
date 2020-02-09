@@ -1,3 +1,7 @@
+html {
+  font-size: 12px;
+}
+
 body {
   background: #774831;
 }
@@ -27,7 +31,7 @@ body {
   .astromon-card {
     background: rgba(180, 120, 100, 0.5);
     display: flex;
-    width: 840px;
+    width: 608px;
     border: 1px solid blanchedalmond;
     border-radius: 8px;
     margin: 16px;
@@ -37,6 +41,10 @@ body {
       border-right: 1px solid blanchedalmond;
       .astromon-pic {
         padding-bottom: 16px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
         .equip-selection {
           display: flex;
         }
@@ -44,39 +52,40 @@ body {
       .stat {
         display: flex;
         margin-bottom: 16px;
-        width: 440px;
+        width: 300px;
         .stat-name {
           border-right: 1px solid blanchedalmond;
-          width: 140px;
+          width: 120px;
           padding: 8px;
         }
         .stat-boost {
           border-right: 1px solid blanchedalmond;
-          width: 100px;
+          width: 60px;
           padding: 8px;
         }
         .stat-gem {
           border-right: 1px solid blanchedalmond;
-          width: 100px;
+          width: 60px;
           padding: 8px;
         }
         .total-stat {
-          width: 100px;
+          width: 60px;
           padding: 8px;
         }
       }
       .skill {
-        margin-bottom: 16px;
         padding: 16px;
+        width: 300px;
         img {
-          width: 64px;
+          width: 60px;
+          height: 60px;
         }
       }
       .leader {
-        margin-bottom: 16px;
         padding: 16px;
         img {
-          width: 64px;
+          width: 60px;
+          height: 60px;
         }
       }
     }
@@ -110,8 +119,8 @@ body {
   }
   .gem-card {
     display: flex;
-    width: 300px;
-    height: 232px;
+    width: 240px;
+    height: 188px;
     margin: 16px;
     color: black;
     .gem-left {
@@ -120,7 +129,7 @@ body {
       .gem-desc {
         margin: 16px;
         p {
-          width: 120px;
+          width: 80px;
           margin-bottom: 8px;
         }
       }
@@ -130,7 +139,7 @@ body {
         border-bottom: 1px solid blanchedalmond;
         text-align: center;
         padding-top: 16px;
-        width: 144px;
+        width: 124px;
       }
       .sub-stat {
         p {
