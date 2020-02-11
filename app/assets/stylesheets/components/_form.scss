@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  width: 600px;
 }
 
 .inner-form {
-  padding: 160px;
+  padding: 100px;
 }
 
 .form-inputs {
@@ -21,6 +22,19 @@
 
 .form-links {
   display: flex;
+}
+
+.form-control.string {
+  width: 400px;
+}
+
+.form-control.password {
+  width: 400px;
+}
+
+.simple_form {
+  width: 400px;
+  margin: 0 auto;
 }
 
 .new-form {
