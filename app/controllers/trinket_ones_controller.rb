@@ -14,7 +14,6 @@ class TrinketOnesController < ApplicationController
   end
 
   def destroy
-<<<<<<< HEAD
     @trinket_one = TrinketOne.find(params[:id])
     if @trinket_one.available == false
     else
@@ -22,9 +21,6 @@ class TrinketOnesController < ApplicationController
       @trinket_one.save
     end
     redirect_to trinkets_path
-=======
-
->>>>>>> 82b0e8d2cff78dcdcabbff9a2d2a89e3a48f7427
   end
 
   private
