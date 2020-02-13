@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :third_trinkets, only: [:new, :create, :destroy]
   end
   resources :msl_gems, only: [:index, :new, :create, :destroy]
-  resources :trinket_1s, only: [:index, :new, :create, :destroy]
-  resources :trinket_2s, only: [:index, :new, :create, :destroy]
-  resources :trinket_3s, only: [:index, :new, :create, :destroy]
+  resources :trinkets, only: [:index]
+  resources :trinket_ones, only: [:new, :create, :destroy]
+  resources :trinket_twos, only: [:new, :create, :destroy]
+  resources :trinket_threes, only: [:new, :create, :destroy]
 end
