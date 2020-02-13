@@ -86,6 +86,24 @@
                 </div>
               </div>
             <% end %>
+            <% @counter += 1 %>
+            <% unless @first_trinket %>
+              <%= link_to new_astromon_first_trinket_path(astromon) do %>
+              <div class="gem-pic">
+                <div class="gem-border Square-bg">
+                  <div class="gem-icon Square empty-gem">
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            <% else %>
+              <div class="gem-pic">
+                <div class="gem-border Square-bg">
+                  <div class="gem-icon Square empty-gem">
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="stat inner-border">
@@ -209,7 +227,7 @@
           </div>
           <% @counter += 1 %>
           <% if @first_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="" id="<%= astromon.id %>-<%= @counter %>">
               <%= render "shared/astromon-trinkets", trinket: @first_trinket.trinket_one %>
               <%= link_to astromon_first_trinket_path(id: @first_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>

@@ -1,11 +1,11 @@
 <%= simple_form_for([@astromon, @first_trinket]) do |f| %>
   <div class="gem-cards">
-  <% @first_gems.each do |msl_gem| %>
-    <%= render "shared/astromon-gems", msl_gem: msl_gem %>
-    <% if msl_gem.available %>
-      <%= check_box_tag "msl_gem", msl_gem.id %>
+  <% @first_trinkets.each do |trinket| %>
+    <%= render "shared/astromon-trinkets", trinket: trinket %>
+    <% if trinket.available %>
+      <%= check_box_tag "trinket", trinket.id %>
     <% end %>
   <% end %>
   </div>
-  <%= f.submit "Add First Gem" %>
+  <%= f.submit "Add First Trinket" %>
 <% end %>
