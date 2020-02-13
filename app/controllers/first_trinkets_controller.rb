@@ -12,8 +12,8 @@ class FirstTrinketsController < ApplicationController
     )
     if @first_trinket.save
       find_trinket
-      @trinket_1.available = false
-      @trinket_1.save
+      @trinket_one.available = false
+      @trinket_one.save
       redirect_to astromons_path
     else
       redirect_to new_astromon_first_trinket_path(@astromon)
@@ -36,6 +36,6 @@ class FirstTrinketsController < ApplicationController
   end
 
   def find_trinket
-    @trinket_1 = @first_trinket.trinket_1
+    @trinket_one = @first_trinket.trinket_one
   end
 end
