@@ -1,4 +1,4 @@
 class ThirdTrinket < ApplicationRecord
+  belongs_to :trinket_3
   belongs_to :astromon
-  belongs_to :trinket_three
 end

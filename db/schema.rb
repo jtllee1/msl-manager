@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_201235) do
+ActiveRecord::Schema.define(version: 2020_02_13_133125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
   end
 
   create_table "first_trinkets", force: :cascade do |t|
+    t.bigint "trinket_1_id", null: false
     t.bigint "astromon_id", null: false
-    t.bigint "trinket_one_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["astromon_id"], name: "index_first_trinkets_on_astromon_id"
-    t.index ["trinket_one_id"], name: "index_first_trinkets_on_trinket_one_id"
+    t.index ["trinket_1_id"], name: "index_first_trinkets_on_trinket_1_id"
   end
 
   create_table "gem_categories", force: :cascade do |t|
@@ -98,12 +98,12 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
   end
 
   create_table "second_trinkets", force: :cascade do |t|
+    t.bigint "trinket_2_id", null: false
     t.bigint "astromon_id", null: false
-    t.bigint "trinket_two_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["astromon_id"], name: "index_second_trinkets_on_astromon_id"
-    t.index ["trinket_two_id"], name: "index_second_trinkets_on_trinket_two_id"
+    t.index ["trinket_2_id"], name: "index_second_trinkets_on_trinket_2_id"
   end
 
   create_table "species", force: :cascade do |t|
@@ -143,15 +143,15 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
   end
 
   create_table "third_trinkets", force: :cascade do |t|
+    t.bigint "trinket_3_id", null: false
     t.bigint "astromon_id", null: false
-    t.bigint "trinket_three_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["astromon_id"], name: "index_third_trinkets_on_astromon_id"
-    t.index ["trinket_three_id"], name: "index_third_trinkets_on_trinket_three_id"
+    t.index ["trinket_3_id"], name: "index_third_trinkets_on_trinket_3_id"
   end
 
-  create_table "trinket_ones", force: :cascade do |t|
+  create_table "trinket_1s", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "m_hp", default: 0
     t.integer "s_defence", default: 0
@@ -160,22 +160,10 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
     t.boolean "available", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_trinket_ones_on_user_id"
+    t.index ["user_id"], name: "index_trinket_1s_on_user_id"
   end
 
-  create_table "trinket_threes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.float "m_crit_res", default: 0.0
-    t.integer "s_defence", default: 0
-    t.integer "s_attack", default: 0
-    t.integer "s_hp", default: 0
-    t.boolean "available", default: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_trinket_threes_on_user_id"
-  end
-
-  create_table "trinket_twos", force: :cascade do |t|
+  create_table "trinket_2s", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "m_attack", default: 0
     t.float "s_crit_dmg", default: 0.0
@@ -184,7 +172,19 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
     t.boolean "available", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_trinket_twos_on_user_id"
+    t.index ["user_id"], name: "index_trinket_2s_on_user_id"
+  end
+
+  create_table "trinket_3s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.float "m_crit_res", default: 0.0
+    t.integer "s_defence", default: 0
+    t.integer "s_attack", default: 0
+    t.integer "s_hp", default: 0
+    t.boolean "available", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trinket_3s_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -221,18 +221,18 @@ ActiveRecord::Schema.define(version: 2020_02_13_201235) do
   add_foreign_key "first_gems", "astromons"
   add_foreign_key "first_gems", "msl_gems"
   add_foreign_key "first_trinkets", "astromons"
-  add_foreign_key "first_trinkets", "trinket_ones"
+  add_foreign_key "first_trinkets", "trinket_1s"
   add_foreign_key "msl_gems", "gem_categories"
   add_foreign_key "msl_gems", "users"
   add_foreign_key "second_gems", "astromons"
   add_foreign_key "second_gems", "msl_gems"
   add_foreign_key "second_trinkets", "astromons"
-  add_foreign_key "second_trinkets", "trinket_twos"
+  add_foreign_key "second_trinkets", "trinket_2s"
   add_foreign_key "third_gems", "astromons"
   add_foreign_key "third_gems", "msl_gems"
   add_foreign_key "third_trinkets", "astromons"
-  add_foreign_key "third_trinkets", "trinket_threes"
-  add_foreign_key "trinket_ones", "users"
-  add_foreign_key "trinket_threes", "users"
-  add_foreign_key "trinket_twos", "users"
+  add_foreign_key "third_trinkets", "trinket_3s"
+  add_foreign_key "trinket_1s", "users"
+  add_foreign_key "trinket_2s", "users"
+  add_foreign_key "trinket_3s", "users"
 end

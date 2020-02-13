@@ -4,9 +4,6 @@ class Astromon < ApplicationRecord
   has_one :first_gem
   has_one :second_gem
   has_one :third_gem
-  has_one :first_trinket
-  has_one :second_trinket
-  has_one :third_trinket
 
   def self.first_gem(astromon)
     FirstGem.find_by(astromon_id: astromon.id)
@@ -18,18 +15,6 @@ class Astromon < ApplicationRecord
 
   def self.third_gem(astromon)
     ThirdGem.find_by(astromon_id: astromon.id)
-  end
-
-  def self.first_trinket(astromon)
-    FirstTrinket.find_by(astromon_id: astromon.id)
-  end
-
-  def self.second_trinket(astromon)
-    SecondTrinket.find_by(astromon_id: astromon.id)
-  end
-
-  def self.third_trinket(astromon)
-    ThirdTrinket.find_by(astromon_id: astromon.id)
   end
 
   def self.stat_sum(first_gem, second_gem, third_gem, stat)

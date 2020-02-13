@@ -1,2 +1,0 @@
-class TrinketTwosController < ApplicationController
-end
