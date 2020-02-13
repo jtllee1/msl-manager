@@ -1,0 +1,2 @@
+class SecondTrinketsController < ApplicationController
+end
