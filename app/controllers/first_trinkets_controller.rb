@@ -8,7 +8,8 @@ class FirstTrinketsController < ApplicationController
 
   def create
     @first_trinket = FirstTrinket.new(
-      astromon_id: params[:astromon_id]
+      astromon_id: params[:astromon_id],
+      trinket_one_id: params[:trinket]
     )
     if @first_trinket.save
       find_trinket
@@ -22,10 +23,10 @@ class FirstTrinketsController < ApplicationController
 
   def destroy
     @first_trinket = FirstTrinket.find_by(astromon_id: params[:astromon_id])
-    @first_trinket.destroy
     find_trinket
-    @trinket_1.available = true
-    @trinket_1.save
+    @trinket_one.available = true
+    @trinket_one.save
+    @first_trinket.destroy
     redirect_to astromons_path
   end
 
