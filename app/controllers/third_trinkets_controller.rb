@@ -1,0 +1,2 @@
+class ThirdTrinketsController < ApplicationController
+end

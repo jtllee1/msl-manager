@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_212700) do
+ActiveRecord::Schema.define(version: 2020_02_13_133125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_01_27_212700) do
     t.bigint "astromon_id"
     t.index ["astromon_id"], name: "index_first_gems_on_astromon_id"
     t.index ["msl_gem_id"], name: "index_first_gems_on_msl_gem_id"
+  end
+
+  create_table "first_trinkets", force: :cascade do |t|
+    t.bigint "trinket_1_id", null: false
+    t.bigint "astromon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["astromon_id"], name: "index_first_trinkets_on_astromon_id"
+    t.index ["trinket_1_id"], name: "index_first_trinkets_on_trinket_1_id"
   end
 
   create_table "gem_categories", force: :cascade do |t|
@@ -88,6 +97,15 @@ ActiveRecord::Schema.define(version: 2020_01_27_212700) do
     t.index ["msl_gem_id"], name: "index_second_gems_on_msl_gem_id"
   end
 
+  create_table "second_trinkets", force: :cascade do |t|
+    t.bigint "trinket_2_id", null: false
+    t.bigint "astromon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["astromon_id"], name: "index_second_trinkets_on_astromon_id"
+    t.index ["trinket_2_id"], name: "index_second_trinkets_on_trinket_2_id"
+  end
+
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.string "element"
@@ -124,6 +142,51 @@ ActiveRecord::Schema.define(version: 2020_01_27_212700) do
     t.index ["msl_gem_id"], name: "index_third_gems_on_msl_gem_id"
   end
 
+  create_table "third_trinkets", force: :cascade do |t|
+    t.bigint "trinket_3_id", null: false
+    t.bigint "astromon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["astromon_id"], name: "index_third_trinkets_on_astromon_id"
+    t.index ["trinket_3_id"], name: "index_third_trinkets_on_trinket_3_id"
+  end
+
+  create_table "trinket_1s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "m_hp", default: 0
+    t.integer "s_defence", default: 0
+    t.integer "s_recovery", default: 0
+    t.float "s_crit_res", default: 0.0
+    t.boolean "available", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trinket_1s_on_user_id"
+  end
+
+  create_table "trinket_2s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "m_attack", default: 0
+    t.float "s_crit_dmg", default: 0.0
+    t.float "s_resist", default: 0.0
+    t.integer "s_recovery", default: 0
+    t.boolean "available", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trinket_2s_on_user_id"
+  end
+
+  create_table "trinket_3s", force: :cascade do |t|
+    t.bigint "user_id"
+    t.float "m_crit_res", default: 0.0
+    t.integer "s_defence", default: 0
+    t.integer "s_attack", default: 0
+    t.integer "s_hp", default: 0
+    t.boolean "available", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trinket_3s_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -157,10 +220,19 @@ ActiveRecord::Schema.define(version: 2020_01_27_212700) do
   add_foreign_key "astromons", "users"
   add_foreign_key "first_gems", "astromons"
   add_foreign_key "first_gems", "msl_gems"
+  add_foreign_key "first_trinkets", "astromons"
+  add_foreign_key "first_trinkets", "trinket_1s"
   add_foreign_key "msl_gems", "gem_categories"
   add_foreign_key "msl_gems", "users"
   add_foreign_key "second_gems", "astromons"
   add_foreign_key "second_gems", "msl_gems"
+  add_foreign_key "second_trinkets", "astromons"
+  add_foreign_key "second_trinkets", "trinket_2s"
   add_foreign_key "third_gems", "astromons"
   add_foreign_key "third_gems", "msl_gems"
+  add_foreign_key "third_trinkets", "astromons"
+  add_foreign_key "third_trinkets", "trinket_3s"
+  add_foreign_key "trinket_1s", "users"
+  add_foreign_key "trinket_2s", "users"
+  add_foreign_key "trinket_3s", "users"
 end
