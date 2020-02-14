@@ -1,0 +1,31 @@
+<div class="gem-card inner-border">
+  <div class="gem-left">
+    <div class="gem-pic">
+      <div class="gem-border square">
+      </div>
+    </div>
+    <div class="gem-desc">
+      <p>Trinket</p>
+    </div>
+  </div>
+  <div class="gem-right">
+    <div class="main-stat">
+      <% unless trinket.m_crit_res == 0 %>
+          <p>Crit. Res: <%= trinket.m_crit_res %>%</p>
+      <% end %>
+    </div>
+    <div class="sub-stat">
+      <% unless trinket.s_defence == 0 %>
+          <p>Defence: <%= trinket.s_defence %></p>
+      <% end %>
+
+      <% unless trinket.s_attack == 0 %>
+          <p>Attack: <%= trinket.s_attack %></p>
+      <% end %>
+
+      <% unless trinket.s_hp == 0 %>
+          <p>HP: <%= trinket.s_hp %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

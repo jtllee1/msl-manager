@@ -3,6 +3,14 @@
     <button class="button">Add Trinket 1</button>
   <% end %>
 
+  <%= link_to new_trinket_two_path do %>
+    <button class="button">Add Trinket 2</button>
+  <% end %>
+
+  <%= link_to new_trinket_three_path do %>
+    <button class="button">Add Trinket 3</button>
+  <% end %>
+
   <%= link_to msl_gems_path do %>
     <button class="button">Your Gems</button>
   <% end %>
@@ -15,8 +23,20 @@
 <div class="container">
   <div class="gem-cards">
     <% @trinket_ones.each do |trinket_one| %>
-      <%= render "shared/astromon-trinkets", trinket: trinket_one %>
+      <%= render "shared/astromon-trinkets-one", trinket: trinket_one %>
       <%= link_to trinket_one_path(trinket_one), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
+    <% @trinket_twos.each do |trinket_two| %>
+      <%= render "shared/astromon-trinkets-two", trinket: trinket_two %>
+      <%= link_to trinket_two_path(trinket_two), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
+    <% @trinket_threes.each do |trinket_three| %>
+      <%= render "shared/astromon-trinkets-three", trinket: trinket_three %>
+      <%= link_to trinket_three_path(trinket_three), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fa fa-trash"></i>
       <% end %>
     <% end %>

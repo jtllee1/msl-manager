@@ -1,0 +1,21 @@
+<div class="container new-form inner-border">
+  <h3>Add Trinket</h3>
+  <%= simple_form_for @trinket_two do |f| %>
+    <div class="stat">
+      <div class="main">
+        <h5>Main Stat</h5>
+        <%= f.input :m_attack, :label => "Attack" %>
+      </div>
+      <div class="sub">
+        <h5>Sub Stat</h5>
+        <%= f.input :s_crit_dmg, :label => "Crit. Dmg" %>
+        <%= f.input :s_resist, :label => "Resist" %>
+        <%= f.input :s_recovery, :label => "Recovery" %>
+      </div>
+    </div>
+    <%= f.submit "Add Trinket", class:"button" %>
+  <% end %>
+  <%= link_to trinkets_path do %>
+    <button class="button">Back</button>
+  <% end %>
+</div>
