@@ -1,0 +1,11 @@
+<%= simple_form_for([@astromon, @second_trinket]) do |f| %>
+  <div class="gem-cards">
+  <% @second_trinkets.each do |trinket| %>
+    <%= render "shared/astromon-trinkets-two", trinket: trinket %>
+    <% if trinket.available %>
+      <%= check_box_tag "trinket", trinket.id %>
+    <% end %>
+  <% end %>
+  </div>
+  <%= f.submit "Add Second Trinket" %>
+<% end %>
