@@ -31,7 +31,7 @@
           <%= link_to astromon_path(astromon), method: :delete, data: { confirm: "Are you sure?" } do %>
             <i class="fa fa-trash"></i>
           <% end %>
-          <div class="equip-selection">
+          <div class="equip-gem">
             <% @counter += 1 %>
             <% unless @first_gem %>
               <%= link_to new_astromon_first_gem_path(astromon) do %>
@@ -86,6 +86,8 @@
                 </div>
               </div>
             <% end %>
+          </div>
+          <div class="equip-trinket">
             <% @counter += 1 %>
             <% unless @first_trinket %>
               <%= link_to new_astromon_first_trinket_path(astromon) do %>
