@@ -26,122 +26,127 @@
     <div class="astromon-card">
       <div class="astromon-data">
         <div class="astromon-pic">
-          <h5 style="color: blanchedalmond;"><%= astromon.specie.name %> - <%= astromon.specie.typing %></h5>
-          <%= image_tag astromon.specie.pic, alt: astromon.specie.name %>
-          <%= link_to astromon_path(astromon), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash"></i>
-          <% end %>
-          <div class="equip-gem">
-            <% @counter += 1 %>
-            <% unless @first_gem %>
-              <%= link_to new_astromon_first_gem_path(astromon) do %>
-                  <div class="gem-pic">
-                    <div class="gem-border <%= astromon.first_gem_shape %>-bg">
-                      <div class="gem-icon <%= astromon.first_gem_shape %> empty-gem">
-                      </div>
-                    </div>
-                  </div>
-              <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border <%= astromon.first_gem_shape %>-bg">
-                  <div class="gem-icon <%= astromon.first_gem_shape %> <%= astromon.first_gem.msl_gem.gem_category.name %>">
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <% @counter += 1 %>
-            <% unless @second_gem %>
-              <%= link_to new_astromon_second_gem_path(astromon) do %>
-                  <div class="gem-pic">
-                    <div class="gem-border <%= astromon.second_gem_shape %>-bg">
-                      <div class="gem-icon <%= astromon.second_gem_shape %> empty-gem">
-                      </div>
-                    </div>
-                  </div>
-              <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border <%= astromon.second_gem_shape %>-bg">
-                  <div class="gem-icon <%= astromon.second_gem_shape %> <%= astromon.second_gem.msl_gem.gem_category.name %>">
-                  </div>
-                </div>
-              </div>
-            <% end %>
-            <% @counter += 1 %>
-            <% unless @third_gem %>
-              <%= link_to new_astromon_third_gem_path(astromon) do %>
-                  <div class="gem-pic">
-                    <div class="gem-border <%= astromon.third_gem_shape %>-bg">
-                      <div class="gem-icon <%= astromon.third_gem_shape %> empty-gem">
-                      </div>
-                    </div>
-                  </div>
-              <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border <%= astromon.third_gem_shape %>-bg">
-                  <div class="gem-icon <%= astromon.third_gem_shape %> <%= astromon.third_gem.msl_gem.gem_category.name %>">
-                  </div>
-                </div>
-              </div>
+          <div class="data">
+            <h5 style="color: blanchedalmond;"><%= astromon.specie.name %></h5>
+            <h6 style="color: burlywood;"><%= astromon.specie.typing %></h6>
+            <%= image_tag astromon.specie.pic, alt: astromon.specie.name %>
+            <%= link_to astromon_path(astromon), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash"></i>
             <% end %>
           </div>
-          <div class="equip-trinket">
-            <% @counter += 1 %>
-            <% unless @first_trinket %>
-              <%= link_to new_astromon_first_trinket_path(astromon) do %>
-              <div class="gem-pic">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
+          <div class="equip">
+            <div class="equip-gem">
+              <% @counter += 1 %>
+              <% unless @first_gem %>
+                <%= link_to new_astromon_first_gem_path(astromon) do %>
+                    <div class="gem-pic">
+                      <div class="gem-border <%= astromon.first_gem_shape %>-bg">
+                        <div class="gem-icon <%= astromon.first_gem_shape %> empty-gem">
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border <%= astromon.first_gem_shape %>-bg">
+                    <div class="gem-icon <%= astromon.first_gem_shape %> <%= astromon.first_gem.msl_gem.gem_category.name %>">
+                    </div>
                   </div>
                 </div>
-              </div>
               <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
+              <% @counter += 1 %>
+              <% unless @second_gem %>
+                <%= link_to new_astromon_second_gem_path(astromon) do %>
+                    <div class="gem-pic">
+                      <div class="gem-border <%= astromon.second_gem_shape %>-bg">
+                        <div class="gem-icon <%= astromon.second_gem_shape %> empty-gem">
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border <%= astromon.second_gem_shape %>-bg">
+                    <div class="gem-icon <%= astromon.second_gem_shape %> <%= astromon.second_gem.msl_gem.gem_category.name %>">
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-            <% @counter += 1 %>
-            <% unless @second_trinket %>
-              <%= link_to new_astromon_second_trinket_path(astromon) do %>
-              <div class="gem-pic">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
-                  </div>
-                </div>
-              </div>
               <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
+              <% @counter += 1 %>
+              <% unless @third_gem %>
+                <%= link_to new_astromon_third_gem_path(astromon) do %>
+                    <div class="gem-pic">
+                      <div class="gem-border <%= astromon.third_gem_shape %>-bg">
+                        <div class="gem-icon <%= astromon.third_gem_shape %> empty-gem">
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border <%= astromon.third_gem_shape %>-bg">
+                    <div class="gem-icon <%= astromon.third_gem_shape %> <%= astromon.third_gem.msl_gem.gem_category.name %>">
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-            <% @counter += 1 %>
-            <% unless @third_trinket %>
-              <%= link_to new_astromon_third_trinket_path(astromon) do %>
-              <div class="gem-pic">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
-                  </div>
-                </div>
-              </div>
               <% end %>
-            <% else %>
-              <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
-                <div class="gem-border Square-bg">
-                  <div class="gem-icon Square empty-gem">
+            </div>
+            <div class="equip-trinket">
+              <% @counter += 1 %>
+              <% unless @first_trinket %>
+                <%= link_to new_astromon_first_trinket_path(astromon) do %>
+                <div class="gem-pic">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <% @counter += 1 %>
+              <% unless @second_trinket %>
+                <%= link_to new_astromon_second_trinket_path(astromon) do %>
+                <div class="gem-pic">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <% @counter += 1 %>
+              <% unless @third_trinket %>
+                <%= link_to new_astromon_third_trinket_path(astromon) do %>
+                <div class="gem-pic">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              <% else %>
+                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                  <div class="gem-border Square-bg">
+                    <div class="gem-icon Square empty-gem">
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="stat inner-border">
@@ -259,7 +264,7 @@
           <div id="<%= astromon.id %>-<%= @counter %>">
             <div class="gem-card inner-border default">
               <div>
-                <p>Click on a gem to display it's stats.</p>
+                <p>Click on a trinket to display it's stats.</p>
               </div>
             </div>
           </div>
