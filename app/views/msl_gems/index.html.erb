@@ -17,7 +17,7 @@
     <% @msl_gems.each do |msl_gem| %>
       <%= render "shared/astromon-gems", msl_gem: msl_gem %>
       <%= link_to msl_gem_path(msl_gem), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash"></i>
+        <i class="fa fa-trash gem-delete"></i>
       <% end %>
     <% end %>
   </div>
