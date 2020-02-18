@@ -107,6 +107,10 @@ body {
 .gem-cards {
   display: flex;
   flex-wrap: wrap;
+  .gem-delete {
+    padding-top: 16px;
+    margin-left: 0px;
+  }
   .add-gem {
     display: flex;
     justify-content: center;
