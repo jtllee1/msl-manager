@@ -36,6 +36,21 @@ class AstromonsController < ApplicationController
       @astromon.third_gem.msl_gem.save
       @astromon.third_gem.destroy
     end
+    if @astromon.first_trinket
+      @astromon.first_trinket.trinket_one.available = true
+      @astromon.first_trinket.trinket_one.save
+      @astromon.first_trinket.destroy
+    end
+    if @astromon.second_trinket
+      @astromon.second_trinket.trinket_two.available = true
+      @astromon.second_trinket.trinket_two.save
+      @astromon.second_trinket.destroy
+    end
+    if @astromon.third_trinket
+      @astromon.third_trinket.trinket_three.available = true
+      @astromon.third_trinket.trinket_three.save
+      @astromon.third_trinket.destroy
+    end
     @astromon.destroy
     redirect_to astromons_path
   end
