@@ -37,7 +37,7 @@
             <div class="equip-gem">
               <% unless @first_gem %>
                 <%= link_to new_astromon_first_gem_path(astromon) do %>
-                    <div class="gem-pic">
+                    <div class="gem-pic" id="<%= astromon.id %>-1g">
                       <div class="gem-border <%= astromon.first_gem_shape %>-bg">
                         <div class="gem-icon <%= astromon.first_gem_shape %> empty-gem">
                         </div>
@@ -54,7 +54,7 @@
               <% end %>
               <% unless @second_gem %>
                 <%= link_to new_astromon_second_gem_path(astromon) do %>
-                    <div class="gem-pic">
+                    <div class="gem-pic" id="<%= astromon.id %>-2g">
                       <div class="gem-border <%= astromon.second_gem_shape %>-bg">
                         <div class="gem-icon <%= astromon.second_gem_shape %> empty-gem">
                         </div>
@@ -71,7 +71,7 @@
               <% end %>
               <% unless @third_gem %>
                 <%= link_to new_astromon_third_gem_path(astromon) do %>
-                    <div class="gem-pic">
+                    <div class="gem-pic" id="<%= astromon.id %>-3g">
                       <div class="gem-border <%= astromon.third_gem_shape %>-bg">
                         <div class="gem-icon <%= astromon.third_gem_shape %> empty-gem">
                         </div>
@@ -90,7 +90,7 @@
             <div class="equip-trinket">
               <% unless @first_trinket %>
                 <%= link_to new_astromon_first_trinket_path(astromon) do %>
-                <div class="gem-pic">
+                <div class="gem-pic" id="<%= astromon.id %>-1t">
                   <div class="Trinket-bg">
                     <div class="Trinket-empty">
                     </div>
@@ -107,7 +107,7 @@
               <% end %>
               <% unless @second_trinket %>
                 <%= link_to new_astromon_second_trinket_path(astromon) do %>
-                <div class="gem-pic">
+                <div class="gem-pic" id="<%= astromon.id %>-2t">
                   <div class="Trinket-bg">
                     <div class="Trinket-empty">
                     </div>
@@ -124,7 +124,7 @@
               <% end %>
               <% unless @third_trinket %>
                 <%= link_to new_astromon_third_trinket_path(astromon) do %>
-                <div class="gem-pic">
+                <div class="gem-pic" id="<%= astromon.id %>-3t">
                   <div class="Trinket-bg">
                     <div class="Trinket-empty">
                     </div>
@@ -230,6 +230,13 @@
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
+          <% else %>
+            <div id="<%= astromon.id %>-5g">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
+            </div>
           <% end %>
           <% if @second_gem %>
             <div class="invisible" id="<%= astromon.id %>-6g">
@@ -238,6 +245,13 @@
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
+          <% else %>
+            <div id="<%= astromon.id %>-6g">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
+            </div>
           <% end %>
           <% if @third_gem %>
             <div class="invisible" id="<%= astromon.id %>-7g">
@@ -245,6 +259,13 @@
               <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
+            </div>
+          <% else %>
+            <div id="<%= astromon.id %>-7g">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
@@ -263,6 +284,13 @@
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
+          <% else %>
+            <div class="invisible" id="<%= astromon.id %>-5t">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
+            </div>
           <% end %>
           <% if @second_trinket %>
             <div class="invisible" id="<%= astromon.id %>-6t">
@@ -271,6 +299,13 @@
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
+          <% else %>
+            <div class="invisible" id="<%= astromon.id %>-6t">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
+            </div>
           <% end %>
           <% if @third_trinket %>
             <div class="invisible" id="<%= astromon.id %>-7t">
@@ -278,6 +313,13 @@
               <%= link_to astromon_third_trinket_path(id: @third_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
+            </div>
+          <% else %>
+            <div class="invisible" id="<%= astromon.id %>-7t">
+              <div class="gem-card inner-border default">
+                <div>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
