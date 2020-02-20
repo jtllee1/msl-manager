@@ -1,6 +1,5 @@
 <div class="astromon-cards">
   <% astromons.each do |astromon| %>
-    <% @counter = 0 %>
     <div class="astromon-id invisible"><%= astromon.id %></div>
     <% @first_gem = Astromon.first_gem(astromon) %>
     <% @second_gem = Astromon.second_gem(astromon) %>
@@ -36,7 +35,6 @@
           </div>
           <div class="equip">
             <div class="equip-gem">
-              <% @counter += 1 %>
               <% unless @first_gem %>
                 <%= link_to new_astromon_first_gem_path(astromon) do %>
                     <div class="gem-pic">
@@ -47,14 +45,13 @@
                     </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-1g">
                   <div class="gem-border <%= astromon.first_gem_shape %>-bg">
                     <div class="gem-icon <%= astromon.first_gem_shape %> <%= astromon.first_gem.msl_gem.gem_category.name %>">
                     </div>
                   </div>
                 </div>
               <% end %>
-              <% @counter += 1 %>
               <% unless @second_gem %>
                 <%= link_to new_astromon_second_gem_path(astromon) do %>
                     <div class="gem-pic">
@@ -65,14 +62,13 @@
                     </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-2g">
                   <div class="gem-border <%= astromon.second_gem_shape %>-bg">
                     <div class="gem-icon <%= astromon.second_gem_shape %> <%= astromon.second_gem.msl_gem.gem_category.name %>">
                     </div>
                   </div>
                 </div>
               <% end %>
-              <% @counter += 1 %>
               <% unless @third_gem %>
                 <%= link_to new_astromon_third_gem_path(astromon) do %>
                     <div class="gem-pic">
@@ -83,7 +79,7 @@
                     </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-3g">
                   <div class="gem-border <%= astromon.third_gem_shape %>-bg">
                     <div class="gem-icon <%= astromon.third_gem_shape %> <%= astromon.third_gem.msl_gem.gem_category.name %>">
                     </div>
@@ -92,7 +88,6 @@
               <% end %>
             </div>
             <div class="equip-trinket">
-              <% @counter += 1 %>
               <% unless @first_trinket %>
                 <%= link_to new_astromon_first_trinket_path(astromon) do %>
                 <div class="gem-pic">
@@ -103,14 +98,13 @@
                 </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-1t">
                   <div class="Trinket-bg">
                     <div class="Trinket">
                     </div>
                   </div>
                 </div>
               <% end %>
-              <% @counter += 1 %>
               <% unless @second_trinket %>
                 <%= link_to new_astromon_second_trinket_path(astromon) do %>
                 <div class="gem-pic">
@@ -121,14 +115,13 @@
                 </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-2t">
                   <div class="Trinket-bg">
                     <div class="Trinket">
                     </div>
                   </div>
                 </div>
               <% end %>
-              <% @counter += 1 %>
               <% unless @third_trinket %>
                 <%= link_to new_astromon_third_trinket_path(astromon) do %>
                 <div class="gem-pic">
@@ -139,7 +132,7 @@
                 </div>
                 <% end %>
               <% else %>
-                <div class="gem-pic" id="<%= astromon.id %>-<%= @counter %>">
+                <div class="gem-pic" id="<%= astromon.id %>-3t">
                   <div class="Trinket-bg">
                     <div class="Trinket">
                     </div>
@@ -223,35 +216,31 @@
       </div>
       <div class="astromon-gem">
         <div class="gem-cards">
-          <% @counter += 1 %>
-          <div id="<%= astromon.id %>-<%= @counter %>">
+          <div id="<%= astromon.id %>-4g">
             <div class="gem-card inner-border default">
               <div>
                 <p>Click on a gem to display it's stats.</p>
               </div>
             </div>
           </div>
-          <% @counter += 1 %>
           <% if @first_gem %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-5g">
               <%= render "shared/astromon-gems", msl_gem: @first_gem.msl_gem %>
               <%= link_to astromon_first_gem_path(id: @first_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
           <% end %>
-          <% @counter += 1 %>
           <% if @second_gem %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-6g">
               <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
               <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
           <% end %>
-          <% @counter += 1 %>
           <% if @third_gem %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-7g">
               <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
               <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
@@ -260,35 +249,31 @@
           <% end %>
         </div>
         <div class="gem-cards">
-          <% @counter += 1 %>
-          <div id="<%= astromon.id %>-<%= @counter %>">
+          <div id="<%= astromon.id %>-4t">
             <div class="gem-card inner-border default">
               <div>
                 <p>Click on a trinket to display it's stats.</p>
               </div>
             </div>
           </div>
-          <% @counter += 1 %>
           <% if @first_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-5t">
               <%= render "shared/astromon-trinkets-one", trinket: @first_trinket.trinket_one %>
               <%= link_to astromon_first_trinket_path(id: @first_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
           <% end %>
-          <% @counter += 1 %>
           <% if @second_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-6t">
               <%= render "shared/astromon-trinkets-two", trinket: @second_trinket.trinket_two %>
               <%= link_to astromon_second_trinket_path(id: @second_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </div>
           <% end %>
-          <% @counter += 1 %>
           <% if @third_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-<%= @counter %>">
+            <div class="invisible" id="<%= astromon.id %>-7t">
               <%= render "shared/astromon-trinkets-three", trinket: @third_trinket.trinket_three %>
               <%= link_to astromon_third_trinket_path(id: @third_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <i class="fa fa-trash"></i>
