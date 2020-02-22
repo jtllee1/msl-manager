@@ -11,6 +11,6 @@ class PagesController < ApplicationController
     )
     @guest.save!(validate: false)
     sign_in(@guest)
-    redirect_to dashboard_path
+    redirect_to root_path
   end
 end
