@@ -21,6 +21,7 @@
       <div class="specie-data">
         <div class="specie-pic">
           <h5 style="color: blanchedalmond;"><%= specie.name %></h5>
+          <h6 style="color: burlywood;"><%= specie.typing %></h6>
           <% if specie.pic %>
             <%= image_tag specie.pic, alt: specie.name %>
           <% end %>
