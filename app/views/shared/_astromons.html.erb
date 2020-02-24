@@ -161,6 +161,15 @@
             <p>+<%= crit_rate_sum %>%</p>
             <p>+<%= resist_sum %>%</p>
           </div>
+<!--           <div class="stat-gem">
+            <p>+<%= gem_hp %><%= flat %></p>
+            <p>+<%= gem_attack %><%= flat %></p>
+            <p>+<%= gem_defence %><%= flat %></p>
+            <p>+<%= gem_recovery %><%= flat %></p>
+            <p>+<%= gem_crit_dmg %><%= flat %></p>
+            <p>+<%= gem_crit_rate %><%= flat %></p>
+            <p>+<%= gem_resist %><%= flat %></p>
+          </div> -->
           <div class="total-stat">
             <p><%= astromon.specie.hp + Astromon.final_stat(astromon, astromon.specie.hp, hp_sum, gem_hp) %></p>
             <p><%= astromon.specie.attack + Astromon.final_stat(astromon, astromon.specie.attack, attack_sum, gem_attack) %></p>
