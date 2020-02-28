@@ -1,0 +1,3 @@
+document.querySelector("[data-gem-id='<%= @second_gem.id %>']").remove();
+document.querySelector("[id='<%= @astromon.id %>-4g']").classList.remove('invisible');
+$("#<%= @astromon.id %>-equip").load(location.href+" #<%= @astromon.id %>-equip");

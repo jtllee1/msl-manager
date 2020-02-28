@@ -27,7 +27,6 @@ class FirstGemsController < ApplicationController
     find_msl_gem
     @msl_gem.available = true
     @msl_gem.save
-    # redirect_to astromons_path
   end
 
   private

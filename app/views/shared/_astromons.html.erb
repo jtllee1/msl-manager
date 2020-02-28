@@ -1,6 +1,6 @@
 <div class="astromon-cards">
   <% astromons.each do |astromon| %>
-    <div class="astromon-id invisible"><%= astromon.id %></div>
+    <div class="astromon-id invisible" id="<%= astromon.id %>"><%= astromon.id %></div>
     <% @first_gem = Astromon.first_gem(astromon) %>
     <% @second_gem = Astromon.second_gem(astromon) %>
     <% @third_gem = Astromon.third_gem(astromon) %>
@@ -234,7 +234,7 @@
             </div>
           <% end %>
           <% if @second_gem %>
-            <div class="invisible" id="<%= astromon.id %>-6g">
+            <div class="invisible" id="<%= astromon.id %>-6g" data-gem-id="<%= @second_gem.id %>">
               <%= render "shared/astromon-gems", msl_gem: @second_gem.msl_gem %>
               <%= link_to astromon_second_gem_path(id: @second_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                 <i class="fa fa-trash"></i>
@@ -249,7 +249,7 @@
             </div>
           <% end %>
           <% if @third_gem %>
-            <div class="invisible" id="<%= astromon.id %>-7g">
+            <div class="invisible" id="<%= astromon.id %>-7g" data-gem-id="<%= @third_gem.id %>">
               <%= render "shared/astromon-gems", msl_gem: @third_gem.msl_gem %>
               <%= link_to astromon_third_gem_path(id: @third_gem.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                 <i class="fa fa-trash"></i>
@@ -273,7 +273,7 @@
             </div>
           </div>
           <% if @first_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-5t">
+            <div class="invisible" id="<%= astromon.id %>-5t" data-gem-id="<%= @first_trinket.id %>">
               <%= render "shared/astromon-trinkets-one", trinket: @first_trinket.trinket_one %>
               <%= link_to astromon_first_trinket_path(id: @first_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                 <i class="fa fa-trash"></i>
@@ -288,7 +288,7 @@
             </div>
           <% end %>
           <% if @second_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-6t">
+            <div class="invisible" id="<%= astromon.id %>-6t" data-gem-id="<%= @second_trinket.id %>">
               <%= render "shared/astromon-trinkets-two", trinket: @second_trinket.trinket_two %>
               <%= link_to astromon_second_trinket_path(id: @second_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                 <i class="fa fa-trash"></i>
@@ -303,7 +303,7 @@
             </div>
           <% end %>
           <% if @third_trinket %>
-            <div class="invisible" id="<%= astromon.id %>-7t">
+            <div class="invisible" id="<%= astromon.id %>-7t" data-gem-id="<%= @third_trinket.id %>">
               <%= render "shared/astromon-trinkets-three", trinket: @third_trinket.trinket_three %>
               <%= link_to astromon_third_trinket_path(id: @third_trinket.id, astromon_id: astromon.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                 <i class="fa fa-trash"></i>
