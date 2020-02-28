@@ -27,7 +27,6 @@ class ThirdTrinketsController < ApplicationController
     @trinket_three.available = true
     @trinket_three.save
     @third_trinket.destroy
-    redirect_to astromons_path
   end
 
   private
