@@ -1,12 +1,12 @@
 <div class="astromon-cards">
   <% astromons.each do |astromon| %>
     <div class="astromon-id invisible" id="<%= astromon.id %>"><%= astromon.id %></div>
-    <% @first_gem = Astromon.first_gem(astromon) %>
-    <% @second_gem = Astromon.second_gem(astromon) %>
-    <% @third_gem = Astromon.third_gem(astromon) %>
-    <% @first_trinket = Astromon.first_trinket(astromon) %>
-    <% @second_trinket = Astromon.second_trinket(astromon) %>
-    <% @third_trinket = Astromon.third_trinket(astromon) %>
+    <% @first_gem = Astromon.find_first_gem(astromon) %>
+    <% @second_gem = Astromon.find_second_gem(astromon) %>
+    <% @third_gem = Astromon.find_third_gem(astromon) %>
+    <% @first_trinket = Astromon.find_first_trinket(astromon) %>
+    <% @second_trinket = Astromon.find_second_trinket(astromon) %>
+    <% @third_trinket = Astromon.find_third_trinket(astromon) %>
     <% hp_sum = Astromon.stat_sum(@first_gem, @second_gem, @third_gem, "hp") %>
     <% gem_hp = Astromon.gem_stat(astromon, "hp") %>
     <% attack_sum = Astromon.stat_sum(@first_gem, @second_gem, @third_gem, "attack") %>
@@ -22,6 +22,13 @@
     <% resist_sum = Astromon.stat_sum(@first_gem, @second_gem, @third_gem, "resist") %>
     <% gem_resist = Astromon.gem_stat(astromon, "resist") %>
     <% flat = Astromon.flat(astromon) %>
+    <% trinket_hp = Astromon.trinket_one_stat(astromon, "m", "hp") + Astromon.trinket_three_stat(astromon, "s", "hp") %>
+    <% trinket_defence = Astromon.trinket_one_stat(astromon, "s", "defence") + Astromon.trinket_three_stat(astromon, "s", "defence") %>
+    <% trinket_recovery = Astromon.trinket_one_stat(astromon, "s", "recovery") + Astromon.trinket_two_stat(astromon, "s", "recovery") %>
+    <% trinket_crit_res = Astromon.trinket_one_stat(astromon, "s", "crit_res") + Astromon.trinket_three_stat(astromon, "m", "crit_res") %>
+    <% trinket_attack = Astromon.trinket_two_stat(astromon, "m", "attack") +Astromon.trinket_three_stat(astromon, "s", "attack") %>
+    <% trinket_crit_dmg = Astromon.trinket_two_stat(astromon, "s", "crit_dmg") %>
+    <% trinket_resist = Astromon.trinket_two_stat(astromon, "s", "resist") %>
     <div class="astromon-card">
       <div class="astromon-data">
         <div class="astromon-pic">
@@ -146,6 +153,7 @@
             <p>Crit. Dmg: <%= astromon.specie.crit_dmg %>%</p>
             <p>Crit. Rate: <%= astromon.specie.crit_rate %>%</p>
             <p>Resist: <%= astromon.specie.resist %>%</p>
+            <p>Crit. Res: 0% </p>
           </div>
           <div class="stat-boost">
             <p>+<%= hp_sum %>%</p>
