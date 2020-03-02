@@ -8,27 +8,27 @@ class Astromon < ApplicationRecord
   has_one :second_trinket
   has_one :third_trinket
 
-  def self.first_gem(astromon)
+  def self.find_first_gem(astromon)
     FirstGem.find_by(astromon_id: astromon.id)
   end
 
-  def self.second_gem(astromon)
+  def self.find_second_gem(astromon)
     SecondGem.find_by(astromon_id: astromon.id)
   end
 
-  def self.third_gem(astromon)
+  def self.find_third_gem(astromon)
     ThirdGem.find_by(astromon_id: astromon.id)
   end
 
-  def self.first_trinket(astromon)
+  def self.find_first_trinket(astromon)
     FirstTrinket.find_by(astromon_id: astromon.id)
   end
 
-  def self.second_trinket(astromon)
+  def self.find_second_trinket(astromon)
     SecondTrinket.find_by(astromon_id: astromon.id)
   end
 
-  def self.third_trinket(astromon)
+  def self.find_third_trinket(astromon)
     ThirdTrinket.find_by(astromon_id: astromon.id)
   end
 
@@ -42,11 +42,41 @@ class Astromon < ApplicationRecord
   end
 
   def self.gem_stat(astromon, stat)
-    first_gem = Astromon.first_gem(astromon)
-    second_gem = Astromon.second_gem(astromon)
-    third_gem = Astromon.third_gem(astromon)
+    first_gem = Astromon.find_first_gem(astromon)
+    second_gem = Astromon.find_second_gem(astromon)
+    third_gem = Astromon.find_third_gem(astromon)
     if first_gem && second_gem && third_gem && astromon.first_gem.msl_gem.gem_category == astromon.second_gem.msl_gem.gem_category && astromon.first_gem.msl_gem.gem_category == astromon.third_gem.msl_gem.gem_category
       str = "astromon.first_gem.msl_gem.gem_category.#{stat}"
+      instance_eval str
+    else
+      0
+    end
+  end
+
+  def self.trinket_one_stat(astromon, type, stat)
+    @first_trinket = Astromon.find_first_trinket(astromon)
+    if @first_trinket
+      str = "@first_trinket.trinket_one.#{type}_#{stat}"
+      instance_eval str
+    else
+      0
+    end
+  end
+
+  def self.trinket_two_stat(astromon, type, stat)
+    @second_trinket = Astromon.find_second_trinket(astromon)
+    if @second_trinket
+      str = "@second_trinket.trinket_two.#{type}_#{stat}"
+      instance_eval str
+    else
+      0
+    end
+  end
+
+  def self.trinket_three_stat(astromon, type, stat)
+    @third_trinket = Astromon.find_third_trinket(astromon)
+    if @third_trinket
+      str = "@third_trinket.trinket_three.#{type}_#{stat}"
       instance_eval str
     else
       0
