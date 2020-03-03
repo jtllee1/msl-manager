@@ -163,6 +163,7 @@
             <p>+<%= crit_dmg_sum %>%</p>
             <p>+<%= crit_rate_sum %>%</p>
             <p>+<%= resist_sum %>%</p>
+            <p>+0%</p>
           </div>
 <!--           <div class="stat-gem">
             <p>+<%= gem_hp %><%= flat %></p>
@@ -174,13 +175,14 @@
             <p>+<%= gem_resist %><%= flat %></p>
           </div> -->
           <div class="total-stat">
-            <p><%= astromon.specie.hp + Astromon.final_stat(astromon, astromon.specie.hp, hp_sum, gem_hp) %></p>
-            <p><%= astromon.specie.attack + Astromon.final_stat(astromon, astromon.specie.attack, attack_sum, gem_attack) %></p>
-            <p><%= astromon.specie.defence + Astromon.final_stat(astromon, astromon.specie.defence, defence_sum, gem_defence) %></p>
-            <p><%= astromon.specie.recovery + Astromon.final_stat(astromon, astromon.specie.recovery, recovery_sum, gem_recovery) %></p>
-            <p><%= astromon.specie.crit_dmg + crit_dmg_sum + gem_crit_dmg %>%</p>
+            <p><%= astromon.specie.hp + Astromon.final_stat(astromon, astromon.specie.hp, hp_sum, gem_hp) + trinket_hp %></p>
+            <p><%= astromon.specie.attack + Astromon.final_stat(astromon, astromon.specie.attack, attack_sum, gem_attack) + trinket_attack %></p>
+            <p><%= astromon.specie.defence + Astromon.final_stat(astromon, astromon.specie.defence, defence_sum, gem_defence) + trinket_defence %></p>
+            <p><%= astromon.specie.recovery + Astromon.final_stat(astromon, astromon.specie.recovery, recovery_sum, gem_recovery) +trinket_recovery %></p>
+            <p><%= astromon.specie.crit_dmg + crit_dmg_sum + gem_crit_dmg +trinket_crit_dmg %>%</p>
             <p><%= astromon.specie.crit_rate + crit_rate_sum + gem_crit_rate %>%</p>
-            <p><%= astromon.specie.resist + resist_sum + gem_resist %>%</p>
+            <p><%= astromon.specie.resist + resist_sum + gem_resist + trinket_resist %>%</p>
+            <p><%= trinket_crit_res %>%</p>
           </div>
         </div>
         <div class="skill inner-border">
