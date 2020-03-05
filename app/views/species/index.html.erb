@@ -32,6 +32,7 @@
         <div class="specie-info">
           <div class="stat inner-border">
             <div class="stat-name">
+              <p><b>Stat</b></p>
               <p>HP: <%= specie.hp %></p>
               <p>Attack: <%= specie.attack %></p>
               <p>Defence: <%= specie.defence %></p>
@@ -42,7 +43,7 @@
             </div>
           </div>
           <div class="skill inner-border">
-            <p><%= specie.first_skill_name %></p>
+            <p><b><%= specie.first_skill_name %></b></p>
             <div class="outer-skill">
               <% if specie.first_skill_pic %>
                 <div class="img">
@@ -53,7 +54,7 @@
                 <%= specie.first_skill_desc %>
               </div>
             </div>
-            <p><%= specie.second_skill_name %></p>
+            <p><b><%= specie.second_skill_name %></b></p>
             <div class="outer-skill">
               <% if specie.second_skill_pic %>
                 <div class="img">

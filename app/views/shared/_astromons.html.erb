@@ -146,6 +146,7 @@
         </div>
         <div class="stat inner-border">
           <div class="stat-name">
+            <p><b>Stat</b></p>
             <p>HP: <%= astromon.specie.hp %></p>
             <p>Attack: <%= astromon.specie.attack %></p>
             <p>Defence: <%= astromon.specie.defence %></p>
@@ -156,6 +157,7 @@
             <p>Crit. Res: 0% </p>
           </div>
           <div class="stat-boost">
+            <p><b>Gem Stat</b></p>
             <p>+<%= hp_sum %>%</p>
             <p>+<%= attack_sum %>%</p>
             <p>+<%= defence_sum %>%</p>
@@ -165,16 +167,8 @@
             <p>+<%= resist_sum %>%</p>
             <p>+0%</p>
           </div>
-<!--           <div class="stat-gem">
-            <p>+<%= gem_hp %><%= flat %></p>
-            <p>+<%= gem_attack %><%= flat %></p>
-            <p>+<%= gem_defence %><%= flat %></p>
-            <p>+<%= gem_recovery %><%= flat %></p>
-            <p>+<%= gem_crit_dmg %><%= flat %></p>
-            <p>+<%= gem_crit_rate %><%= flat %></p>
-            <p>+<%= gem_resist %><%= flat %></p>
-          </div> -->
           <div class="total-stat">
+            <p><b>Final Stat</b></p>
             <p><%= astromon.specie.hp + Astromon.final_stat(astromon, astromon.specie.hp, hp_sum, gem_hp) + trinket_hp %></p>
             <p><%= astromon.specie.attack + Astromon.final_stat(astromon, astromon.specie.attack, attack_sum, gem_attack) + trinket_attack %></p>
             <p><%= astromon.specie.defence + Astromon.final_stat(astromon, astromon.specie.defence, defence_sum, gem_defence) + trinket_defence %></p>
@@ -186,7 +180,7 @@
           </div>
         </div>
         <div class="skill inner-border">
-          <p><%= astromon.specie.first_skill_name %></p>
+          <p><b><%= astromon.specie.first_skill_name %></b></p>
              <div class="outer-skill">
                <div class="img">
                 <%= image_tag astromon.specie.first_skill_pic, alt: astromon.specie.first_skill_name %>
@@ -195,7 +189,7 @@
                 <%= astromon.specie.first_skill_desc %>
                </div>
              </div>
-          <p><%= astromon.specie.second_skill_name %></p>
+          <p><b><%= astromon.specie.second_skill_name %></b></p>
              <div class="outer-skill">
                <div class="img">
                 <%= image_tag astromon.specie.second_skill_pic, alt: astromon.specie.second_skill_name %>
