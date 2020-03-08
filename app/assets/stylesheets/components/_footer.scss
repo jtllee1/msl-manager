@@ -1,8 +1,12 @@
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 6%;
+#main-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#footer {
+  position: absolute;
+  margin-top: 8px;
+  height: 6vh;
   width: 100%;
   background-color: rgba(180, 180, 180, 0.16);
   color: white;
