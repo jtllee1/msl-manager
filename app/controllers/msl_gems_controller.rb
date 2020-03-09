@@ -1,6 +1,13 @@
 class MslGemsController < ApplicationController
   def index
     msl_gem_index
+    if params[:shape].present?
+      @msl_gems = @msl_gems.where(gem_shape: params[:shape])
+    end
+    if params[:stat].present?
+      stat = params[:stat].to_sym
+      @msl_gems = @msl_gems.where.not(stat => 0)
+    end
   end
 
   def new
