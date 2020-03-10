@@ -1,7 +1,7 @@
 <div class="container filter">
   <%= form_tag msl_gems_path, method: :get do %>
-    <%= select_tag(:shape, raw('<option value="Square">Square</option><option value="Triangle">Triangle</option><option value="Diamond">Diamond</option>')) %>
-    <%= select_tag(:stat, raw('<option value="m_hp">HP</option><option value="m_attack">Attack</option><option value="m_defence">Defence</option><option value="m_recovery">Recovery</option><option value="m_crit_rate">Crit. Rate</option><option value="m_crit_dmg">Crit. Dmg</option><option value="m_resist">Resist</option>')) %>
+    <%= select_tag(:shape, raw('<option value="">--Select Shape--</option><option value="Square">Square</option><option value="Triangle">Triangle</option><option value="Diamond">Diamond</option>')) %>
+    <%= select_tag(:stat, raw('<option value="">--Select Main Stat--</option><option value="m_hp">HP</option><option value="m_attack">Attack</option><option value="m_defence">Defence</option><option value="m_recovery">Recovery</option><option value="m_crit_rate">Crit. Rate</option><option value="m_crit_dmg">Crit. Dmg</option><option value="m_resist">Resist</option>')) %>
     <%= submit_tag "Filter Gems", class: "button" %>
     <%= link_to "Reset Filter", msl_gems_path, class: "button"  %>
   <% end %>
