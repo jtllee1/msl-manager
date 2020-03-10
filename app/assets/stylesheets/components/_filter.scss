@@ -1,0 +1,13 @@
+.filter {
+  select {
+    margin: 8px;
+    padding: 8px;
+    border-radius: 16px;
+    background: burlywood;
+    border-color: blanchedalmond;
+  }
+  select:focus {
+    outline: none;
+  }
+}
+
