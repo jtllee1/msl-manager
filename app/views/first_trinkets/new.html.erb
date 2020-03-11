@@ -7,8 +7,6 @@
             <%= check_box_tag "trinket", trinket.id, false, class: "invisible" %>
             <%= render "shared/astromon-trinkets-one", trinket: trinket %>
           </label>
-        <% else %>
-          <%= render "shared/astromon-trinkets-one", trinket: trinket %>
         <% end %>
       <% end %>
     </div>
