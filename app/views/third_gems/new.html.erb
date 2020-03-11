@@ -14,8 +14,6 @@
             <%= check_box_tag "msl_gem", msl_gem.id, false, class: "invisible" %>
             <%= render "shared/astromon-gems", msl_gem: msl_gem %>
           </label>
-        <% else %>
-            <%= render "shared/astromon-gems", msl_gem: msl_gem %>
         <% end %>
       <% end %>
     </div>
