@@ -11,7 +11,7 @@
       <% @third_gems.each do |msl_gem| %>
         <% if msl_gem.available %>
           <label>
-            <%= check_box_tag "msl_gem", msl_gem.id %>
+            <%= check_box_tag "msl_gem", msl_gem.id, false, class: "invisible" %>
             <%= render "shared/astromon-gems", msl_gem: msl_gem %>
           </label>
         <% else %>
