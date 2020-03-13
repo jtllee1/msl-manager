@@ -23,7 +23,7 @@
 <div class="container">
   <div class="gem-cards">
     <% @trinket_ones.each do |trinket_one| %>
-      <%= render "shared/astromon-trinkets-one", trinket: trinket_one %>
+      <%= render "shared/astromon-trinkets-one", trinket: trinket_one, status: "status" %>
       <div>
         <%= link_to trinket_one_path(trinket_one), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fa fa-trash gem-delete"></i>
@@ -31,7 +31,7 @@
       </div>
     <% end %>
     <% @trinket_twos.each do |trinket_two| %>
-      <%= render "shared/astromon-trinkets-two", trinket: trinket_two %>
+      <%= render "shared/astromon-trinkets-two", trinket: trinket_two, status: "status" %>
       <div>
         <%= link_to trinket_two_path(trinket_two), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fa fa-trash gem-delete"></i>
@@ -39,7 +39,7 @@
       </div>
     <% end %>
     <% @trinket_threes.each do |trinket_three| %>
-      <%= render "shared/astromon-trinkets-three", trinket: trinket_three %>
+      <%= render "shared/astromon-trinkets-three", trinket: trinket_three, status: "status" %>
       <div>
         <%= link_to trinket_three_path(trinket_three), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fa fa-trash gem-delete"></i>

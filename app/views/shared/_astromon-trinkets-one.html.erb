@@ -31,7 +31,7 @@
     </div>
   </div>
   <% if trinket.first_trinket %>
-    <div class="equipped-astromon-trinket">
+    <div class="equipped-astromon-trinket <%= status %>">
       <%= image_tag trinket.first_trinket.astromon.specie.pic, alt: trinket.first_trinket.astromon.specie.name %>
     </div>
   <% end %>
