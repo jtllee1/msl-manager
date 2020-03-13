@@ -151,6 +151,7 @@ body {
     height: 188px;
     margin: 16px;
     color: black;
+    position: relative;
     .gem-left {
       border-right: 1px solid blanchedalmond;
       padding-top: 8px;
@@ -177,6 +178,13 @@ body {
           padding-top: 8px;
           padding-bottom: 8px;
         }
+      }
+    }
+    .equipped-astromon {
+      position: absolute;
+      top: 0;
+      img {
+        height: 30px;
       }
     }
   }

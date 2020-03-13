@@ -59,4 +59,17 @@
       <% end %>
     </div>
   </div>
+  <% if msl_gem.first_gem %>
+  <div class="equipped-astromon">
+      <%= image_tag msl_gem.first_gem.astromon.specie.pic, alt: msl_gem.first_gem.astromon.specie.name %>
+    </div>
+  <% elsif msl_gem.second_gem %>
+    <div class="equipped-astromon">
+      <%= image_tag msl_gem.second_gem.astromon.specie.pic, alt: msl_gem.second_gem.astromon.specie.name %>
+    </div>
+  <% elsif msl_gem.third_gem %>
+    <div class="equipped-astromon">
+      <%= image_tag msl_gem.third_gem.astromon.specie.pic, alt: msl_gem.third_gem.astromon.specie.name %>
+    </div>
+  <% end %>
 </div>
