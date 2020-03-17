@@ -69,8 +69,8 @@ body {
       }
       .stat {
         display: flex;
-        margin-bottom: 16px;
         width: 300px;
+        border-radius: 0px 8px 8px 8px;
         .stat-name {
           border-right: 1px solid blanchedalmond;
           width: 120px;
@@ -94,6 +94,7 @@ body {
       .skill {
         padding: 16px;
         width: 300px;
+        border-radius: 0px 8px 8px 8px;
         img {
           width: 60px;
           height: 60px;
