@@ -1,0 +1,15 @@
+.switches {
+  display: flex;
+  .switch-button {
+    background: burlywood;
+    margin-right: 0.8px;
+    padding: 8px;
+    border-top: 1px solid blanchedalmond;
+    border-left: 1px solid blanchedalmond;
+    border-right: 1px solid blanchedalmond;
+    border-radius: 8px 8px 0px 0px;
+  }
+  .active {
+    background: rgba(190, 150, 110, 1.0);
+  }
+}
