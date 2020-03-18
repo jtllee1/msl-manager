@@ -6,5 +6,5 @@ import { switchOnClick } from '../components/switch';
 
 displayGemOnClick();
 gemEffectOnLoad();
-gemSelectOnClick();
 switchOnClick();
+gemSelectOnClick();
