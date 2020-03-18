@@ -9,4 +9,7 @@
   select:focus {
     outline: none;
   }
+  select:hover {
+    background: rgba(210, 170, 130, 1.0);
+  }
 }
