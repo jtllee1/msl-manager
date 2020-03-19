@@ -1,4 +1,14 @@
 <div class="container">
+  <%= link_to astromons_path do %>
+    <button class="button">Your Astromons</button>
+  <% end %>
+
+  <%= link_to msl_gems_path do %>
+    <button class="button">Your Gems</button>
+  <% end %>
+</div>
+
+<div class="container">
   <%= link_to new_trinket_one_path do %>
     <button class="button">Add Relic</button>
   <% end %>
@@ -9,14 +19,6 @@
 
   <%= link_to new_trinket_three_path do %>
     <button class="button">Add Essence</button>
-  <% end %>
-
-  <%= link_to msl_gems_path do %>
-    <button class="button">Your Gems</button>
-  <% end %>
-
-  <%= link_to astromons_path do %>
-    <button class="button">Your Astromons</button>
   <% end %>
 </div>
 
