@@ -1,12 +1,4 @@
 <div class="container">
-  <div class="container filter">
-    <%= form_tag trinkets_path, method: :get do %>
-      <%= select_tag(:trinket, raw('<option value="">--Select Trinket--</option><option value="trinket_one">Relic</option><option value="trinket_two">Magicite</option><option value="trinket_three">Essence</option>')) %>
-      <%= submit_tag "Filter Trinkets", class: "button" %>
-      <%= link_to "Reset Filter", trinkets_path, class: "button"  %>
-    <% end %>
-  </div>
-
   <%= link_to new_trinket_one_path do %>
     <button class="button">Add Relic</button>
   <% end %>
@@ -25,6 +17,14 @@
 
   <%= link_to astromons_path do %>
     <button class="button">Your Astromons</button>
+  <% end %>
+</div>
+
+<div class="container filter">
+  <%= form_tag trinkets_path, method: :get do %>
+    <%= select_tag(:trinket, raw('<option value="">--Select Trinket--</option><option value="trinket_one">Relic</option><option value="trinket_two">Magicite</option><option value="trinket_three">Essence</option>')) %>
+    <%= submit_tag "Filter Trinkets", class: "button" %>
+    <%= link_to "Reset Filter", trinkets_path, class: "button"  %>
   <% end %>
 </div>
 
