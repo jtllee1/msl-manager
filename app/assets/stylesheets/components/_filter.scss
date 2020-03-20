@@ -13,3 +13,14 @@
     background: rgba(210, 170, 130, 1.0);
   }
 }
+
+.element-tag {
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.element-tag:hover {
+  cursor: pointer;
+}
