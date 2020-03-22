@@ -1,6 +1,7 @@
 class MslGemsController < ApplicationController
   def index
     msl_gem_index
+    @gem_categories = GemCategory.all
     if params[:shape].present?
       @msl_gems = @msl_gems.where(gem_shape: params[:shape])
     end
