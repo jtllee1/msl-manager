@@ -24,6 +24,16 @@
 </div>
 
 <div class="container">
+  <div class="posts">
+    <div class="post">
+      <div class="content">
+        <p></p>
+        <% @gem_categories.each do |type| %>
+          <p><b><%= type.name %>: <%= type.description %></b></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class="gem-cards">
     <% @msl_gems.each do |msl_gem| %>
       <%= render "shared/astromon-gems", msl_gem: msl_gem, status: "status" %>
