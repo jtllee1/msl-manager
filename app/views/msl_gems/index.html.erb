@@ -31,9 +31,13 @@
         <p><b>Equipping 3 gems of the same type will give you a specific bonus effect.</b></p>
         <br>
         <% @gem_categories.each do |type| %>
-          <p><b><%= type.name %>: <%= type.description %></b></p>
-          <div class="gem-border Square-bg">
-            <div class="gem-icon Square <%= type.name %>">
+          <div class="d-flex align-items-center">
+            <div class="gem-border Square-bg">
+              <div class="gem-icon Square <%= type.name %>">
+              </div>
+            </div>
+            <div>
+              <p><b><%= type.name %>: <%= type.description %></b></p>
             </div>
           </div>
         <% end %>
