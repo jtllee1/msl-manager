@@ -24,12 +24,18 @@
 </div>
 
 <div class="container">
-  <div class="posts">
+  <div class="posts" id="category-toggle">
     <div class="post">
-      <div class="content">
-        <p></p>
+      <p><b>Click to toggle info on gem bonus effects.</b></p>
+      <div class="content invisible" id="category-info">
+        <p><b>Equipping 3 gems of the same type will give you a specific bonus effect.</b></p>
+        <br>
         <% @gem_categories.each do |type| %>
           <p><b><%= type.name %>: <%= type.description %></b></p>
+          <div class="gem-border Square-bg">
+            <div class="gem-icon Square <%= type.name %>">
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
