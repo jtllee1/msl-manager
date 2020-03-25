@@ -1,6 +1,17 @@
 class AstromonsController < ApplicationController
   def index
     @astromons = Astromon.where(user_id: current_user.id)
+    if params[:element].present?
+      @astromonz = []
+
+      @astromons.each do |astromon|
+        if astromon.specie.element == params[:element]
+          @astromonz << astromon
+        end
+      end
+
+      @astromons = @astromonz
+    end
   end
 
   def new
