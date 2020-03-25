@@ -14,4 +14,41 @@
   <% end %>
 </div>
 
+<div class="container form">
+  <%= form_tag astromons_path, method: :get do %>
+    <label>
+      <%= check_box_tag "element","Fire" , false, class: "invisible" %>
+      <div class="element-tag">
+        <img src="https://vignette.wikia.nocookie.net/monstersuperleague/images/2/28/Element_Fire.png/revision/latest?cb=20160915074335" alt="Fire">
+      </div>
+    </label>
+    <label>
+      <%= check_box_tag "element","Water" , false, class: "invisible" %>
+      <div class="element-tag">
+        <img src="https://vignette.wikia.nocookie.net/monstersuperleague/images/e/ef/Element_Water.png/revision/latest?cb=20160915074342" alt="Water">
+      </div>
+    </label>
+    <label>
+      <%= check_box_tag "element","Wood" , false, class: "invisible" %>
+      <div class="element-tag">
+        <img src="https://vignette.wikia.nocookie.net/monstersuperleague/images/e/ec/Element_Wood.png/revision/latest?cb=20160915074342" alt="Wood">
+      </div>
+    </label>
+    <label>
+      <%= check_box_tag "element","Light" , false, class: "invisible" %>
+      <div class="element-tag">
+        <img src="https://vignette.wikia.nocookie.net/monstersuperleague/images/4/44/Element_Light.png/revision/latest?cb=20160915074343" alt="Light">
+      </div>
+    </label>
+    <label>
+      <%= check_box_tag "element","Dark" , false, class: "invisible" %>
+      <div class="element-tag">
+        <img src="https://vignette.wikia.nocookie.net/monstersuperleague/images/8/85/Element_Dark.png/revision/latest?cb=20160915074343" alt="Dark">
+      </div>
+    </label>
+    <%= submit_tag "Filter", class: "button" %>
+    <%= link_to "Reset Filter", astromons_path, class: "button"  %>
+  <% end %>
+</div>
+
 <%= render "shared/astromons", astromons: @astromons %>
