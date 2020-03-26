@@ -3,7 +3,7 @@
   <%= simple_form_for @msl_gem do |f| %>
     <div class="type">
       <%= f.input :gem_shape, as: :select, collection: ["Square", "Triangle", "Diamond"], prompt: "Select Gem Shape" %>
-      <%= f.association :gem_category %>
+      <%= f.association :gem_category, prompt: "Select Gem Category" %>
     </div>
     <div class="stat">
       <div class="main">
