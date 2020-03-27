@@ -3,7 +3,7 @@ class FirstGemsController < ApplicationController
 
   def new
     @first_gem = FirstGem.new
-    @first_gems = MslGem.where(gem_shape: @astromon.first_gem_shape)
+    @first_gems = MslGem.where(gem_shape: @astromon.first_gem_shape, user_id: current_user.id)
   end
 
   def create
