@@ -10,5 +10,5 @@ displayGemOnClick();
 gemEffectOnLoad();
 switchOnClick();
 filterSelectOnClick();
-categoryDisplayOnClick();
 gemSelectOnClick();
+categoryDisplayOnClick();
