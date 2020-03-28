@@ -54,6 +54,30 @@ class PagesController < ApplicationController
       s_crit_dmg: 5.5
       )
     @gem.save!
-    redirect_to root_path
+    @trinket_one = TrinketOne.new(
+      user_id: current_user.id,
+      m_hp: 4000,
+      s_defence: 500,
+      s_recovery: 500,
+      s_crit_res: 15
+      )
+    @trinket_one.save!
+    @trinket_two = TrinketTwo.new(
+      user_id: current_user.id,
+      m_attack: 1500,
+      s_crit_dmg: 15,
+      s_resist: 15,
+      s_recovery: 500
+      )
+    @trinket_two.save!
+    @trinket_three = TrinketThree.new(
+      user_id: current_user.id,
+      m_crit_res: 15,
+      s_defence: 500,
+      s_attack: 500,
+      s_hp: 2000
+      )
+    @trinket_three.save!
+    redirect_to astromons_path
   end
 end
