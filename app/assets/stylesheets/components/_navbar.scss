@@ -2,6 +2,9 @@
   justify-content: space-between;
   background: burlywood;
   margin-bottom: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
