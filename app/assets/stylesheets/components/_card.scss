@@ -126,6 +126,7 @@ body {
 .gem-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   .gem-delete {
     padding-top: 16px;
     margin-left: 0px;
