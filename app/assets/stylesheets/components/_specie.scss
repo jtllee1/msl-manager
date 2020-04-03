@@ -54,3 +54,15 @@
     }
   }
 }
+
+.search-border {
+  background: rgba(180, 120, 100, 0.5);
+  border: 1px solid blanchedalmond;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  #query {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}

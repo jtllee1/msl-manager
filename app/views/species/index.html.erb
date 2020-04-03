@@ -1,4 +1,4 @@
-<div class="container form">
+<div class="container form search-border">
   <%= form_tag species_index_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -56,7 +56,7 @@
             <%= image_tag specie.pic, alt: specie.name %>
           <% end %>
           <%= link_to new_astromon_path(specie) do %>
-            <button class="button">Add Astromon</button>
+            <button class="button"><i class="fas fa-plus"></i> Astromon</button>
           <% end %>
         </div>
         <div class="specie-info">
