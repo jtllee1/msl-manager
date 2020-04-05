@@ -1,57 +1,59 @@
-<div class="container">
-  <%= link_to astromons_path do %>
-    <button class="button">Your Astromons</button>
-  <% end %>
+<div class="container background-border">
+  <div class="container">
+    <%= link_to astromons_path do %>
+      <button class="button">Your Astromons</button>
+    <% end %>
 
-  <%= link_to trinkets_path do %>
-    <button class="button">Your Trinkets</button>
-  <% end %>
-</div>
+    <%= link_to trinkets_path do %>
+      <button class="button">Your Trinkets</button>
+    <% end %>
+  </div>
 
-<div class="container">
-  <%= link_to new_msl_gem_path do %>
-    <button class="button"><i class="fas fa-plus"></i> Gem</button>
-  <% end %>
-</div>
+  <div class="container">
+    <%= link_to new_msl_gem_path do %>
+      <button class="button"><i class="fas fa-plus"></i> Gem</button>
+    <% end %>
+  </div>
 
-<div class="container filter">
-  <%= form_tag msl_gems_path, method: :get do %>
-    <%= select_tag(:shape, raw('<option value="">--Select Shape--</option><option value="Square">Square</option><option value="Triangle">Triangle</option><option value="Diamond">Diamond</option>')) %>
-    <%= select_tag(:stat, raw('<option value="">--Select Main Stat--</option><option value="m_hp">HP</option><option value="m_attack">Attack</option><option value="m_defence">Defence</option><option value="m_recovery">Recovery</option><option value="m_crit_rate">Crit. Rate</option><option value="m_crit_dmg">Crit. Dmg</option><option value="m_resist">Resist</option>')) %>
-    <%= submit_tag "Filter Gems", class: "button" %>
-    <%= link_to "Reset Filter", msl_gems_path, class: "button"  %>
-  <% end %>
-</div>
+  <div class="container filter">
+    <%= form_tag msl_gems_path, method: :get do %>
+      <%= select_tag(:shape, raw('<option value="">--Select Shape--</option><option value="Square">Square</option><option value="Triangle">Triangle</option><option value="Diamond">Diamond</option>')) %>
+      <%= select_tag(:stat, raw('<option value="">--Select Main Stat--</option><option value="m_hp">HP</option><option value="m_attack">Attack</option><option value="m_defence">Defence</option><option value="m_recovery">Recovery</option><option value="m_crit_rate">Crit. Rate</option><option value="m_crit_dmg">Crit. Dmg</option><option value="m_resist">Resist</option>')) %>
+      <%= submit_tag "Filter Gems", class: "button" %>
+      <%= link_to "Reset Filter", msl_gems_path, class: "button"  %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <div class="posts" id="category-toggle">
-    <div class="post">
-      <p><b>Click to toggle info on gem bonus effects.</b></p>
-      <div class="content invisible" id="category-info">
-        <p><b>Equipping 3 gems of the same type will give you a specific bonus effect.</b></p>
-        <br>
-        <% @gem_categories.each do |type| %>
-          <div class="d-flex align-items-center">
-            <div class="gem-border Square-bg">
-              <div class="gem-icon Square <%= type.name %>">
+  <div class="container">
+    <div class="posts" id="category-toggle">
+      <div class="post">
+        <p><b>Click to toggle info on gem bonus effects.</b></p>
+        <div class="content invisible" id="category-info">
+          <p><b>Equipping 3 gems of the same type will give you a specific bonus effect.</b></p>
+          <br>
+          <% @gem_categories.each do |type| %>
+            <div class="d-flex align-items-center">
+              <div class="gem-border Square-bg">
+                <div class="gem-icon Square <%= type.name %>">
+                </div>
+              </div>
+              <div>
+                <p><b><%= type.name %>: <%= type.description %></b></p>
               </div>
             </div>
-            <div>
-              <p><b><%= type.name %>: <%= type.description %></b></p>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="gem-cards">
-    <% @msl_gems.each do |msl_gem| %>
-      <%= render "shared/astromon-gems", msl_gem: msl_gem, status: "status" %>
-      <div>
-        <%= link_to msl_gem_path(msl_gem), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash gem-delete"></i>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="gem-cards">
+      <% @msl_gems.each do |msl_gem| %>
+        <%= render "shared/astromon-gems", msl_gem: msl_gem, status: "status" %>
+        <div>
+          <%= link_to msl_gem_path(msl_gem), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash gem-delete"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

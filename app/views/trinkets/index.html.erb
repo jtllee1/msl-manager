@@ -1,65 +1,67 @@
-<div class="container">
-  <%= link_to astromons_path do %>
-    <button class="button">Your Astromons</button>
-  <% end %>
+<div class="container background-border">
+  <div class="container">
+    <%= link_to astromons_path do %>
+      <button class="button">Your Astromons</button>
+    <% end %>
 
-  <%= link_to msl_gems_path do %>
-    <button class="button">Your Gems</button>
-  <% end %>
-</div>
-
-<div class="container">
-  <%= link_to new_trinket_one_path do %>
-    <button class="button"><i class="fas fa-plus"></i> Relic</button>
-  <% end %>
-
-  <%= link_to new_trinket_two_path do %>
-    <button class="button"><i class="fas fa-plus"></i> Magicite</button>
-  <% end %>
-
-  <%= link_to new_trinket_three_path do %>
-    <button class="button"><i class="fas fa-plus"></i> Essence</button>
-  <% end %>
-</div>
-
-<div class="container filter">
-  <%= form_tag trinkets_path, method: :get do %>
-    <%= select_tag(:trinket, raw('<option value="">--Select Trinket--</option><option value="trinket_one">Relic</option><option value="trinket_two">Magicite</option><option value="trinket_three">Essence</option>')) %>
-    <%= submit_tag "Filter Trinkets", class: "button" %>
-    <%= link_to "Reset Filter", trinkets_path, class: "button"  %>
-  <% end %>
-</div>
-
-<div class="container">
-  <div class="posts">
-    <div class="post">
-      <p><b>There are three kinds of trinkets each with their own set of stat boosts.</b></p>
-    </div>
+    <%= link_to msl_gems_path do %>
+      <button class="button">Your Gems</button>
+    <% end %>
   </div>
-  <div class="gem-cards">
-    <% @trinket_ones.each do |trinket_one| %>
-      <%= render "shared/astromon-trinkets-one", trinket: trinket_one, status: "status" %>
-      <div>
-        <%= link_to trinket_one_path(trinket_one), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash gem-delete"></i>
-        <% end %>
-      </div>
+
+  <div class="container">
+    <%= link_to new_trinket_one_path do %>
+      <button class="button"><i class="fas fa-plus"></i> Relic</button>
     <% end %>
-    <% @trinket_twos.each do |trinket_two| %>
-      <%= render "shared/astromon-trinkets-two", trinket: trinket_two, status: "status" %>
-      <div>
-        <%= link_to trinket_two_path(trinket_two), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash gem-delete"></i>
-        <% end %>
-      </div>
+
+    <%= link_to new_trinket_two_path do %>
+      <button class="button"><i class="fas fa-plus"></i> Magicite</button>
     <% end %>
-    <% @trinket_threes.each do |trinket_three| %>
-      <%= render "shared/astromon-trinkets-three", trinket: trinket_three, status: "status" %>
-      <div>
-        <%= link_to trinket_three_path(trinket_three), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash gem-delete"></i>
-        <% end %>
-      </div>
+
+    <%= link_to new_trinket_three_path do %>
+      <button class="button"><i class="fas fa-plus"></i> Essence</button>
     <% end %>
+  </div>
+
+  <div class="container filter">
+    <%= form_tag trinkets_path, method: :get do %>
+      <%= select_tag(:trinket, raw('<option value="">--Select Trinket--</option><option value="trinket_one">Relic</option><option value="trinket_two">Magicite</option><option value="trinket_three">Essence</option>')) %>
+      <%= submit_tag "Filter Trinkets", class: "button" %>
+      <%= link_to "Reset Filter", trinkets_path, class: "button"  %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="posts">
+      <div class="post">
+        <p><b>There are three kinds of trinkets each with their own set of stat boosts.</b></p>
+      </div>
+    </div>
+    <div class="gem-cards">
+      <% @trinket_ones.each do |trinket_one| %>
+        <%= render "shared/astromon-trinkets-one", trinket: trinket_one, status: "status" %>
+        <div>
+          <%= link_to trinket_one_path(trinket_one), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash gem-delete"></i>
+          <% end %>
+        </div>
+      <% end %>
+      <% @trinket_twos.each do |trinket_two| %>
+        <%= render "shared/astromon-trinkets-two", trinket: trinket_two, status: "status" %>
+        <div>
+          <%= link_to trinket_two_path(trinket_two), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash gem-delete"></i>
+          <% end %>
+        </div>
+      <% end %>
+      <% @trinket_threes.each do |trinket_three| %>
+        <%= render "shared/astromon-trinkets-three", trinket: trinket_three, status: "status" %>
+        <div>
+          <%= link_to trinket_three_path(trinket_three), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash gem-delete"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
