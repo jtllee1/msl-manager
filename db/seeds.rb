@@ -12,9 +12,15 @@ puts "Destroying data..."
 FirstGem.destroy_all
 SecondGem.destroy_all
 ThirdGem.destroy_all
+FirstTrinket.destroy_all
+SecondTrinket.destroy_all
+ThirdTrinket.destroy_all
 Astromon.destroy_all
 Specie.destroy_all
 MslGem.destroy_all
+TrinketOne.destroy_all
+TrinketTwo.destroy_all
+TrinketThree.destroy_all
 GemCategory.destroy_all
 User.destroy_all
 
