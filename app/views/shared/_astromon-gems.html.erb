@@ -7,33 +7,35 @@
       </div>
     </div>
     <div class="gem-desc">
-      <p><%= msl_gem.gem_category.name %></p>
-      <p><%= msl_gem.gem_category.description %></p>
+      <p><b><%= msl_gem.gem_category.name %></b></p>
+      <p><b><%= msl_gem.gem_category.description %></b></p>
     </div>
   </div>
   <div class="gem-right">
     <div class="main-stat">
-      <% unless msl_gem.m_hp == 0 %>
-        <p>HP: <%= msl_gem.m_hp %>%</p>
-      <% end %>
-      <% unless msl_gem.m_attack == 0 %>
-        <p>Attack: <%= msl_gem.m_attack %>%</p>
-      <% end %>
-      <% unless msl_gem.m_defence == 0 %>
-        <p>Defence: <%= msl_gem.m_defence %>%</p>
-      <% end %>
-      <% unless msl_gem.m_recovery == 0 %>
-        <p>Recovery: <%= msl_gem.m_recovery %>%</p>
-      <% end %>
-      <% unless msl_gem.m_crit_dmg == 0 %>
-        <p>Crit. Dmg: <%= msl_gem.m_crit_dmg %>%</p>
-      <% end %>
-      <% unless msl_gem.m_crit_rate == 0 %>
-        <p>Crit. Rate: <%= msl_gem.m_crit_rate %>%</p>
-      <% end %>
-      <% unless msl_gem.m_resist == 0 %>
-        <p>Resist: <%= msl_gem.m_resist %>%</p>
-      <% end %>
+      <b>
+        <% unless msl_gem.m_hp == 0 %>
+          <p>HP: <%= msl_gem.m_hp %>%</p>
+        <% end %>
+        <% unless msl_gem.m_attack == 0 %>
+          <p>Attack: <%= msl_gem.m_attack %>%</p>
+        <% end %>
+        <% unless msl_gem.m_defence == 0 %>
+          <p>Defence: <%= msl_gem.m_defence %>%</p>
+        <% end %>
+        <% unless msl_gem.m_recovery == 0 %>
+          <p>Recovery: <%= msl_gem.m_recovery %>%</p>
+        <% end %>
+        <% unless msl_gem.m_crit_dmg == 0 %>
+          <p>Crit. Dmg: <%= msl_gem.m_crit_dmg %>%</p>
+        <% end %>
+        <% unless msl_gem.m_crit_rate == 0 %>
+          <p>Crit. Rate: <%= msl_gem.m_crit_rate %>%</p>
+        <% end %>
+        <% unless msl_gem.m_resist == 0 %>
+          <p>Resist: <%= msl_gem.m_resist %>%</p>
+        <% end %>
+      </b>
     </div>
     <div class="sub-stat">
       <% unless msl_gem.s_hp == 0 %>
