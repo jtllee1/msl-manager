@@ -12,7 +12,6 @@ class PagesController < ApplicationController
     @guest.save!(validate: false)
     sign_in(@guest)
     @specie = Specie.all.first
-    @gem_category = GemCategory.all.first
     @astromon = Astromon.new(
       specie_id: @specie.id,
       first_gem_shape: "Square",
@@ -21,26 +20,27 @@ class PagesController < ApplicationController
       user_id: current_user.id
       )
     @astromon.save!
+    @gem_category = GemCategory.all.first
     @gem = MslGem.new(
       gem_shape: "Square",
       gem_category_id: @gem_category.id,
       user_id: current_user.id,
       m_crit_rate: 54,
-      s_attack: 12.5,
-      s_defence: 7.5,
-      s_hp: 12.5,
-      s_crit_dmg: 5.5
+      s_attack: rand(5..20),
+      s_defence: rand(5..20),
+      s_hp: rand(5..20),
+      s_crit_dmg: rand(5..20)
       )
     @gem.save!
     @gem = MslGem.new(
       gem_shape: "Triangle",
       gem_category_id: @gem_category.id,
       user_id: current_user.id,
-      m_attack: 68,
-      s_crit_rate: 12.5,
-      s_defence: 7.5,
-      s_hp: 12.5,
-      s_crit_dmg: 5.5
+      m_attack: rand(5..20),
+      s_crit_rate: rand(5..20),
+      s_defence: rand(5..20),
+      s_hp: rand(5..20),
+      s_crit_dmg: rand(5..20)
       )
     @gem.save!
     @gem = MslGem.new(
@@ -48,10 +48,44 @@ class PagesController < ApplicationController
       gem_category_id: @gem_category.id,
       user_id: current_user.id,
       m_hp: 68,
-      s_attack: 12.5,
-      s_defence: 7.5,
-      s_crit_rate: 12.5,
-      s_crit_dmg: 5.5
+      s_attack: rand(5..20),
+      s_defence: rand(5..20),
+      s_crit_rate: rand(5..20),
+      s_crit_dmg: rand(5..20)
+      )
+    @gem.save!
+    @gem_category = GemCategory.all.second
+    @gem = MslGem.new(
+      gem_shape: "Square",
+      gem_category_id: @gem_category.id,
+      user_id: current_user.id,
+      m_crit_rate: 54,
+      s_attack: rand(5..20),
+      s_defence: rand(5..20),
+      s_hp: rand(5..20),
+      s_crit_dmg: rand(5..20)
+      )
+    @gem.save!
+    @gem = MslGem.new(
+      gem_shape: "Triangle",
+      gem_category_id: @gem_category.id,
+      user_id: current_user.id,
+      m_attack: rand(5..20),
+      s_crit_rate: rand(5..20),
+      s_defence: rand(5..20),
+      s_hp: rand(5..20),
+      s_crit_dmg: rand(5..20)
+      )
+    @gem.save!
+    @gem = MslGem.new(
+      gem_shape: "Diamond",
+      gem_category_id: @gem_category.id,
+      user_id: current_user.id,
+      m_hp: 68,
+      s_attack: rand(5..20),
+      s_defence: rand(5..20),
+      s_crit_rate: rand(5..20),
+      s_crit_dmg: rand(5..20)
       )
     @gem.save!
     @trinket_one = TrinketOne.new(
