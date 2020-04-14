@@ -32,6 +32,7 @@ class MslGemsController < ApplicationController
     msl_gem_index
     find_msl_gem
     if @first_gem != [] || @second_gem != [] || @third_gem != []
+      flash.alert = "You cannot delete an equipped gem!"
     else
       @msl_gem.destroy
       @msl_gem.save
