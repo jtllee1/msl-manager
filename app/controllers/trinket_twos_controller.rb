@@ -16,6 +16,7 @@ class TrinketTwosController < ApplicationController
   def destroy
     @trinket_two = TrinketTwo.find(params[:id])
     if @trinket_two.available == false
+      flash.alert = "You cannot delete an equipped trinket!"
     else
       @trinket_two.destroy
       @trinket_two.save
